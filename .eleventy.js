@@ -1,5 +1,6 @@
-@'
+
 module.exports = function (eleventyConfig) {
+  // Copy /src/assets to /assets in the output
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
   return {
@@ -11,4 +12,3 @@ module.exports = function (eleventyConfig) {
     }
   };
 };
-'@ | Set-Content -Encoding UTF8 .eleventy.js
