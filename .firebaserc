@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "petiole-website-26"
-  }
+    "default": "marynakuzmenko-2812",
+    "maryna": "marynakuzmenko-2812"
+  },
+  "targets": {},
+  "etags": {}
 }

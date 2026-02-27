@@ -1,0 +1,18 @@
+@'
+{
+  "title": "Dr. Maryna Kuzmenko",
+  "description": "AI in Agriculture education, agrifood policy, and women in agriculture support.",
+  "baseUrl": "https://marynakuzmenko.com",
+  "stats": {
+    "udemyStudents": 2600,
+    "udemyCountries": 119,
+    "linkedinFollowers": 30500,
+    "newsletterReaders": 14100,
+    "youtubeSubscribers": 11700
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/kuzmenkomaryna/",
+    "youtube": "https://www.youtube.com/@drmarynakuzmenko"
+  }
+}
+'@ | Set-Content -Encoding UTF8 src\_data\site.json
