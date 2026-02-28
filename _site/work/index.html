@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Petiole — AI Tools for Practical Agriculture | Dr. Maryna Kuzmenko</title>
-  <meta name="description" content="Petiole work overview product snapshot, selected LinkedIn posts, and YouTube Shorts featuring real-world AI in agriculture." />
+  <title>Work &amp; Impact | Dr. Maryna Kuzmenko</title>
+  <meta name="description" content="CEO of Petiole and global AI agrifood influencer." />
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
@@ -28,91 +28,56 @@
   <main class="main">
     <div class="container">
       
-<section class="hero">
-  <span class="eyebrow">Work</span>
-  <h1>Petiole</h1>
-  <p style="font-size: 18px; max-width: 900px; margin: 0 auto 22px;">
-    I’m the CEO & Co-Founder of Petiole — practical AI tools for agriculture and field teams.
-    This page collects a product snapshot and selected public content.
+<section class="work-hero">
+  <span class="eyebrow">Innovation in Action</span>
+  <h1>Proven Impact from <span class="italic-text">Field to Forum.</span></h1>
+  <p class="lead">
+    A fusion of entrepreneurial leadership at Petiole and global knowledge sharing across digital platforms.
   </p>
+</section>
 
-  <div class="hero__actions">
-    <a class="btn btn--primary" href="https://petiolepro.com" target="_blank" rel="noopener">Visit Petiole Website</a>
-    <a class="btn btn--ghost" href="/contact/">Work with me</a>
+<section class="section petiole-feature">
+  <div class="petiole-grid">
+    <div class="petiole-content">
+      <span class="eyebrow">Flagship Venture</span>
+      <h2>Petiole: AI-Powered Plant Phenotyping</h2>
+      <p>
+        As CEO and Co-Founder, I lead the development of computer vision solutions that provide real-time insights into plant health. Petiole turns any smartphone into a powerful leaf area meter, bridging the gap between high-tech research and accessible field data.
+      </p>
+      <div class="badges">
+        <span class="badge">Virgin StartUp StepUp</span>
+        <span class="badge">Computer Vision</span>
+        <span class="badge">AgTech</span>
+      </div>
+      <a href="https://petioleapp.com" class="btn btn--primary" target="_blank">Visit Petiole →</a>
+    </div>
+    <div class="petiole-visual">
+
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <span class="eyebrow">Product snapshot</span>
-  <h2>Petiole website</h2>
+<section class="section digital-pulse">
+  <span class="eyebrow">Digital Influence</span>
+  <h2>The Global Classroom</h2>
+  <p>Sharing daily insights with 30,500+ followers and 11,600+ subscribers.</p>
 
-  <div class="card" style="padding: 16px;">
-    <a href="https://petiolepro.com" target="_blank" rel="noopener" style="display:block;">
-      <img
-        src="/assets/img/work/petiole-website.png"
-        alt="Screenshot of the Petiole website"
-        style="width:100%; border-radius: 14px; border: 1px solid var(--border);"
-        loading="lazy"
-      />
-    </a>
-    <p style="margin: 12px 0 0; color: var(--muted);">
-      Click the screenshot to open the live site.
-    </p>
+  <div class="carousel-container">
+    <h3>LinkedIn Insights</h3>
+    <div class="linkedin-carousel">
+      <div class="post-preview">Post 1: AI Policy Trends</div>
+      <div class="post-preview">Post 2: Female Leadership</div>
+      <div class="post-preview">Post 3: Future of Agrifood</div>
+    </div>
+  </div>
+
+  <div class="shorts-grid">
+    <h3>YouTube Shorts</h3>
+    <div class="video-placeholder">Short 1: AI Explainer</div>
+    <div class="video-placeholder">Short 2: Field Recap</div>
+    <div class="video-placeholder">Short 3: Innovation Tip</div>
   </div>
 </section>
-
-<section class="section carousel" id="linkedin">
-  <div class="carousel__head">
-    <div>
-      <span class="eyebrow">Selected posts</span>
-      <h2 style="margin: 0;">LinkedIn highlights</h2>
-      <p style="margin: 8px 0 0; color: var(--muted);">A few posts that show the work and the thinking behind it.</p>
-    </div>
-    <div class="carousel__controls">
-      <button class="carousel__btn" type="button" data-carousel-prev="linkedinTrack">←</button>
-      <button class="carousel__btn" type="button" data-carousel-next="linkedinTrack">→</button>
-    </div>
-  </div>
-
-  <div class="carousel__track" id="linkedinTrack" aria-label="LinkedIn posts carousel">
-    
-  </div>
-</section>
-
-<section class="section carousel" id="youtube">
-  <div class="carousel__head">
-    <div>
-      <span class="eyebrow">Short videos</span>
-      <h2 style="margin: 0;">YouTube Shorts</h2>
-      <p style="margin: 8px 0 0; color: var(--muted);">Quick visual proof: demos, field moments, and short explainers.</p>
-    </div>
-    <div class="carousel__controls">
-      <button class="carousel__btn" type="button" data-carousel-prev="youtubeTrack">←</button>
-      <button class="carousel__btn" type="button" data-carousel-next="youtubeTrack">→</button>
-    </div>
-  </div>
-
-  <div class="carousel__track" id="youtubeTrack" aria-label="YouTube Shorts carousel">
-    
-  </div>
-</section>
-
-<script>
-  // Lightweight carousel controls (no dependencies)
-  function scrollTrack(trackId, dir) {
-    const el = document.getElementById(trackId);
-    if (!el) return;
-    const amount = Math.min(el.clientWidth * 0.9, 900);
-    el.scrollBy({ left: dir * amount, behavior: "smooth" });
-  }
-
-  document.addEventListener("click", (e) => {
-    const prev = e.target.closest("[data-carousel-prev]");
-    const next = e.target.closest("[data-carousel-next]");
-    if (prev) scrollTrack(prev.getAttribute("data-carousel-prev"), -1);
-    if (next) scrollTrack(next.getAttribute("data-carousel-next"), 1);
-  });
-</script>
     </div>
   </main>
 
