@@ -303,97 +303,125 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     transform: translateY(-1px);
 }
 
-/* --- Work Page Styling --- */
+/* --- Elegant Events Timeline --- */
 
-.work-hero {
-    padding: 80px 0 40px;
+.events-hero {
+    padding: 100px 0 60px;
     text-align: center;
 }
 
-/* Petiole Section */
-.petiole-feature {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 60px;
-    box-shadow: var(--shadow);
-    margin-bottom: 80px;
+.events-timeline {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+    position: relative;
 }
 
-.petiole-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* The vertical line in the background */
+.events-timeline::before {
+    content: '';
+    position: absolute;
+    left: 100px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+}
+
+.event-item {
+    display: flex;
     gap: 60px;
-    align-items: center;
+    margin-bottom: 60px;
+    position: relative;
 }
 
-.petiole-content h2 {
-    font-size: 32px;
-    color: var(--accent);
-    margin: 15px 0;
+/* Featured item has a subtle emerald glow */
+.event-item.featured .event-details {
+    background: rgba(30, 77, 58, 0.03);
+    border-left: 3px solid var(--accent);
+    padding: 30px;
+    border-radius: 0 var(--radius) var(--radius) 0;
 }
 
-.petiole-visual {
-    background: var(--card);
-    border-radius: var(--radius);
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--border);
-}
-
-/* Social Media Displays */
-.carousel-container {
-    margin-top: 40px;
-}
-
-.linkedin-carousel {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 20px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--gold) transparent;
-}
-
-.post-preview {
-    min-width: 300px;
-    height: 400px;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
+/* Date Badge Style */
+.event-date {
     flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    width: 80px;
+    text-align: right;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    font-weight: 600;
 }
 
-.shorts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 60px;
-}
-
-.video-placeholder {
-    aspect-ratio: 9/16;
-    background: #000;
-    color: #fff;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.event-date .year {
     font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.1em;
 }
 
-/* Mobile Polish */
-@media (max-width: 800px) {
-    .petiole-grid { grid-template-columns: 1fr; }
-    .shorts-grid { grid-template-columns: 1fr; }
-    .petiole-feature { padding: 30px; }
+.event-date .day {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: var(--accent);
+}
+
+/* Details Style */
+.event-details h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    color: var(--text);
+}
+
+.event-details p {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.event-tag {
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.event-meta {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    display: flex;
+    gap: 15px;
+}
+
+/* Simple Archive Grid */
+.events-archive {
+    background: #fff;
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.archive-item {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.archive-item strong { display: block; font-size: 15px; }
+.archive-item span { font-size: 13px; color: var(--muted); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .events-timeline::before { left: 30px; }
+    .event-item { flex-direction: column; gap: 10px; padding-left: 50px; }
+    .event-date { text-align: left; width: auto; }
 }
