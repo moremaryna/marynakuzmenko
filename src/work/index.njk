@@ -1,5 +1,116 @@
 ---
-title: Work
 layout: layouts/base.njk
+title: Petiole — AI Tools for Practical Agriculture | Dr. Maryna Kuzmenko
+description: Petiole work overview product snapshot, selected LinkedIn posts, and YouTube Shorts featuring real-world AI in agriculture.
 ---
-{% include "partials/coming-soon.njk" %}
+
+<section class="hero">
+  <span class="eyebrow">Work</span>
+  <h1>Petiole</h1>
+  <p style="font-size: 18px; max-width: 900px; margin: 0 auto 22px;">
+    I’m the CEO & Co-Founder of Petiole — practical AI tools for agriculture and field teams.
+    This page collects a product snapshot and selected public content.
+  </p>
+
+  <div class="hero__actions">
+    <a class="btn btn--primary" href="https://petiolepro.com" target="_blank" rel="noopener">Visit Petiole Website</a>
+    <a class="btn btn--ghost" href="/contact/">Work with me</a>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow">Product snapshot</span>
+  <h2>Petiole website</h2>
+
+  <div class="card" style="padding: 16px;">
+    <a href="https://petiolepro.com" target="_blank" rel="noopener" style="display:block;">
+      <img
+        src="/assets/img/work/petiole-website.png"
+        alt="Screenshot of the Petiole website"
+        style="width:100%; border-radius: 14px; border: 1px solid var(--border);"
+        loading="lazy"
+      />
+    </a>
+    <p style="margin: 12px 0 0; color: var(--muted);">
+      Click the screenshot to open the live site.
+    </p>
+  </div>
+</section>
+
+<section class="section carousel" id="linkedin">
+  <div class="carousel__head">
+    <div>
+      <span class="eyebrow">Selected posts</span>
+      <h2 style="margin: 0;">LinkedIn highlights</h2>
+      <p style="margin: 8px 0 0; color: var(--muted);">A few posts that show the work and the thinking behind it.</p>
+    </div>
+    <div class="carousel__controls">
+      <button class="carousel__btn" type="button" data-carousel-prev="linkedinTrack">←</button>
+      <button class="carousel__btn" type="button" data-carousel-next="linkedinTrack">→</button>
+    </div>
+  </div>
+
+  <div class="carousel__track" id="linkedinTrack" aria-label="LinkedIn posts carousel">
+    {% for post in linkedin_maryna %}
+      <a href="{{ post.url }}" target="_blank" rel="noopener">
+        <article class="thumbCard">
+          <img class="thumbCard__img" src="{{ post.thumb }}" alt="LinkedIn post thumbnail: {{ post.title }}" loading="lazy" />
+          <div class="thumbCard__body">
+            <h3 class="thumbCard__title">{{ post.title }}</h3>
+            <div class="thumbCard__meta">LinkedIn · {{ post.tag }}</div>
+          </div>
+        </article>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section carousel" id="youtube">
+  <div class="carousel__head">
+    <div>
+      <span class="eyebrow">Short videos</span>
+      <h2 style="margin: 0;">YouTube Shorts</h2>
+      <p style="margin: 8px 0 0; color: var(--muted);">Quick visual proof: demos, field moments, and short explainers.</p>
+    </div>
+    <div class="carousel__controls">
+      <button class="carousel__btn" type="button" data-carousel-prev="youtubeTrack">←</button>
+      <button class="carousel__btn" type="button" data-carousel-next="youtubeTrack">→</button>
+    </div>
+  </div>
+
+  <div class="carousel__track" id="youtubeTrack" aria-label="YouTube Shorts carousel">
+    {% for s in youtube_petiole_shorts %}
+      <a href="{{ s.url }}" target="_blank" rel="noopener">
+        <article class="thumbCard">
+          <img
+            class="thumbCard__img"
+            src="https://img.youtube.com/vi/{{ s.videoId }}/hqdefault.jpg"
+            alt="YouTube Short thumbnail: {{ s.title }}"
+            loading="lazy"
+          />
+          <div class="thumbCard__body">
+            <h3 class="thumbCard__title">{{ s.title }}</h3>
+            <div class="thumbCard__meta">YouTube Shorts</div>
+          </div>
+        </article>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  // Lightweight carousel controls (no dependencies)
+  function scrollTrack(trackId, dir) {
+    const el = document.getElementById(trackId);
+    if (!el) return;
+    const amount = Math.min(el.clientWidth * 0.9, 900);
+    el.scrollBy({ left: dir * amount, behavior: "smooth" });
+  }
+
+  document.addEventListener("click", (e) => {
+    const prev = e.target.closest("[data-carousel-prev]");
+    const next = e.target.closest("[data-carousel-next]");
+    if (prev) scrollTrack(prev.getAttribute("data-carousel-prev"), -1);
+    if (next) scrollTrack(next.getAttribute("data-carousel-next"), 1);
+  });
+</script>
