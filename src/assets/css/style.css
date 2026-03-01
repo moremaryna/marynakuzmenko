@@ -388,12 +388,71 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     margin-bottom: 8px;
 }
 
-.event-meta {
+/* --- Sexy "Learn More" Links --- */
+
+.event-learn-more {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 16px;
+    padding: 6px 0;
     font-size: 13px;
-    font-weight: 600;
-    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gold) !important; /* Gold for the 'Soul' and creativity */
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* The Animated Underline */
+.event-learn-more::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px; /* Short line to start */
+    height: 2px;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.event-learn-more:hover {
+    color: var(--accent) !important; /* Switch to Emerald on hover */
+}
+
+.event-learn-more:hover::after {
+    width: 100%; /* Line grows to full width on hover */
+    background-color: var(--accent);
+}
+
+/* Icon Styling */
+.event-learn-more svg {
+    width: 14px;
+    height: 14px;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.event-learn-more:hover svg {
+    transform: translate(3px, -3px); /* Elegant diagonal jump */
+}
+
+/* Bullet-style formatting for the Metadata */
+.event-meta {
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.event-meta span:not(:last-child)::after {
+    content: "•";
+    margin-left: 12px;
+    opacity: 0.5;
 }
 
 /* Simple Archive Grid */
