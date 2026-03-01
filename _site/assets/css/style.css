@@ -286,10 +286,10 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     display: inline-block; /* Ensures background matches text length */
     background-color: #FFD700; /* Bold flat yellow */
     color: #0a1a12 !important; /* High-contrast dark text */
-    padding: 6px 16px;
-    font-weight: 700;
+    padding: 2px 8px;
+    font-weight: 600;
     font-size: 13px;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.1em;
     text-decoration: none;
     border-radius: 8px; /* Clean rounded corners */
@@ -484,7 +484,64 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     .event-item { flex-direction: column; gap: 10px; padding-left: 50px; }
     .event-date { text-align: left; width: auto; }
 }
+/* --- Event Links Layout --- */
+.event-links {
+    display: flex;
+    flex-wrap: wrap; /* Wraps on mobile */
+    gap: 24px;       /* Space between LinkedIn and YouTube */
+    margin-top: 16px;
+}
 
+/* Base styles for all event links (from our previous session) */
+.event-learn-more {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gold) !important;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Custom Underline Animation */
+.event-learn-more::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.event-learn-more:hover::after {
+    width: 100%;
+}
+
+/* Specific YouTube "Video" Variant */
+.event-learn-more--video:hover {
+    color: #FF0000 !important; /* YouTube Red only on hover for a 'pop' of attention */
+}
+
+.event-learn-more--video:hover::after {
+    background-color: #FF0000;
+}
+
+/* Icon Spacing */
+.event-learn-more svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.event-learn-more:hover svg {
+    transform: scale(1.1);
+}
 /* --- Speaking Page Refinements --- */
 
 .speaking-hero {
@@ -594,7 +651,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     display: flex;
     align-items: flex-end;
     padding: 40px;
-    background-image: url('src/assets/img/speaking/maryna-kuzmenko-speaking.jpg'); /* Link to your photo later */
+    background-image: url('/assets/img/speaking/maryna-kuzmenko-speaking.jpg'); /* Link to your photo later */
     background-size: cover;
     background-position: center;
 }
@@ -750,4 +807,93 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     .success-actions {
         flex-direction: column;
     }
+}
+/* --- Human & True About Style --- */
+
+.about-hero-human {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, rgba(30, 77, 58, 0.05) 0%, transparent 100%);
+}
+
+.about-hero-human h1 {
+    font-size: clamp(32px, 5vw, 64px);
+    max-width: 800px;
+}
+
+.bio-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.bio-intro {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--accent);
+    margin-bottom: 30px;
+}
+
+/* The "Truth Box" - a signature soulful element */
+.truth-box {
+    margin: 40px 0;
+    padding: 40px;
+    background: #fff;
+    border-left: 4px solid var(--gold);
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+    border-radius: 0 16px 16px 0;
+}
+
+.truth-box h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+    color: var(--gold);
+}
+
+/* Sidebar Cards */
+.bio-sidebar-human {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-card {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+.sidebar-card--gold {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+}
+
+.sidebar-card--gold h4 { color: var(--gold); }
+
+.human-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.human-list li {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.human-list li strong {
+    display: block;
+    color: var(--accent);
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .bio-layout { grid-template-columns: 1fr; gap: 40px; }
 }
