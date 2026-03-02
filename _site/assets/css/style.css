@@ -983,87 +983,33 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     padding: 0 20px;
 }
 
-/* Hide mobile toggle by default */
+/* Desktop Navigation */
+.nav {
+    display: flex;
+    gap: 28px;
+}
+
+.nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover { color: var(--gold); }
+
+/* Hide Toggle Elements on Desktop */
 .nav-toggle, .nav-toggle-label { display: none; }
 
-/* --- Smooth Mobile Transition --- */
+/* --- MOBILE SLEEK MENU --- */
 @media (max-width: 850px) {
     .nav-toggle-label {
         display: block;
         cursor: pointer;
-        z-index: 1001;
-    }
-
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        display: block;
-        background: var(--accent);
-        height: 2px;
-        width: 22px;
-        position: relative;
-        transition: all 0.3s;
-    }
-    .nav-toggle-label span::before { content: ""; top: -7px; }
-    .nav-toggle-label span::after { content: ""; top: 5px; }
-
-    /* Slide-out Menu Mobile Styles */
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%; /* Full screen overlay */
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        font-size: 18px;
-        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-    }
-
-    /* Show menu when checkbox is clicked */
-    .nav-toggle:checked ~ .nav {
-        right: 0;
-    }
-
-    /* Hamburger to X animation */
-    .nav-toggle:checked ~ .nav-toggle-label span { background: transparent; }
-    .nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; }
-    .nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: -2px; }
-}
-/* --- Mobile Sleek Menu --- */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Hidden off-screen */
-        width: 80%;
-        height: 100vh;
-        background: var(--accent); /* Your Deep Emerald */
-        padding: 100px 40px;
-        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-        z-index: 999;
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .nav-menu a {
-        color: white;
-        font-size: 24px;
-        font-family: var(--font-heading);
-        text-decoration: none;
-    }
-
-    /* Hamburger Icon Styling */
-    .nav-toggle-label {
-        display: block;
-        cursor: pointer;
-        z-index: 1001;
+        z-index: 1001; /* Higher than menu */
         padding: 10px;
     }
 
@@ -1073,43 +1019,50 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
         display: block;
         background: var(--accent);
         height: 2px;
-        width: 25px;
+        width: 24px;
         position: relative;
-        transition: all 0.3s;
+        transition: all 0.3s ease;
     }
-
     .nav-toggle-label span::before { content: ""; top: -8px; }
     .nav-toggle-label span::after { content: ""; top: 6px; }
 
-    /* Trigger: When checkbox is checked, slide menu in */
-    .nav-toggle:checked ~ .nav-menu {
+    /* The Navigation Drawer */
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start hidden */
+        width: 100%;
+        height: 100vh;
+        background: var(--accent); /* Deep Emerald */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .nav a {
+        color: white;
+        font-size: 22px;
+        font-family: var(--font-heading);
+    }
+
+    /* Logic: Trigger Open */
+    .nav-toggle:checked ~ .nav {
         right: 0;
     }
 
-    /* Transform Hamburger to 'X' when open */
-    .nav-toggle:checked ~ .nav-toggle-label span { background: transparent; }
-    .nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; background: white; }
-    .nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: -2px; background: white; }
-}
-/* --- Desktop Nav Styling --- */
-.nav ul{
-    display:flex;
-    gap:24px;
-    list-style:none;
-    margin:0;
-    padding:0;
-    align-items:center;
-}
+    /* Icon Transformation & Visibility */
+    .nav-toggle:checked ~ .nav-toggle-label span {
+        background: transparent;
+    }
 
-.nav a{
-    display:inline-block;
-    padding:10px 12px;
-    border-radius:999px;
-    font-weight:600;
-    color:var(--text);
-}
+    .nav-toggle:checked ~ .nav-toggle-label span::before,
+    .nav-toggle:checked ~ .nav-toggle-label span::after {
+        background: white; /* Becomes white on the emerald background */
+        top: 0;
+    }
 
-.nav a:hover{
-    color:var(--accent);
-    background: rgba(30, 77, 58, 0.06);
+    .nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); }
+    .nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); }
 }
