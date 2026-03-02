@@ -4,22 +4,30 @@
   <meta charset="utf-8" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ title or site.title }}</title>
-  <meta name="description" content="{{ description or site.description }}" />
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}" />
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="container header__inner">
-      <div class="brand">
-        <a href="/">{{ site.title }}</a>
-      </div>
-      <nav class="nav" aria-label="Primary">
-        <a href="/services/">Services</a>
-        <a href="/events/">Events</a>
-        <a href="/speaking/">Speaking</a>
-        <a href="/about/">About</a>
-        <a href="/contact/">Contact</a>
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="logo">
+        {{ site.title }}<span class="dot">.</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+
+      <nav class="nav">
+      <ul>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/speaking/">Speaking</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
       </nav>
     </div>
   </header>
@@ -59,7 +67,7 @@
 
     <div class="container footer__bottom">
       <div class="footer__copyright">
-        © 2026 · Dr. Maryna Kuzmenko · AI & Agrifood Technologies
+        © 2026 · <a href="/">{{ site.title }}</a> · <a href="/">{{ site.description }}</a>
       </div>
       <div class="footer__motto italic-text">
         Where Agriculture Meets AI.
