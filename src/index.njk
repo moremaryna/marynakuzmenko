@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-title: Dr. Maryna Kuzmenko | AI Agrifood Policy & Keynote Speaker
+title: Dr. Maryna Kuzmenko
 description: Expert advisory and global perspectives on the intersection of AI and agriculture.
 ---
 
@@ -18,22 +18,28 @@ description: Expert advisory and global perspectives on the intersection of AI a
   </div>
 
   <div class="stats" style="margin-top: 50px;">
+    {% if site.social.linkedin %}<a href="{{ site.links.udemy }}" aria-label="Udemy">
     <div class="stat">
       <strong>2,700+</strong>
       <span>Global Students</span>
-    </div>
+    </div></a>{% endif %}
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7433798234336104448/" target="_blank">
     <div class="stat">
       <strong>119</strong>
       <span>Countries Reached</span>
-    </div>
+    </div></a>
+
+    {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}" aria-label="LinkedIn">
     <div class="stat">
       <strong>30,600+</strong>
       <span>LinkedIn Community</span>
-    </div>
+    </div></a>{% endif %}
+
+    {% if site.social.youtube %}<a href="{{ site.social.youtube }}" aria-label="YouTube">
     <div class="stat">
-      <strong>12,100</strong>
+      <strong>12,100+</strong>
       <span>YouTube Visionaries</span>
-    </div>
+    </div></a>{% endif %}
   </div>
 </section>
 

@@ -1,7 +1,22 @@
 {
   "title": "Dr. Maryna Kuzmenko",
-  "description": "Ph.D., Founder, and Agrifood AI Strategist",
-  "social.linkedin":"https://www.linkedin.com/in/kuzmenkomaryna",
-  "social.youtube":"https://www.youtube.com/@drmarynakuzmenko"
-
+  "name": "Dr. Maryna Kuzmenko",
+  "suffix": "Ph.D.",
+  "description": "Strategic expert deploying computer vision & AI in agrifood and forestry—bridging technical innovation, public policy, and commercial viability.",
+  "url": "https://marynakuzmenko.com",
+  "author": {
+    "name": "Maryna Kuzmenko",
+    "email": "support@petioleapp.com"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/kuzmenkomaryna",
+    "youtube": "https://www.youtube.com/@drmarynakuzmenko",
+    "twitter": "https://x.com/mary_kuzmenko"
+  },
+  "analytics": {
+    "google": "G-8SR2ZG841F"
+  },
+  "links": {
+    "udemy": "https://www.udemy.com/course/ai-in-agriculture/?referralCode=19C904CE9CE14A84F140"
+  }
 }
