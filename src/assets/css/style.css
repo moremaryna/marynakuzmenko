@@ -59,8 +59,9 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     font-weight: 700;
     color: var(--accent);
 }
+.dot{ color: var(--gold);}
 
-/* --- HERO SECTION --- */
+    /* --- HERO SECTION --- */
 .hero {
     padding: 100px 0 60px;
     text-align: center;
@@ -276,29 +277,6 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     .soul-section { padding: 40px; }
     .nav { display: none; } /* Consider a mobile menu later */
 }
-
-/* --- Flat Rounded Highlight Link --- */
-.link-highlight-rounded {
-    display: inline-block; /* Ensures background matches text length */
-    background-color: #FFD700; /* Bold flat yellow */
-    color: #0a1a12 !important; /* High-contrast dark text */
-    padding: 2px 8px;
-    font-weight: 600;
-    font-size: 13px;
-    text-transform: none;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    border-radius: 8px; /* Clean rounded corners */
-    transition: all 0.2s ease-in-out;
-}
-
-.link-highlight-rounded:hover {
-    background-color: #0a1a12; /* Invert to dark on hover */
-    color: #FFD700 !important;
-    text-decoration: none;
-    transform: translateY(-1px);
-}
-
 /* --- Elegant Events Timeline --- */
 
 .events-hero {
@@ -1112,4 +1090,26 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     .nav-toggle:checked ~ .nav-toggle-label span { background: transparent; }
     .nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; background: white; }
     .nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: -2px; background: white; }
+}
+/* --- Desktop Nav Styling --- */
+.nav ul{
+    display:flex;
+    gap:24px;
+    list-style:none;
+    margin:0;
+    padding:0;
+    align-items:center;
+}
+
+.nav a{
+    display:inline-block;
+    padding:10px 12px;
+    border-radius:999px;
+    font-weight:600;
+    color:var(--text);
+}
+
+.nav a:hover{
+    color:var(--accent);
+    background: rgba(30, 77, 58, 0.06);
 }
