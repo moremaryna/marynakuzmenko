@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Contact</title>
+  <meta name="title" content="Contact">
+  <meta name="description" content="Inquire about agrifood advisory, speaking engagements, or research projects.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marynakuzmenko.com/">
+  <meta property="og:title" content="Contact">
+  <meta property="og:description" content="Inquire about agrifood advisory, speaking engagements, or research projects.">
+  <meta property="og:image" content="https://marynakuzmenko.com/assets/images/og-card.jpg">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Contact">
+  <meta property="twitter:description" content="Inquire about agrifood advisory, speaking engagements, or research projects.">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8SR2ZG841F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8SR2ZG841F');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Maryna Kuzmenko",
+    "jobTitle": "CEO & Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Petiole"
+    },
+    "url": "https://marynakuzmenko.com",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Taras Shevchenko National University of Kyiv"
+    },
+    "knowsAbout": ["Computer Vision", "AgTech", "Public Policy", "AI in Forestry", "Quality Control"],
+    "sameAs": [
+      "https://www.linkedin.com/in/marynakuzmenko/",
+      "https://twitter.com/mary_kuzmenko"
+    ],
+    "description": "Expert in the strategic deployment of computer vision and AI within the agrifood and forestry sectors."
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="brand">
+       Contact<span class="dot">.</span>
+      </a>
+
+     <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+         <label for="nav-toggle" class="nav-toggle-label">
+           <span></span>
+         </label>
+
+         <nav class="nav">
+           <a href="/about/">About</a>
+           <a href="/services/">Services</a>
+           <a href="/speaking/">Speaking</a>
+           <a href="/events/">Events</a>
+           <a href="/contact/">Contact</a>
+         </nav>
+       </div>
+     </header>
+
+  <main class="main">
+    <div class="container">
+      
+<section class="contact-hero">
+  <span class="eyebrow">Let's Connect</span>
+  <h1>Cultivating the <span class="italic-text">Next Dialogue.</span></h1>
+  <p class="lead">Available for global speaking, policy advisory, and innovation partnerships.</p>
+</section>
+
+<div class="contact-container">
+  <div class="contact-form-wrapper">
+    <form action="https://formspree.io/f/xvzbnwdb" method="POST" class="contact-form">
+    <input type="hidden" name="_next" value="https://marynakuzmenko.com/success/">
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" placeholder="Jane Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Work Email</label>
+        <input type="email" name="_replyto" id="email" placeholder="jane@organization.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Inquiry Type</label>
+        <select name="subject" id="subject">
+          <option value="Speaking">Keynote / Speaking Engagement</option>
+          <option value="Advisory">Strategic Advisory</option>
+          <option value="Research">Policy Research</option>
+          <option value="Other">General Inquiry</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">How can I help?</label>
+        <textarea name="message" id="message" rows="6" placeholder="Tell me about your project or event..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--primary">Send Message</button>
+
+    </form>
+  </div>
+
+  <div class="contact-info">
+    <div class="info-block">
+      <h3>Direct Outreach</h3>
+      <p>For urgent press inquiries or quick professional intros, LinkedIn is often the fastest route.</p>
+      <a href="https://www.linkedin.com/in/kuzmenkomaryna" class="text-link" target="_blank">Message on LinkedIn →</a>
+    </div>
+
+    <div class="info-block">
+      <h3>Location</h3>
+      <p>Based in the UK · Working Globally.</p>
+    </div>
+
+    <div class="info-block">
+      <h3>Current Focus</h3>
+      <ul class="speaking-list" style="font-size: 14px;">
+        <li>AI in Agrifood</li>
+        <li>AI in Quality Control for Agrifood & Forestry</li>
+        <li>AI Adoption Policy Briefings</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const form = document.querySelector(".contact-form");
+    if (!form) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const formData = new FormData(form);
+
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok) {
+          window.location.href = "/success/";
+          return;
+        }
+
+        // If Formspree returns an error payload, try to show it
+        let msg = "Sorry — something went wrong. Please try again.";
+        try {
+          const data = await res.json();
+          if (data && data.errors && data.errors.length) {
+            msg = data.errors.map(e => e.message).join(" ");
+          }
+        } catch (_) {}
+
+        alert(msg);
+      } catch (err) {
+        alert("Network error — please try again.");
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  })();
+</script>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="brand">Dr. Maryna Kuzmenko</div>
+        <p class="footer__tagline">Architecting the future of agrifood through AI, Education, Policy, and Human-First Innovation.</p>
+      </div>
+
+      <div class="footer__grid">
+        <div class="footer__col">
+          <span class="footer__label">Expertise</span>
+          <a href="/speaking/">Keynotes & Lectures</a>
+          <a href="/events/">Events</a>
+          <a href="/services/">Services</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__label">Insights</span>
+                   <a href="https://www.linkedin.com/in/kuzmenkomaryna" aria-label="LinkedIn">LinkedIn</a>
+                   <a href="https://www.youtube.com/@drmarynakuzmenko" aria-label="YouTube">YouTube</a>
+                   <a href="https://www.udemy.com/course/ai-in-agriculture/?referralCode=19C904CE9CE14A84F140" aria-label="Udemy">Udemy</a>
+           <a href="https://moremaryna.com" target="_blank">More Maryna</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <div class="footer__copyright">
+        © 2026 · <a href="/">Contact</a> · <a href="/">Inquire about agrifood advisory, speaking engagements, or research projects.</a>
+      </div>
+      <div class="footer__motto italic-text">
+        Where Agriculture Meets AI.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

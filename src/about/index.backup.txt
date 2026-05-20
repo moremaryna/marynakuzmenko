@@ -1,4 +1,4 @@
-﻿---
+---
 layout: layouts/base.njk
 title: "About"
 description: "Official short and extended bios for Dr. Maryna Kuzmenko, co-founder and CEO of Petiole, AI in agriculture educator, speaker, and agritech entrepreneur."
@@ -10,9 +10,7 @@ permalink: "/about/"
     <h2>Bio of Dr. Maryna Kuzmenko</h2>
 
     <p class="lead">
-      I created this page to make life easier for dear event organisers, journalists,
-      podcast hosts, collaborators, and conference teams — a practical resource for anyone
-      who needs a clear, accurate, publication-ready bio of
+     I created this page to make life easier for dear event organisers, journalists, podcast hosts, collaborators, and conference teams — a practical resource for anyone who needs a clear, accurate, publication-ready bio of
       <strong>Dr. Maryna Kuzmenko</strong>.
     </p>
   </div>
@@ -30,19 +28,17 @@ permalink: "/about/"
       </p>
 
       <p>
-        Maryna was recognised as an Expert Top Voice on LinkedIn in the May 2026 edition and has an active educational presence in social and business media.
+        Maryna was recognised as an <strong>Expert Top Voice on LinkedIn</strong> in the May 2026 edition and she shares her knowledge on other <strong>social media</strong> platforms.
       </p>
 
       <p>
-        She is one of 16 Community Forum Members of the 2025/26 Cohort, pre-selected by the Innovate UK Women in Innovation team. Maryna is also an Oxford Farming Conference 2026 Inspire Fellow.
+        She is one of 16 Community Forum Members of 2025/26 Cohort, pre-selected by the Innovate UK Women in Innovation team. Maryna is also a fellow at Inspire Programme of the Oxford Farming Conference 2026.
       </p>
-
       <p>
-        Maryna is a fellow of the “Scaling Young Women’s Businesses Through IP Mentorship” programme by the World Intellectual Property Organization (WIPO) and the International Trade Centre’s SheTrades initiative. She is Virgin StartUp Alumna 2020.
+      Maryna is a fellow of programme “Scaling young women’s businesses through IP mentorship” (World Intellectual Property Organization (WIPO) + International Trade Centre’s (ITC) SheTrades initiative).
       </p>
-
       <p>
-        She is a regular speaker at educational <a href="/events/">events</a> and has participated in high-level agriculture-focused meetings in the United Kingdom and internationally.
+        She is a regular speaker at educational <a href="\events\">events</events> and has participated in high-level agriculture-focused meetings in the United Kingdom and internationally.
       </p>
     </div>
   </section>
@@ -52,8 +48,7 @@ permalink: "/about/"
 
     <div class="bio-card featured">
       <p>
-        Dr. Maryna Kuzmenko is co-founder and CEO of Petiole, applying computer vision and deep learning to agriculture. She is a LinkedIn Expert Top Voice, Innovate UK Women in Innovation Forum Member, and Oxford Farming Conference Inspire Fellow.
-      </p>
+        Dr. Maryna Kuzmenko is co-founder and CEO of Petiole, applying computer vision and deep learning to agriculture. She is an Innovate UK Women in Innovation Community Forum Member, the Oxford Farming Conference 2026 Inspire Fellow, and a LinkedIn Expert Top Voice, with a focus on practical AI in agriculture.</p>
     </div>
   </section>
 
@@ -78,7 +73,7 @@ permalink: "/about/"
       <article class="bio-card">
         <h3>100-word bio</h3>
         <p>
-          Dr. Maryna Kuzmenko is co-founder and CEO of Petiole, a UK-based agritech SME developing AI tools for plant science, plant phenotyping, and food quality assurance. She brings nearly 10 years of practical experience in applying digital technologies in agriculture, with a focus on computer vision and deep learning. Petiole Pro, developed by her team, was recognised as a finalist in the GIST Tech-I 2015 competition, shortlisted for the UK FPC Fresh Awards 2023, and supported by two Innovate UK grants. Maryna was recognised as an Expert Top Voice on LinkedIn in May 2026.
+          Dr. Maryna Kuzmenko is co-founder and CEO of Petiole, a UK-based agritech SME developing AI tools for plant science, plant phenotyping, and food quality assurance. She brings nearly 10 years of practical experience in applying digital technologies in agriculture, with a focus on computer vision and deep learning. Petiole Pro, developed by her team, was recognised as a finalist in the GIST Tech-I competition, shortlisted for the UK FPC Fresh Awards 2023, and supported by two Innovate UK grants. Maryna was recognised as an Expert Top Voice on LinkedIn in May 2026.
         </p>
       </article>
 
@@ -129,12 +124,11 @@ permalink: "/about/"
         <li><strong>Location:</strong> United Kingdom</li>
         <li><strong>Main field:</strong> AI in agriculture, food quality assurance, entrepreneurship, female leadership</li>
         <li><strong>Recognition:</strong> Expert Top Voice on LinkedIn, May 2026 Edition</li>
-        <li><strong>Media presence:</strong> Active educational presence in social and business media</li>
+        <li><strong>LinkedIn audience:</strong> 32.700+ followers</li>
+        <li><strong>YouTube audience:</strong> 16.400+ subscribers</li>
+        <li><strong>Udemy learners:</strong> 3.100+</li>
         <li><strong>Innovate UK:</strong> Women in Innovation Community Forum Member 2025/26; Petiole received two Innovate UK grants</li>
-        <li><strong>Oxford Farming Conference:</strong> Inspire Fellow 2026</li>
-        <li><strong>WIPO / ITC SheTrades:</strong> Fellow of the IP mentorship programme for young women’s businesses</li>
-        <li><strong>Virgin StartUp:</strong> Step UP Alumna 2020
-        <li><strong>Petiole Pro recognition:</strong> GIST Tech-I 2015 finalist, Top 20 Hottest Startup Ideas 2015 by CNBC, UK FPC Fresh Awards 2023 shortlist</li>
+        <li><strong>Petiole Pro recognition:</strong> GIST Tech-I 2015 finalist, Top-20 Hottest Startup Ideas 2015 by CNBC, UK FPC Fresh Awards 2023 shortlist</li>
       </ul>
     </div>
   </section>
@@ -143,28 +137,17 @@ permalink: "/about/"
     <h2>Suggested JSON format</h2>
 
     <p>
-      This structure can be copied, adapted, and used by respected event organisers, collaborators,
-      media teams, website developers, or AI assistants when preparing a bio.
+      This structure can be used by respected event organisers, collaborators, media teams, or website developers.
     </p>
 
-    <div class="copy-box">
-      <div class="copy-box-header">
-        <span>JSON bio profile</span>
-        <button class="copy-btn" type="button" data-copy-target="bioJson">Copy JSON</button>
-      </div>
-
-      <textarea id="bioJson" class="copy-textarea" rows="36" readonly>{
+    <pre><code>{
   "name": "Dr. Maryna Kuzmenko",
   "role": "Co-founder and CEO",
   "company": "Petiole",
   "location": "United Kingdom",
-  "shortBio": "Dr. Maryna Kuzmenko is co-founder and CEO of Petiole, applying computer vision and deep learning to agriculture. She is a LinkedIn Expert Top Voice, Innovate UK Women in Innovation Forum Member, and Oxford Farming Conference Inspire Fellow.",
-  "professionalBio": "Dr. Maryna Kuzmenko brings nearly 10 years of practical experience in applying digital technologies in agriculture, with a primary focus on computer vision and deep learning for plant phenotyping and food quality assurance.",
   "recognition": [
     "Expert Top Voice on LinkedIn, May 2026 Edition",
-    "Innovate UK Women in Innovation Community Forum Member, 2025/26 Cohort",
-    "Oxford Farming Conference 2026 Inspire Fellow",
-    "WIPO and ITC SheTrades IP mentorship fellow"
+    "Innovate UK Women in Innovation Community Forum Member"
   ],
   "experience": "Nearly 10 years of practical experience applying digital technologies in agriculture",
   "specialisms": [
@@ -174,14 +157,15 @@ permalink: "/about/"
     "Plant phenotyping",
     "Food quality assurance",
     "Plant health assessment",
-    "Pest and disease detection",
-    "Agritech entrepreneurship",
-    "Female leadership"
+    "Pest and disease detection"
   ],
-  "mediaPresence": "Active educational presence in social and business media",
+  "audience": {
+    "linkedinFollowers": "32.7K",
+    "youtubeSubscribers": "16.4K",
+    "udemyLearners": "3.1K"
+  },
   "companyRecognition": [
     "Petiole Pro was a finalist in the GIST Tech-I 2015 competition, USA",
-    "Petiole Pro was named one of CNBC's Top 20 Hottest Startup Ideas in 2015",
     "Petiole Pro was shortlisted for the UK FPC Fresh Awards 2023",
     "Petiole received two Innovate UK grants for practical AI applications in agriculture"
   ],
@@ -212,38 +196,28 @@ permalink: "/about/"
   ],
   "website": "https://marynakuzmenko.com",
   "linkedin": "https://www.linkedin.com/in/marynakuzmenko/"
-}</textarea>
-    </div>
+}</code></pre>
   </section>
 
   <section class="bio-section">
     <h2>Prompt to create a suitable bio</h2>
 
     <p>
-      Copy, paste, and adapt this prompt when you need a specific version of my bio
-      for a conference, podcast, grant profile, media feature, article, or speaker page.
+      Copy and adapt this prompt when you need a specific version of the bio.
     </p>
 
-    <div class="copy-box">
-      <div class="copy-box-header">
-        <span>Reusable bio prompt</span>
-        <button class="copy-btn" type="button" data-copy-target="bioPrompt">Copy Prompt</button>
-      </div>
-
-      <textarea id="bioPrompt" class="copy-textarea" rows="32" readonly>Write a professional bio for Dr. Maryna Kuzmenko.
+    <pre><code>Write a professional bio for Dr. Maryna Kuzmenko.
 
 Context:
 - Co-founder and CEO of Petiole, a UK-based SME
 - Nearly 10 years of practical experience applying digital technologies in agriculture
 - Main focus: computer vision and deep learning for plant phenotyping and food quality assurance
 - Recognised as Expert Top Voice on LinkedIn, May 2026 Edition
-- Active educational presence in social and business media
-- Petiole Pro was a finalist in the GIST Tech-I 2015 competition in the USA
+- Educational reach: 32.7K LinkedIn followers, 16.4K YouTube subscribers, 3.1K Udemy learners
+- Petiole Pro was a finalist in the GIST Tech-I competition in the USA
 - Petiole Pro was shortlisted for the UK FPC Fresh Awards 2023
 - Petiole received two Innovate UK grants for practical AI applications in agricultural challenges such as pest and disease detection
-- Maryna is one of 16 Community Forum Members of the 2025/26 Cohort, pre-selected by the Innovate UK Women in Innovation team
-- Maryna is an Oxford Farming Conference 2026 Inspire Fellow
-- Maryna is a fellow of the WIPO and ITC SheTrades IP mentorship programme
+- Maryna is one of 16 Community Forum Members pre-selected by the Innovate UK Women in Innovation team
 - Background includes government relations in Ukraine, AXA Insurance, entrepreneurship, and work with smallholder farmers internationally
 - Education includes PhD in Business Law, LL.M in International Commercial Law, IEMA Foundation Certificate, and UPOV plant variety protection training
 
@@ -259,40 +233,6 @@ Length:
 Point of view:
 [first person / third person]
 
-Please make it accurate, concise, and suitable for publication.</textarea>
-    </div>
+Please make it accurate, concise, and suitable for publication.</code></pre>
   </section>
 </section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const copyButtons = document.querySelectorAll("[data-copy-target]");
-
-    copyButtons.forEach(function (button) {
-      button.addEventListener("click", async function () {
-        const targetId = button.getAttribute("data-copy-target");
-        const target = document.getElementById(targetId);
-
-        if (!target) return;
-
-        const text = target.value || target.innerText;
-        const originalText = button.textContent;
-
-        try {
-          await navigator.clipboard.writeText(text);
-          button.textContent = "Copied!";
-          button.classList.add("copied");
-
-          setTimeout(function () {
-            button.textContent = originalText;
-            button.classList.remove("copied");
-          }, 1800);
-        } catch (error) {
-          target.focus();
-          target.select();
-          button.textContent = "Select + copy";
-        }
-      });
-    });
-  });
-</script>

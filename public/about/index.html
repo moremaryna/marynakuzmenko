@@ -1,10 +1,86 @@
-﻿---
-layout: layouts/base.njk
-title: "About"
-description: "Official short and extended bios for Dr. Maryna Kuzmenko, co-founder and CEO of Petiole, AI in agriculture educator, speaker, and agritech entrepreneur."
-permalink: "/about/"
----
-<section class="bio-page">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>About</title>
+  <meta name="title" content="About">
+  <meta name="description" content="Official short and extended bios for Dr. Maryna Kuzmenko, co-founder and CEO of Petiole, AI in agriculture educator, speaker, and agritech entrepreneur.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marynakuzmenko.com/">
+  <meta property="og:title" content="About">
+  <meta property="og:description" content="Official short and extended bios for Dr. Maryna Kuzmenko, co-founder and CEO of Petiole, AI in agriculture educator, speaker, and agritech entrepreneur.">
+  <meta property="og:image" content="https://marynakuzmenko.com/assets/images/og-card.jpg">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="About">
+  <meta property="twitter:description" content="Official short and extended bios for Dr. Maryna Kuzmenko, co-founder and CEO of Petiole, AI in agriculture educator, speaker, and agritech entrepreneur.">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8SR2ZG841F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8SR2ZG841F');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Maryna Kuzmenko",
+    "jobTitle": "CEO & Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Petiole"
+    },
+    "url": "https://marynakuzmenko.com",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Taras Shevchenko National University of Kyiv"
+    },
+    "knowsAbout": ["Computer Vision", "AgTech", "Public Policy", "AI in Forestry", "Quality Control"],
+    "sameAs": [
+      "https://www.linkedin.com/in/marynakuzmenko/",
+      "https://twitter.com/mary_kuzmenko"
+    ],
+    "description": "Expert in the strategic deployment of computer vision and AI within the agrifood and forestry sectors."
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="brand">
+       About<span class="dot">.</span>
+      </a>
+
+     <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+         <label for="nav-toggle" class="nav-toggle-label">
+           <span></span>
+         </label>
+
+         <nav class="nav">
+           <a href="/about/">About</a>
+           <a href="/services/">Services</a>
+           <a href="/speaking/">Speaking</a>
+           <a href="/events/">Events</a>
+           <a href="/contact/">Contact</a>
+         </nav>
+       </div>
+     </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="bio-page">
   <div class="bio-hero">
     <p class="eyebrow">Official biography resource</p>
     <h2>Bio of Dr. Maryna Kuzmenko</h2>
@@ -296,3 +372,42 @@ Please make it accurate, concise, and suitable for publication.</textarea>
     });
   });
 </script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="brand">Dr. Maryna Kuzmenko</div>
+        <p class="footer__tagline">Architecting the future of agrifood through AI, Education, Policy, and Human-First Innovation.</p>
+      </div>
+
+      <div class="footer__grid">
+        <div class="footer__col">
+          <span class="footer__label">Expertise</span>
+          <a href="/speaking/">Keynotes & Lectures</a>
+          <a href="/events/">Events</a>
+          <a href="/services/">Services</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__label">Insights</span>
+                   <a href="https://www.linkedin.com/in/kuzmenkomaryna" aria-label="LinkedIn">LinkedIn</a>
+                   <a href="https://www.youtube.com/@drmarynakuzmenko" aria-label="YouTube">YouTube</a>
+                   <a href="https://www.udemy.com/course/ai-in-agriculture/?referralCode=19C904CE9CE14A84F140" aria-label="Udemy">Udemy</a>
+           <a href="https://moremaryna.com" target="_blank">More Maryna</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <div class="footer__copyright">
+        © 2026 · <a href="/">About</a> · <a href="/">Official short and extended bios for Dr. Maryna Kuzmenko, co-founder and CEO of Petiole, AI in agriculture educator, speaker, and agritech entrepreneur.</a>
+      </div>
+      <div class="footer__motto italic-text">
+        Where Agriculture Meets AI.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
