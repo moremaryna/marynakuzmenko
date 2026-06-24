@@ -2,8 +2,28 @@
   "title": "Dr. Maryna Kuzmenko",
   "name": "Dr. Maryna Kuzmenko",
   "suffix": "Ph.D.",
-  "description": "Strategic expert deploying computer vision & AI in agrifood and forestry—bridging technical innovation, public policy, and commercial viability.",
+  "description": "Expert advisory and global perspectives on the intersection of AI and agriculture.",
   "url": "https://marynakuzmenko.com",
+  "role": "AI in Agriculture Speaker, Advisor & Educator",
+  "image": "https://marynakuzmenko.com/assets/img/speaking/maryna-kuzmenko-speaking.jpg",
+  "worksFor": "Petiole",
+  "alumniOf": "Taras Shevchenko National University of Kyiv",
+  "knowsAbout": [
+    "Artificial Intelligence in Agriculture",
+    "AgTech",
+    "Agrifood Policy",
+    "Computer Vision",
+    "Precision Agriculture",
+    "Responsible AI",
+    "AI in Forestry",
+    "Women in Innovation"
+  ],
+  "awards": [
+    "LinkedIn Top Voice",
+    "WIPO + ITC Global Fellow 2024",
+    "Virgin StartUp Alumna",
+    "Oxford Farming Conference \u2014 Inspire 2026"
+  ],
   "author": {
     "name": "Maryna Kuzmenko",
     "email": "support@petioleapp.com"

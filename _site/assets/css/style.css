@@ -1081,3 +1081,189 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     .nav li{ margin: 0; }
     .nav a{ display: block; }
 }
+
+.bio-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1.25rem;
+}
+
+.bio-hero {
+    max-width: 850px;
+    margin-bottom: 4rem;
+}
+
+.bio-page .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.bio-page h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.bio-page .lead {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.7;
+    max-width: 780px;
+}
+
+.bio-section {
+    margin-top: 4rem;
+}
+
+.bio-section h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    margin-bottom: 1.25rem;
+}
+
+.bio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.bio-card {
+    padding: 1.5rem;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.bio-card.featured {
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.bio-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.15rem;
+}
+
+.bio-card p {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.bio-list {
+    padding-left: 1.2rem;
+}
+
+.bio-list li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.bio-page pre {
+    overflow-x: auto;
+    padding: 1.5rem;
+    border-radius: 24px;
+    background: #111;
+    color: #f7f7f7;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.bio-page code {
+    font-family: Consolas, Monaco, "Courier New", monospace;
+}
+
+@media (max-width: 760px) {
+    .bio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bio-page {
+        padding-top: 2.5rem;
+    }
+}
+/* Copy-paste boxes for About page */
+
+.copy-box {
+  margin-top: 1.25rem;
+  border: 1px solid #e8dfd0;
+  border-radius: 20px;
+  background: #fffaf2;
+  overflow: hidden;
+}
+
+.copy-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #e8dfd0;
+  background: #f8f3ea;
+}
+
+.copy-box-header span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #315542;
+}
+
+.copy-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  background: #315542;
+  color: #fffaf2;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background: #244231;
+}
+
+.copy-btn.copied {
+  background: #c9a66b;
+  color: #07110d;
+}
+
+.copy-textarea {
+  display: block;
+  width: 100%;
+  min-height: 420px;
+  padding: 1.2rem;
+  border: none;
+  resize: vertical;
+  background: #102016;
+  color: #fffaf2;
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  outline: none;
+  white-space: pre;
+}
+
+.copy-textarea:focus {
+  box-shadow: inset 0 0 0 2px #c9a66b;
+}
+
+@media (max-width: 760px) {
+  .copy-box-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .copy-btn {
+    width: 100%;
+  }
+
+  .copy-textarea {
+    min-height: 520px;
+    font-size: 0.86rem;
+  }
+}

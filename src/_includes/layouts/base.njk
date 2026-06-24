@@ -4,49 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>{{ title or site.title }}</title>
-  <meta name="title" content="{{ title or site.title }}">
-  <meta name="description" content="{{ description or site.description }}">
+  {# ── Per-page title & description ──────────────────────────────
+     `metaTitle` / `metaDescription` are the SEO values (the <title> tag).
+     They fall back to the visible `title` / `description`, then to site defaults.
+     Set `metaTitle` in a page's front matter to use the long Phase 0 titles
+     WITHOUT changing the visible heading/brand. #}
+  {% set pageTitle = metaTitle or title or site.title %}
+  {% set pageDesc  = metaDescription or description or site.description %}
+  {% set canonical = site.url + page.url %}
+  {% set pageImage = image or site.image %}
+
+  <title>{{ pageTitle }}</title>
+  <meta name="title" content="{{ pageTitle }}">
+  <meta name="description" content="{{ pageDesc }}">
+  <link rel="canonical" href="{{ canonical }}">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://marynakuzmenko.com/">
-  <meta property="og:title" content="{{ title or site.title }}">
-  <meta property="og:description" content="{{ description or site.description }}">
-  <meta property="og:image" content="https://marynakuzmenko.com/assets/images/og-card.jpg">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDesc }}">
+  <meta property="og:image" content="{{ pageImage }}">
+  <meta property="og:site_name" content="{{ site.name }}">
 
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="{{ title or site.title }}">
-  <meta property="twitter:description" content="{{ description or site.description }}">
+  <meta property="twitter:url" content="{{ canonical }}">
+  <meta property="twitter:title" content="{{ pageTitle }}">
+  <meta property="twitter:description" content="{{ pageDesc }}">
+  <meta property="twitter:image" content="{{ pageImage }}">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8SR2ZG841F"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-8SR2ZG841F');
+    gtag('config', '{{ site.analytics.google }}');
   </script>
 
+  {# ── Structured data (schema.org) ──────────────────────────────
+     One @graph with three linked nodes:
+       • Person  — your entity, stable @id, reused site-wide
+       • WebSite — the site, published by the Person
+       • WebPage — this specific page, about the Person
+     All values are driven from _data/site.json so there is a single
+     source of truth and nothing can drift out of sync again. #}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Dr. Maryna Kuzmenko",
-    "jobTitle": "CEO & Founder",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Petiole"
-    },
-    "url": "https://marynakuzmenko.com",
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Taras Shevchenko National University of Kyiv"
-    },
-    "knowsAbout": ["Computer Vision", "AgTech", "Public Policy", "AI in Forestry", "Quality Control"],
-    "sameAs": [
-      "https://www.linkedin.com/in/marynakuzmenko/",
-      "https://twitter.com/mary_kuzmenko"
-    ],
-    "description": "Expert in the strategic deployment of computer vision and AI within the agrifood and forestry sectors."
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person",
+        "name": {{ site.name | dump | safe }},
+        "jobTitle": {{ site.role | dump | safe }},
+        "description": {{ site.description | dump | safe }},
+        "url": "{{ site.url }}/",
+        "image": {{ site.image | dump | safe }},
+        "worksFor": { "@type": "Organization", "name": {{ site.worksFor | dump | safe }} },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": {{ site.alumniOf | dump | safe }} },
+        "knowsAbout": {{ site.knowsAbout | dump | safe }},
+        "award": {{ site.awards | dump | safe }},
+        "sameAs": {{ [site.social.linkedin, site.social.youtube, site.social.twitter, site.links.udemy] | dump | safe }}
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "url": "{{ site.url }}/",
+        "name": {{ site.name | dump | safe }},
+        "inLanguage": "en",
+        "publisher": { "@id": "{{ site.url }}/#person" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "{{ canonical }}#webpage",
+        "url": "{{ canonical }}",
+        "name": {{ pageTitle | dump | safe }},
+        "description": {{ pageDesc | dump | safe }},
+        "inLanguage": "en",
+        "isPartOf": { "@id": "{{ site.url }}/#website" },
+        "about": { "@id": "{{ site.url }}/#person" }
+      }
+    ]
   }
   </script>
 
@@ -59,7 +96,7 @@
   <header class="site-header">
     <div class="header-container">
       <a href="/" class="brand">
-       {{ title or site.title }}<span class="dot">.</span>
+       {{ site.name }}<span class="dot">.</span>
       </a>
 
      <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -87,7 +124,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <div class="brand">Dr. Maryna Kuzmenko</div>
+        <div class="brand">{{ site.name }}</div>
         <p class="footer__tagline">Architecting the future of agrifood through AI, Education, Policy, and Human-First Innovation.</p>
       </div>
 
@@ -102,15 +139,15 @@
           <span class="footer__label">Insights</span>
                    {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}" aria-label="LinkedIn">LinkedIn</a>{% endif %}
                    {% if site.social.youtube %}<a href="{{ site.social.youtube }}" aria-label="YouTube">YouTube</a>{% endif %}
-                   {% if site.social.linkedin %}<a href="{{ site.links.udemy }}" aria-label="Udemy">Udemy</a>{% endif %}
-           <a href="https://moremaryna.com" target="_blank">More Maryna</a>
+                   {% if site.links.udemy %}<a href="{{ site.links.udemy }}" aria-label="Udemy">Udemy</a>{% endif %}
+           <a href="https://moremaryna.com" target="_blank" rel="noopener">More Maryna</a>
         </div>
       </div>
     </div>
 
     <div class="container footer__bottom">
       <div class="footer__copyright">
-        © 2026 · <a href="/">{{ title or site.title }}</a> · <a href="/">{{ description or site.description }}</a>
+        © 2026 · <a href="/">{{ site.name }}</a> · {{ site.description }}
       </div>
       <div class="footer__motto italic-text">
         Where Agriculture Meets AI.
