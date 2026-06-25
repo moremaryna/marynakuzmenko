@@ -31,8 +31,15 @@
   "social": {
     "linkedin": "https://www.linkedin.com/in/kuzmenkomaryna",
     "youtube": "https://www.youtube.com/@drmarynakuzmenko",
-    "twitter": "https://x.com/mary_kuzmenko"
+    "twitter": "https://x.com/mary_kuzmenko",
+    "orcid": "https://orcid.org/0009-0002-3923-5168"
   },
+  "sameAs": [
+    "https://www.linkedin.com/in/kuzmenkomaryna",
+    "https://www.youtube.com/@drmarynakuzmenko",
+    "https://x.com/mary_kuzmenko",
+    "https://orcid.org/0009-0002-3923-5168"
+  ],
   "analytics": {
     "google": "G-8SR2ZG841F"
   },
