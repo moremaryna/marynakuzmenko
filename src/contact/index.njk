@@ -1,13 +1,14 @@
 ---
 layout: layouts/base.njk
 title: Contact
-description: Inquire about agrifood advisory, speaking engagements, or research projects.
+metaTitle: "Contact Dr. Maryna Kuzmenko — Speaking, Advisory & Partnerships"
+description: Inquire about AI in agriculture keynotes, strategic advisory, brand partnerships, or media.
 ---
 
 <section class="contact-hero">
   <span class="eyebrow">Let's Connect</span>
   <h1>Cultivating the <span class="italic-text">Next Dialogue.</span></h1>
-  <p class="lead">Available for global speaking, policy advisory, and innovation partnerships.</p>
+  <p class="lead">Available for keynotes, strategic advisory, brand partnerships, and media on AI in agriculture.</p>
 </section>
 
 <div class="contact-container">
@@ -26,13 +27,84 @@ description: Inquire about agrifood advisory, speaking engagements, or research 
       </div>
 
       <div class="form-group">
-        <label for="subject">Inquiry Type</label>
+        <label for="subject">What can I help with?</label>
         <select name="subject" id="subject">
           <option value="Speaking">Keynote / Speaking Engagement</option>
           <option value="Advisory">Strategic Advisory</option>
-          <option value="Research">Policy Research</option>
+          <option value="Partnership">Brand Partnership</option>
+          <option value="Media">Media / Press</option>
+          <option value="Education">Course / Education</option>
           <option value="Other">General Inquiry</option>
         </select>
+      </div>
+
+      <p id="inquiry-helper" class="inquiry-helper"></p>
+
+      <!-- Adaptive: Speaking -->
+      <div class="adaptive-fields" data-inquiry="Speaking" hidden>
+        <div class="form-group">
+          <label for="event_name">Event / Organization</label>
+          <input type="text" name="event_name" id="event_name" placeholder="Name of the event or host">
+        </div>
+        <div class="form-group">
+          <label for="event_date">Event Date</label>
+          <input type="date" name="event_date" id="event_date">
+        </div>
+        <div class="form-group">
+          <label for="event_format">Format</label>
+          <select name="event_format" id="event_format">
+            <option value="">Select…</option>
+            <option value="In-person">In-person</option>
+            <option value="Virtual">Virtual</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Adaptive: Advisory -->
+      <div class="adaptive-fields" data-inquiry="Advisory" hidden>
+        <div class="form-group">
+          <label for="org_type">Organization Type</label>
+          <select name="org_type" id="org_type">
+            <option value="">Select…</option>
+            <option value="Agrifood corporate">Agrifood corporate</option>
+            <option value="Agritech startup">Agritech startup</option>
+            <option value="Investor / Fund">Investor / Fund</option>
+            <option value="Public sector / NGO">Public sector / NGO</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Adaptive: Partnership -->
+      <div class="adaptive-fields" data-inquiry="Partnership" hidden>
+        <div class="form-group">
+          <label for="brand">Brand / Company</label>
+          <input type="text" name="brand" id="brand" placeholder="Your brand or company">
+        </div>
+        <div class="form-group">
+          <label for="collab_type">Collaboration Type</label>
+          <select name="collab_type" id="collab_type">
+            <option value="">Select…</option>
+            <option value="Sponsored content">Sponsored content</option>
+            <option value="Newsletter feature">Newsletter feature</option>
+            <option value="Webinar / Workshop">Webinar / Workshop</option>
+            <option value="Event appearance">Event appearance</option>
+            <option value="Long-term partnership">Long-term partnership</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Adaptive: Media -->
+      <div class="adaptive-fields" data-inquiry="Media" hidden>
+        <div class="form-group">
+          <label for="outlet">Outlet / Publication</label>
+          <input type="text" name="outlet" id="outlet" placeholder="Where will this appear?">
+        </div>
+        <div class="form-group">
+          <label for="deadline">Deadline</label>
+          <input type="date" name="deadline" id="deadline">
+        </div>
       </div>
 
       <div class="form-group">
@@ -53,25 +125,74 @@ description: Inquire about agrifood advisory, speaking engagements, or research 
     </div>
 
     <div class="info-block">
-      <h3>Location</h3>
-      <p>Based in the UK · Working Globally.</p>
+      <h3>Explore First</h3>
+      <ul class="speaking-list" style="font-size: 14px;">
+        <li><a class="text-link" href="/speaking/">Keynotes &amp; speaking</a></li>
+        <li><a class="text-link" href="/advisory/">Strategic advisory</a></li>
+        <li><a class="text-link" href="/partner/">Brand partnerships</a></li>
+      </ul>
     </div>
 
     <div class="info-block">
-      <h3>Current Focus</h3>
-      <ul class="speaking-list" style="font-size: 14px;">
-        <li>AI in Agrifood</li>
-        <li>AI in Quality Control for Agrifood & Forestry</li>
-        <li>AI Adoption Policy Briefings</li>
-      </ul>
+      <h3>Location</h3>
+      <p>Based in the UK · Working Globally.</p>
     </div>
   </div>
 </div>
+
+<style>
+  .inquiry-helper {
+    margin: -8px 0 18px;
+    font-size: 14px;
+    color: var(--muted);
+    min-height: 1em;
+  }
+  .inquiry-helper:empty { margin: 0; }
+</style>
 
 <script>
   (function () {
     const form = document.querySelector(".contact-form");
     if (!form) return;
+
+    const select = document.getElementById("subject");
+    const groups = form.querySelectorAll(".adaptive-fields");
+    const helper = document.getElementById("inquiry-helper");
+
+    const helpers = {
+      Speaking: "Share your event details and I'll come back with availability and formats.",
+      Advisory: "Tell me about the challenge you're tackling and we'll find the highest-value place to start.",
+      Partnership: "Tell me about the campaign, audience, and timeline, and I'll send the media kit.",
+      Media: "Let me know your outlet and deadline so I can respond in time.",
+      Education: "Tell me what you're looking to learn or build.",
+      Other: ""
+    };
+
+    function sync() {
+      const val = select.value;
+      groups.forEach((g) => {
+        g.hidden = g.getAttribute("data-inquiry") !== val;
+      });
+      if (helper) helper.textContent = helpers[val] || "";
+    }
+
+    // Pre-select inquiry type from the URL, e.g. /contact/?type=advisory
+    const requested = new URLSearchParams(window.location.search).get("type");
+    if (requested) {
+      const map = {
+        speaking: "Speaking", keynote: "Speaking",
+        advisory: "Advisory", consulting: "Advisory",
+        partnership: "Partnership", partner: "Partnership", brand: "Partnership",
+        media: "Media", press: "Media",
+        education: "Education", course: "Education",
+        general: "Other"
+      };
+      const matched = map[requested.toLowerCase()];
+      if (matched) select.value = matched;
+    }
+
+    select.addEventListener("change", sync);
+    sync();
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -93,12 +214,11 @@ description: Inquire about agrifood advisory, speaking engagements, or research 
           return;
         }
 
-        // If Formspree returns an error payload, try to show it
         let msg = "Sorry — something went wrong. Please try again.";
         try {
           const data = await res.json();
           if (data && data.errors && data.errors.length) {
-            msg = data.errors.map(e => e.message).join(" ");
+            msg = data.errors.map(er => er.message).join(" ");
           }
         } catch (_) {}
 
