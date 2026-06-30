@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+title: Insights
+metaTitle: "Insights on AI in Agriculture — Dr. Maryna Kuzmenko"
+metaDescription: "Essays and analysis on AI in agriculture by Dr. Maryna Kuzmenko — precision farming, computer vision, agrifood policy, and the human-first future of food."
+---
+
+<section class="hero">
+  <span class="eyebrow">Insights</span>
+  <h1>Notes on AI &amp; <span class="italic-text">Agriculture.</span></h1>
+  <p class="lead" style="max-width: 720px; margin: 0 auto;">
+    Essays, talks, and field notes on where artificial intelligence meets agrifood — and the people it should serve.
+  </p>
+</section>
+
+<section class="section">
+  <div style="display: grid; gap: 24px; max-width: 820px; margin: 0 auto;">
+    {%- for post in collections.posts %}
+    <a class="card" href="{{ post.url }}" style="display: block; text-decoration: none;">
+      <span class="eyebrow" style="margin-bottom: 10px;">{{ post.date | readableDate }}</span>
+      <h3>{{ post.data.title }}</h3>
+      <p>{{ post.data.description }}</p>
+    </a>
+    {%- else %}
+    <p class="lead" style="text-align: center; color: var(--muted);">New writing is on the way.</p>
+    {%- endfor %}
+  </div>
+</section>
