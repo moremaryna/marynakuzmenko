@@ -54,16 +54,18 @@
       {
         "@type": "Person",
         "@id": "{{ site.url }}/#person",
-        "name": {{ site.name | dump | safe }},
-        "jobTitle": {{ site.role | dump | safe }},
-        "description": {{ site.description | dump | safe }},
+        "name": {{ site.personName | dump | safe }},
+        "alternateName": {{ site.alternateName | dump | safe }},
+        "honorificPrefix": {{ site.honorificPrefix | dump | safe }},
         "url": "{{ site.url }}/",
+        "jobTitle": {{ site.role | dump | safe }},
+        "description": {{ site.personDescription | dump | safe }},
         "image": {{ site.image | dump | safe }},
-        "worksFor": { "@type": "Organization", "name": {{ site.worksFor | dump | safe }} },
+        "worksFor": {{ site.worksFor | dump | safe }},
         "alumniOf": { "@type": "CollegeOrUniversity", "name": {{ site.alumniOf | dump | safe }} },
-        "knowsAbout": {{ site.knowsAbout | dump | safe }},
         "award": {{ site.awards | dump | safe }},
-        "sameAs": {{ [site.social.linkedin, site.social.youtube, site.social.twitter, site.links.udemy] | dump | safe }}
+        "knowsAbout": {{ site.knowsAbout | dump | safe }},
+        "sameAs": {{ site.sameAs | dump | safe }}
       },
       {
         "@type": "WebSite",

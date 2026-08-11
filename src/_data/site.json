@@ -4,25 +4,41 @@
   "suffix": "Ph.D.",
   "description": "Expert advisory and global perspectives on the intersection of AI and agriculture.",
   "url": "https://marynakuzmenko.com",
-  "role": "AI in Agriculture Speaker, Advisor & Educator",
+  "personName": "Maryna Kuzmenko",
+  "alternateName": "Dr Maryna Kuzmenko",
+  "honorificPrefix": "Dr",
+  "role": "Founder and Chief Executive Officer",
+  "personDescription": "UK-based agritech founder working on applied AI in agriculture. Founder of MooMore, which uses thermal imaging and on-device AI to detect inflammation in dairy cows before lameness develops. Winner of the Innovate UK Women in Innovation Award 2025/26.",
   "image": "https://marynakuzmenko.com/assets/img/speaking/maryna-kuzmenko-speaking.jpg",
-  "worksFor": "Petiole",
+  "worksFor": [
+    {
+      "@type": "Organization",
+      "@id": "https://moomore.com/#organization",
+      "name": "MooMore",
+      "url": "https://moomore.com/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Petiole Pro",
+      "alternateName": "Petiole Ltd",
+      "url": "https://www.petiolepro.com/"
+    }
+  ],
   "alumniOf": "Taras Shevchenko National University of Kyiv",
   "knowsAbout": [
-    "Artificial Intelligence in Agriculture",
-    "AI in agriculture",
-    "AgTech",
-    "Agrifood Policy",
-    "Precision Agriculture",
-    "Responsible AI",
-    "Agrifood influencer marketing",
-    "Women in Innovation"
+    "Applied AI in agriculture",
+    "Computer vision in agriculture",
+    "Precision livestock farming",
+    "Dairy cattle lameness detection",
+    "Thermal imaging",
+    "Plant phenotyping",
+    "Agricultural technology"
   ],
   "awards": [
-    "LinkedIn Top Voice",
-    "WIPO + ITC Global Fellow 2024",
-    "Virgin StartUp Alumna",
-    "Oxford Farming Conference \u2014 Inspire 2026"
+    "Innovate UK Women in Innovation Award 2025/26 \u2014 winner, for MooMore (announced 5 August 2026)",
+    "LinkedIn Top Voice in Agritech, May 2026",
+    "Oxford Farming Conference 2026 Inspire Fellow",
+    "WIPO/ITC SheTrades IP mentorship programme fellow"
   ],
   "author": {
     "name": "Maryna Kuzmenko",
@@ -35,7 +51,12 @@
     "orcid": "https://orcid.org/0009-0002-3923-5168"
   },
   "sameAs": [
-    "https://www.linkedin.com/in/kuzmenkomaryna",
+    "https://moomore.com/",
+    "https://www.linkedin.com/in/kuzmenkomaryna/",
+    "https://iuk-business-connect.org.uk/projects/women-in-innovation/maryna-kuzmenko/",
+    "https://www.researchgate.net/profile/Maryna-Kuzmenko-2",
+    "https://www.udemy.com/user/maryna-kuzmenko-9/",
+    "https://www.petiolepro.com/",
     "https://www.youtube.com/@drmarynakuzmenko",
     "https://x.com/mary_kuzmenko",
     "https://orcid.org/0009-0002-3923-5168"
