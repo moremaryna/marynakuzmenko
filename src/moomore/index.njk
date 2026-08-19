@@ -1,10 +1,11 @@
 ---
 layout: layouts/base.njk
 title: "Why I added AI for dairy cattle to my crop AI portfolio"
-metaTitle: "Why I added AI to dairy cattle into my crop AI portfolio — Dr Maryna Kuzmenko on founding MooMore"
+metaTitle: "From Crops to Cattle — Founding MooMore | Maryna Kuzmenko"
 description: "Dr Maryna Kuzmenko on founding MooMore, the AI thermal imaging project for early dairy lameness detection that won the Innovate UK Women in Innovation Award 2026."
 permalink: "/moomore/"
 image: "https://marynakuzmenko.com/assets/img/women-in-innovation-2026/maryna-kuzmenko-moomore-women-in-innovation-2026.webp"
+ogType: "article"
 ---
 <section class="bio-page">
   <div class="bio-hero">
@@ -139,7 +140,7 @@ image: "https://marynakuzmenko.com/assets/img/women-in-innovation-2026/maryna-ku
           continents and cited in peer-reviewed research
         </li>
         <li>
-          <strong>Teaching</strong> — AI in agriculture, to more than 3,000 students across 119 countries
+          <strong>Teaching</strong> — AI in agriculture, to more than 3,000 students across 121 countries
         </li>
       </ul>
     </div>
@@ -154,3 +155,50 @@ image: "https://marynakuzmenko.com/assets/img/women-in-innovation-2026/maryna-ku
     </div>
   </section>
 </section>
+
+{# ── Q&A structured data ───────────────────────────────────────────
+   The page is already written as questions with self-contained
+   answers. Marking them up makes each one retrievable on its own,
+   which is the unit an answer engine actually quotes. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ site.url }}{{ page.url }}#faq",
+  "about": { "@id": "{{ site.url }}/#person" },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is MooMore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MooMore uses thermal imaging and on-device AI to detect inflammation in dairy cows before lameness becomes visible. Founded by Dr Maryna Kuzmenko, it won the Innovate UK Women in Innovation Award 2025/26, announced on 5 August 2026, with a £75,000 grant and a twelve-month programme running to June 2027. It is currently in validation on a 650-cow crossbred herd in Staffordshire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did Maryna Kuzmenko move from crop AI to livestock AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The underlying problem is the same: a measurement that matters is available only to people with specialist equipment or expert judgement, so most of the people who need it never take it. With Petiole Pro that measurement was leaf area and the answer was a smartphone camera. With MooMore it is inflammation in dairy cattle and the answer is a thermal sensor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did MooMore take four years to start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two things, neither of them scientific: finding a sensor configuration that works in a working milking parlour rather than a laboratory, and finding a farm willing to host a real trial. The trial runs with William Sanders, Farm Manager at Major Farming Ltd, whom Dr Maryna Kuzmenko met through the Oxford Farming Conference 2026 Inspire Programme, where both are Fellows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the Innovate UK Women in Innovation Award fund?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It funds twelve months of validation with a named farm partner — the step that turns a plausible signal into evidence. The findings will be published whether or not the signal holds. The award was made in the programme's tenth-anniversary round: 100 women recognised from 1,590 applications, of whom 61 received grants."
+      }
+    }
+  ]
+}
+</script>

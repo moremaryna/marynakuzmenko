@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#FDF6E6" />
 
   {# ── Per-page title & description ──────────────────────────────
      `metaTitle` / `metaDescription` are the SEO values (the <title> tag).
@@ -14,13 +13,23 @@
   {% set pageDesc  = metaDescription or description or site.description %}
   {% set canonical = site.url + page.url %}
   {% set pageImage = image or site.image %}
+  {% set pageOgType = ogType or "website" %}
 
   <title>{{ pageTitle }}</title>
   <meta name="title" content="{{ pageTitle }}">
   <meta name="description" content="{{ pageDesc }}">
   <link rel="canonical" href="{{ canonical }}">
 
-  <meta property="og:type" content="website">
+  {# Utility pages (thank-you, etc.) set `noindex: true` so they stay out of
+     search results and AI answer engines. Everything else invites full
+     indexing, including large snippets — answer engines quote from these. #}
+  {% if noindex %}
+  <meta name="robots" content="noindex, follow">
+  {% else %}
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  {% endif %}
+
+  <meta property="og:type" content="{{ pageOgType }}">
   <meta property="og:url" content="{{ canonical }}">
   <meta property="og:title" content="{{ pageTitle }}">
   <meta property="og:description" content="{{ pageDesc }}">
@@ -94,7 +103,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>

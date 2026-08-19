@@ -4,6 +4,8 @@ title: Books
 metaTitle: "Books by Dr. Maryna Kuzmenko — AI in Agriculture"
 description: "Books by Dr. Maryna Kuzmenko on practical AI in agriculture, including The Precision Vineyard, a grower's field guide to AI, sensors and robotics in viticulture."
 permalink: "/books/"
+image: "https://marynakuzmenko.com/assets/img/books/the-precision-vineyard-maryna-kuzmenko.jpg"
+ogType: "book"
 ---
 
 <section class="hero">
@@ -20,22 +22,32 @@ permalink: "/books/"
   <span class="eyebrow">AI in Agriculture — Book 1</span>
   <h2>The Precision Vineyard</h2>
 
-  <div class="card" style="margin-top: 24px;">
-    <p style="font-size: 18px;">
-      <strong>The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics</strong>
-      — what to adopt, what to skip, and what it pays back in viticulture.
-    </p>
+  <div class="card book-card" style="margin-top: 24px;">
+    <a class="book-cover" href="https://www.amazon.com/dp/B0HFDHJ86H" target="_blank" rel="noopener"
+       aria-label="The Precision Vineyard on Amazon">
+      <img
+        src="/assets/img/books/the-precision-vineyard-maryna-kuzmenko.jpg"
+        alt="Cover of The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics by Dr. Maryna Kuzmenko"
+        width="1600" height="2560" loading="eager" decoding="async">
+    </a>
 
-    <p style="color: var(--muted);">
-      The first book in the <em>AI in Agriculture</em> series. A practical guide for growers weighing up
-      precision viticulture: which tools are ready for the vineyard, which are still a demo, and how to
-      judge the payback before you commit.
-    </p>
+    <div class="book-detail">
+      <p style="font-size: 18px;">
+        <strong>The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics</strong>
+        — what to adopt, what to skip, and what it pays back in viticulture.
+      </p>
 
-    <div style="margin-top: 20px;">
-      <a class="btn btn--primary" href="https://www.amazon.com/dp/B0HFDHJ86H" target="_blank" rel="noopener">
-        Find it on Amazon
-      </a>
+      <p style="color: var(--muted);">
+        The first book in the <em>AI in Agriculture</em> series. A practical guide for growers weighing up
+        precision viticulture: which tools are ready for the vineyard, which are still a demo, and how to
+        judge the payback before you commit.
+      </p>
+
+      <div style="margin-top: 20px;">
+        <a class="btn btn--primary" href="https://www.amazon.com/dp/B0HFDHJ86H" target="_blank" rel="noopener">
+          Find it on Amazon
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -77,3 +89,47 @@ permalink: "/books/"
   <p>For review copies, foreign rights, or an invitation to speak.</p>
   <a class="btn btn--primary" href="/contact/">Get in touch</a>
 </section>
+
+{# ── Book structured data ──────────────────────────────────────────
+   A standalone Book node with a stable @id, authored by the same
+   Person @id used site-wide, so the authorship resolves rather than
+   restating a name. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Book",
+      "@id": "{{ site.url }}/books/#precision-vineyard",
+      "name": "The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics",
+      "alternateName": "The Precision Vineyard",
+      "description": "A practical guide for growers weighing up precision viticulture: which AI, sensor and robotics tools are ready for the vineyard, which are still a demo, and how to judge the payback before committing.",
+      "url": "https://www.amazon.com/dp/B0HFDHJ86H",
+      "image": "{{ site.url }}/assets/img/books/the-precision-vineyard-maryna-kuzmenko.jpg",
+      "author": { "@id": "{{ site.url }}/#person" },
+      "inLanguage": "en",
+      "about": [
+        "Precision viticulture",
+        "Artificial intelligence in agriculture",
+        "Agricultural sensors",
+        "Agricultural robotics",
+        "Viticulture"
+      ],
+      "position": 1,
+      "isPartOf": {
+        "@type": "BookSeries",
+        "@id": "{{ site.url }}/books/#ai-in-agriculture-series",
+        "name": "AI in Agriculture"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "{{ site.url }}{{ page.url }}#webpage-books",
+      "url": "{{ site.url }}{{ page.url }}",
+      "name": {{ metaTitle | dump | safe }},
+      "about": { "@id": "{{ site.url }}/#person" },
+      "mainEntity": { "@id": "{{ site.url }}/books/#precision-vineyard" }
+    }
+  ]
+}
+</script>
