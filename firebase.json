@@ -7,6 +7,12 @@
       "**/node_modules/**"
     ],
     "trailingSlash": true,
+    "redirects": [
+      { "source": "/advisory", "destination": "/speaking/", "type": 301 },
+      { "source": "/advisory/**", "destination": "/speaking/", "type": 301 },
+      { "source": "/work", "destination": "/services/", "type": 301 },
+      { "source": "/work/**", "destination": "/services/", "type": 301 }
+    ],
     "headers": [
       {
         "source": "/assets/**",

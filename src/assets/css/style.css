@@ -1,20 +1,39 @@
 /* --- THE SOUL & SILICON DESIGN SYSTEM --- */
 :root {
-    /* High-End Organic Palette */
-    --bg: #fdfcfb;          /* Warm paper white */
-    --text: #0a1a12;        /* Deep Forest (near black) */
-    --muted: #5a6e63;       /* Sage Grey */
-    --border: rgba(10, 26, 18, 0.08);
-    --card: #ffffff;
-    --accent: #1e4d3a;      /* Deep Emerald - Growth & Policy */
-    --gold: #b28e4b;        /* Warm Gold - Innovation & Sophistication */
-    --shadow: 0 20px 40px rgba(0,0,0,0.04);
+    /* ── Warm Field Palette ────────────────────────────────────────
+       A creative geek who loves nature: sun-warmed paper and honey
+       carry the page, deep emerald does the thinking, and a little
+       moss-green keeps it posh. Yellow leads, green earns attention. */
+
+    /* Warm ground — yellow dominant */
+    --bg: #FDF6E6;          /* Sun-warmed paper */
+    --bg-soft: #FAEDD4;     /* Deeper butter, for alternating bands */
+    --card: #FFFCF4;        /* Warm white, still clearly paper */
+
+    /* Ink */
+    --text: #1E1A10;        /* Warm near-black, brown undertone */
+    --muted: #7A6A4F;       /* Field stone */
+    --border: rgba(60, 45, 18, 0.13);
+
+    /* Honey — the dominant warm, for fills and emphasis (never small text) */
+    --honey: #E8A33D;
+    --honey-soft: rgba(232, 163, 61, 0.16);
+    --sun: #F6C453;         /* Brighter highlight */
+    --gold: #8A6220;        /* Darkened honey — AA-safe for small text on warm bg */
+
+    /* Green — posh accent, used sparingly and with intent */
+    --accent: #14503B;      /* Deep emerald */
+    --accent-soft: rgba(20, 80, 59, 0.08);
+    --moss: #2F6B4F;        /* Lighter green for hovers and rules */
+
+    --shadow: 0 20px 40px rgba(90, 65, 20, 0.07);
     --radius: 24px;
     --max: 1140px;
 
-    /* Typography */
+    /* Typography — Playfair for poise, Inter to read, mono for the geek */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 /* --- BASE STYLES --- */
@@ -43,7 +62,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 /* --- HEADER & NAVIGATION --- */
 .header {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(253, 252, 251, 0.8);
+    background: rgba(253, 246, 230, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
 }
@@ -65,7 +84,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 .hero {
     padding: 100px 0 60px;
     text-align: center;
-    background: radial-gradient(circle at top right, #f2f5f3, transparent);
+    background: radial-gradient(circle at top right, rgba(246, 196, 83, 0.28), transparent);
 }
 
 .eyebrow {
@@ -97,9 +116,9 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 .btn--primary {
     background: var(--accent);
     color: #fff;
-    box-shadow: 0 10px 20px rgba(30, 77, 58, 0.15);
+    box-shadow: 0 10px 20px rgba(20, 80, 59, 0.15);
 }
-.btn--primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(30, 77, 58, 0.25); }
+.btn--primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(20, 80, 59, 0.25); }
 
 .btn--ghost { border: 1px solid var(--border); background: transparent; }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
@@ -146,12 +165,12 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 }
 .soul-section h2 { color: #fff; font-size: 42px; margin-bottom: 20px; }
 .soul-section p { color: rgba(255,255,255,0.8); font-size: 18px; max-width: 600px; }
-.soul-section .btn { background: #fff; color: var(--accent); margin-top: 30px; }
+.soul-section .btn { background: var(--card); color: var(--accent); margin-top: 30px; }
 
 /* --- BADGES --- */
 .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .badge {
-    background: rgba(178, 142, 75, 0.1);
+    background: rgba(232, 163, 61, 0.1);
     color: var(--gold);
     padding: 6px 16px;
     border-radius: 100px;
@@ -162,7 +181,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
 /* --- Sophisticated Footer --- */
 .footer {
-    background: #fff;
+    background: var(--card);
     border-top: 1px solid var(--border);
     padding: 80px 0 40px;
     margin-top: 100px;
@@ -311,7 +330,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
 /* Featured item has a subtle emerald glow */
 .event-item.featured .event-details {
-    background: rgba(30, 77, 58, 0.03);
+    background: rgba(20, 80, 59, 0.03);
     border-left: 3px solid var(--accent);
     padding: 30px;
     border-radius: 0 var(--radius) var(--radius) 0;
@@ -431,7 +450,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
 /* Simple Archive Grid */
 .events-archive {
-    background: #fff;
+    background: var(--card);
     padding: 60px 0;
     border-top: 1px solid var(--border);
 }
@@ -458,7 +477,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
         display: block; /* Stack everything */
         padding: 24px 0;
         margin-bottom: 0;
-        border-bottom: 1px solid #eee; /* Thin, elegant separator */
+        border-bottom: 1px solid var(--border); /* Thin, elegant separator */
         border-left: none;
         position: relative;
     }
@@ -508,7 +527,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
         font-size: 15px;
         line-height: 1.6;
         margin-bottom: 16px;
-        color: #4a4a4a;
+        color: var(--muted);
     }
 
     /* Meta info (Location/Mode) */
@@ -531,7 +550,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: #f9f9f9; /* Soft background for buttons */
+        background: var(--bg-soft); /* Soft background for buttons */
         padding: 12px 16px;
         border-radius: 8px;
         font-size: 12px;
@@ -540,7 +559,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     }
 
     .event-learn-more:active {
-        background: #fff;
+        background: var(--card);
         border-color: var(--gold);
         transform: scale(0.98);
     }
@@ -612,7 +631,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 .speaking-hero {
     padding: 120px 0 60px;
     text-align: center;
-    background: linear-gradient(to bottom, rgba(30, 77, 58, 0.02), transparent);
+    background: linear-gradient(to bottom, rgba(20, 80, 59, 0.02), transparent);
 }
 
 /* Topic Cards */
@@ -624,7 +643,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 }
 
 .topic-card {
-    background: #fff;
+    background: var(--card);
     border: 1px solid var(--border);
     padding: 40px;
     border-radius: var(--radius);
@@ -643,7 +662,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     font-family: var(--font-heading);
     font-size: 48px;
     font-weight: 700;
-    color: rgba(178, 142, 75, 0.1); /* Subtle Gold Number */
+    color: rgba(232, 163, 61, 0.1); /* Subtle Gold Number */
     margin-bottom: 10px;
 }
 
@@ -722,7 +741,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 }
 
 .speaking-photo-placeholder span {
-    background: #fff;
+    background: var(--card);
     padding: 20px;
     border-radius: 12px;
     font-size: 16px;
@@ -751,7 +770,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 }
 
 .contact-form-wrapper {
-    background: #fff;
+    background: var(--card);
     padding: 40px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -796,8 +815,8 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 .form-group select:focus {
     outline: none;
     border-color: var(--gold);
-    box-shadow: 0 0 0 4px rgba(178, 142, 75, 0.1);
-    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(232, 163, 61, 0.1);
+    background-color: var(--card);
 }
 
 .contact-info {
@@ -877,7 +896,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
 .about-hero-human {
     padding: 100px 0 60px;
-    background: linear-gradient(135deg, rgba(30, 77, 58, 0.05) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(20, 80, 59, 0.05) 0%, transparent 100%);
 }
 
 .about-hero-human h1 {
@@ -904,9 +923,9 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 .truth-box {
     margin: 40px 0;
     padding: 40px;
-    background: #fff;
+    background: var(--card);
     border-left: 4px solid var(--gold);
-    box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+    box-shadow: 20px 20px 60px rgba(90, 65, 20, 0.09);
     border-radius: 0 16px 16px 0;
 }
 
@@ -927,7 +946,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
 .sidebar-card {
     padding: 30px;
-    background: #fff;
+    background: var(--card);
     border: 1px solid var(--border);
     border-radius: 20px;
 }
@@ -968,10 +987,10 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     padding: 20px 0;
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(253, 246, 230, 0.96);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border);
 }
 
 .header-container {
@@ -1302,4 +1321,241 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
   .photo-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CHARACTER LAYER — creative geek who loves nature
+   Warm paper and honey carry the page. Deep emerald is reserved for
+   things that matter. Monospace does the "geek" talking; the serif
+   keeps it poised. Nothing here changes layout — only temperament.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Graph paper. Faint enough to read as texture, not decoration. */
+body {
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(rgba(60, 45, 18, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(60, 45, 18, 0.045) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-attachment: fixed;
+}
+
+/* Surfaces sit on the grid rather than dissolving into it. */
+.card, .stat, .footer, .header { background-clip: padding-box; }
+
+/* ── The geek voice: monospace for labels, counts and metadata ──── */
+.eyebrow,
+.footer__label,
+.stat span,
+.badge,
+.event-tag,
+.event-meta span,
+.cred-item span {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.eyebrow,
+.footer__label {
+    letter-spacing: 0.14em;
+    color: var(--gold);
+}
+
+/* A small technical tell before section labels — a prompt, basically. */
+.eyebrow::before {
+    content: "// ";
+    color: var(--honey);
+    font-weight: 700;
+}
+
+/* Numbers deserve the mono treatment; they're the evidence. */
+.stat strong,
+.topic-icon {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+/* ── Honey leads ─────────────────────────────────────────────────── */
+
+/* Badges: honey fill, dark ink. Readable, unlike tinted text on tint. */
+.badge {
+    background: var(--honey-soft);
+    color: #5B4212;
+    border: 1px solid rgba(232, 163, 61, 0.42);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    padding: 7px 15px;
+}
+
+a.badge:hover {
+    background: var(--honey);
+    color: #2A1E06;
+    border-color: var(--honey);
+}
+
+/* Alternating warm bands so the page breathes in yellow, not white. */
+.section:nth-of-type(even) {
+    background: linear-gradient(180deg, transparent, var(--bg-soft) 22%, var(--bg-soft) 78%, transparent);
+}
+
+/* Hero: low sun across the top-right. */
+.hero {
+    background:
+        radial-gradient(ellipse 70% 60% at 78% 0%, rgba(246, 196, 83, 0.45), transparent 70%),
+        radial-gradient(ellipse 50% 40% at 10% 10%, rgba(232, 163, 61, 0.18), transparent 70%);
+}
+
+/* ── Green earns its moments ─────────────────────────────────────── */
+
+/* Headline emphasis: a hand-drawn highlight, in green rather than yellow
+   so it reads as considered instead of loud. */
+.italic-text {
+    color: var(--accent);
+    background: linear-gradient(180deg, transparent 62%, rgba(47, 107, 79, 0.22) 62%);
+    padding: 0 0.08em;
+}
+
+/* Cards: a green spine that grows on hover. The nature bit, restrained. */
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--honey), var(--moss));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover::before { transform: scaleY(1); }
+
+.card:hover {
+    border-color: rgba(47, 107, 79, 0.45);
+    box-shadow: 0 26px 50px rgba(90, 65, 20, 0.13);
+}
+
+/* Links: honey underline that deepens to green on hover. */
+.text-link {
+    background-image: linear-gradient(var(--honey), var(--honey));
+    background-size: 100% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 2px;
+}
+
+.text-link:hover {
+    color: var(--accent);
+    background-image: linear-gradient(var(--moss), var(--moss));
+}
+
+/* Prose links inside body copy get the same logic, unobtrusively. */
+.bio-card p a:not(.btn):not(.text-link),
+.event-details p a:not(.btn) {
+    color: var(--accent);
+    box-shadow: inset 0 -2px 0 var(--honey-soft);
+}
+
+.bio-card p a:not(.btn):not(.text-link):hover,
+.event-details p a:not(.btn):hover {
+    box-shadow: inset 0 -2px 0 var(--honey);
+}
+
+/* Buttons: primary stays emerald; ghost picks up honey on approach. */
+.btn--ghost:hover {
+    border-color: var(--honey);
+    background: var(--honey-soft);
+    color: var(--gold);
+}
+
+/* Stat hover — green, matching the card spine. */
+.stat:hover { border-color: var(--moss); }
+
+/* Pull quotes: a green margin rule, like a note in a field notebook. */
+blockquote {
+    border-left: 3px solid var(--moss);
+    background: var(--accent-soft);
+    margin: 24px 0;
+    padding: 18px 26px;
+    border-radius: 0 12px 12px 0;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.12rem;
+    color: var(--accent);
+}
+
+/* Figures: paper edge and a warm mount. */
+.page-figure img {
+    border: 1px solid var(--border);
+    box-shadow: 0 14px 34px rgba(90, 65, 20, 0.11);
+}
+
+.page-figure figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.01em;
+    color: var(--muted);
+    opacity: 1;
+    border-left: 2px solid var(--honey);
+    padding-left: 10px;
+}
+
+/* Nav: honey underline on hover, mono for the geek register. */
+.nav a {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    letter-spacing: 0.01em;
+    position: relative;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -5px;
+    width: 100%; height: 2px;
+    background: var(--honey);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.32s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav a:hover { color: var(--accent); }
+.nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* The brand dot: a seed of honey. */
+.dot { color: var(--honey); }
+
+/* Emerald panels keep their contrast on the warmer ground. */
+.soul-section,
+.speaker-creds {
+    box-shadow: 0 30px 60px rgba(20, 80, 59, 0.18);
+}
+
+/* Selection: honey, because of course. */
+::selection {
+    background: var(--sun);
+    color: #2A1E06;
+}
+
+/* Keyboard focus: visible, warm, and never removed. */
+:focus-visible {
+    outline: 2px solid var(--moss);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Respect people who'd rather things held still. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

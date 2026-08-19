@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#FDF6E6" />
 
   {# ── Per-page title & description ──────────────────────────────
      `metaTitle` / `metaDescription` are the SEO values (the <title> tag).
@@ -64,6 +65,8 @@
         "worksFor": {{ site.worksFor | dump | safe }},
         "alumniOf": { "@type": "CollegeOrUniversity", "name": {{ site.alumniOf | dump | safe }} },
         "award": {{ site.awards | dump | safe }},
+        "hasOccupation": { "@type": "Occupation", "name": "Educator, author and speaker on AI in agriculture" },
+        "author": {{ site.books | dump | safe }},
         "knowsAbout": {{ site.knowsAbout | dump | safe }},
         "sameAs": {{ site.sameAs | dump | safe }}
       },
@@ -91,7 +94,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
@@ -109,7 +112,8 @@
 
          <nav class="nav">
            <a href="/about/">About</a>
-           <a href="/services/">Services</a>
+           <a href="/ai-in-agriculture/">Teaching</a>
+           <a href="/books/">Books</a>
            <a href="/speaking/">Speaking</a>
            <a href="/events/">Events</a>
            <a href="/contact/">Contact</a>
@@ -133,10 +137,10 @@
       <div class="footer__grid">
         <div class="footer__col">
           <span class="footer__label">Expertise</span>
-          <a href="/speaking/">Keynotes & Lectures</a>
           <a href="/ai-in-agriculture/">AI in Agriculture</a>
+          <a href="/books/">Books</a>
+          <a href="/speaking/">Keynotes & Lectures</a>
           <a href="/events/">Events</a>
-          <a href="/services/">Services</a>
           <a href="/partner/">Partner With Me</a>
           <a href="/insights/">Insights</a>
           <a href="/recognition/">Recognition</a>

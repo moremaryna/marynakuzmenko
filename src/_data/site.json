@@ -2,13 +2,13 @@
   "title": "Dr. Maryna Kuzmenko",
   "name": "Dr. Maryna Kuzmenko",
   "suffix": "Ph.D.",
-  "description": "Expert advisory and global perspectives on the intersection of AI and agriculture.",
+  "description": "Educator, author, and speaker on AI in agriculture.",
   "url": "https://marynakuzmenko.com",
   "personName": "Maryna Kuzmenko",
   "alternateName": "Dr Maryna Kuzmenko",
   "honorificPrefix": "Dr",
-  "role": "Founder and Chief Executive Officer",
-  "personDescription": "UK-based agritech founder working on applied AI in agriculture. Founder of MooMore, which uses thermal imaging and on-device AI to detect inflammation in dairy cows before lameness develops. Winner of the Innovate UK Women in Innovation Award 2025/26.",
+  "role": "Educator, Author and Speaker on AI in Agriculture",
+  "personDescription": "UK-based educator, author, and speaker on AI in agriculture. Teaches AI in agriculture to students in 119 countries and writes the AI in Agriculture book series. Founder of MooMore, which uses thermal imaging and on-device AI to detect inflammation in dairy cows before lameness develops, and winner of the Innovate UK Women in Innovation Award 2025/26.",
   "image": "https://marynakuzmenko.com/assets/img/speaking/maryna-kuzmenko-speaking.jpg",
   "worksFor": [
     {
@@ -25,8 +25,18 @@
     }
   ],
   "alumniOf": "Taras Shevchenko National University of Kyiv",
+  "books": [
+    {
+      "@type": "Book",
+      "name": "The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics",
+      "url": "https://www.amazon.com/dp/B0HFDHJ86H",
+      "isPartOf": { "@type": "BookSeries", "name": "AI in Agriculture", "position": 1 }
+    }
+  ],
   "knowsAbout": [
     "Applied AI in agriculture",
+    "Precision viticulture",
+    "Agricultural education",
     "Computer vision in agriculture",
     "Precision livestock farming",
     "Dairy cattle lameness detection",
