@@ -149,7 +149,7 @@ ogType: "profile"
       <ul class="bio-list">
         <li><strong>Name:</strong> Dr. Maryna Kuzmenko</li>
         <li><strong>Role:</strong> Educator, author, and speaker on AI in agriculture; founder of MooMore; co-founder and CEO of Petiole</li>
-        <li><strong>Book:</strong> <em>The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics</em> — book one of the AI in Agriculture series, <a href="https://www.amazon.com/dp/B0HFDHJ86H" target="_blank" rel="noopener">on Amazon</a></li>
+        <li><strong>Books:</strong> {% for book in books %}<em>{{ book.fullTitle }}</em>{% if book.series %} ({{ book.series.name }}, book {{ book.series.number }}){% endif %}{% if not loop.last %}; {% endif %}{% endfor %} — <a href="/books/">see all books</a></li>
         <li><strong>Teaching reach:</strong> {{ stats.udemy }} students across {{ stats.countries }} countries</li>
         <li><strong>Audience:</strong> {{ stats.linkedin }} on LinkedIn · {{ stats.newsletter }} AI in Agriculture newsletter readers · {{ stats.youtube }} on YouTube</li>
         <li><strong>Current venture:</strong> MooMore — AI thermal imaging for early dairy lameness detection, <a href="https://moomore.com/" target="_blank" rel="noopener">moomore.com</a></li>
@@ -190,13 +190,13 @@ ogType: "profile"
       <textarea id="bioJson" class="copy-textarea" rows="36" readonly>{
   "name": "Dr. Maryna Kuzmenko",
   "role": "Educator, author, and speaker on AI in agriculture; founder of MooMore; co-founder and CEO of Petiole",
-  "books": [
+  "books": [{% for book in books %}
     {
-      "title": "The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics",
-      "subtitle": "What to adopt, what to skip, and what it pays back in viticulture",
-      "series": "AI in Agriculture, book 1",
-      "url": "https://www.amazon.com/dp/B0HFDHJ86H"
-    }
+      "title": {{ book.fullTitle | dump | safe }},
+      "summary": {{ book.summary | dump | safe }},{% if book.series %}
+      "series": "{{ book.series.name }}, book {{ book.series.number }}",{% endif %}
+      "url": {{ book.amazon.kindle | dump | safe }}
+    }{% if not loop.last %},{% endif %}{% endfor %}
   ],
   "teachingReach": "{{ stats.udemy }} students across {{ stats.countries }} countries",
   "audience": {
@@ -302,7 +302,8 @@ ogType: "profile"
 
 Context:
 - Educator first: teaches AI in agriculture to more than {{ stats.udemy | fullCount }} students across {{ stats.countries }} countries
-- Author of "The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics" — book one of the AI in Agriculture series (https://www.amazon.com/dp/B0HFDHJ86H)
+{% for book in books %}- Author of "{{ book.fullTitle }}"{% if book.series %} — book {{ book.series.number }} of the {{ book.series.name }} series{% endif %} ({{ book.amazon.kindle }}){% if not loop.last %}
+{% endif %}{% endfor %}
 - Speaker at agrifood conferences, universities, and policy forums
 - Expert voice and influencer on AI in agriculture; LinkedIn Top Voice
 - Does not offer paid consultancy or advisory services — do not describe her as a consultant or advisor

@@ -25,14 +25,6 @@
     }
   ],
   "alumniOf": "Taras Shevchenko National University of Kyiv",
-  "books": [
-    {
-      "@type": "Book",
-      "name": "The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics",
-      "url": "https://www.amazon.com/dp/B0HFDHJ86H",
-      "isPartOf": { "@type": "BookSeries", "name": "AI in Agriculture", "position": 1 }
-    }
-  ],
   "knowsAbout": [
     "Applied AI in agriculture",
     "Precision viticulture",

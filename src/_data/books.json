@@ -1,0 +1,104 @@
+[
+  {
+    "id": "the-precision-vineyard",
+    "title": "The Precision Vineyard",
+    "subtitle": "A Grower's Field Guide to AI, Sensors and Robotics — what to adopt, what to skip, and what it pays back in viticulture",
+    "fullTitle": "The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics",
+    "series": { "name": "AI in Agriculture", "number": 1 },
+    "isbn": "979-8194779062",
+    "cover": "Maryna-Kuzmenko-The-Precision-Vineyard-Book-Cover",
+    "amazon": {
+      "kindle": "https://www.amazon.com/dp/B0HFDHJ86H",
+      "paperback": "https://www.amazon.com/dp/B0HGGQN2VJ"
+    },
+    "summary": "Which vineyard technology earns its place, which does not, and how to tell the difference before you spend.",
+    "description": [
+      "Precision viticulture is sold hard and explained badly. This field guide goes through the tools a grower is actually offered — sensors, imagery, variable-rate equipment, robotics — and asks the only question that matters: what does it pay back, and over how many seasons?",
+      "Written for growers and the people who advise them. No vendor language, and no assumption that newer is better."
+    ],
+    "contents": [
+      "What precision viticulture actually promises",
+      "Sensors in the vineyard, and what they can and cannot see",
+      "Imagery: satellite, drone and on-machine",
+      "Variable-rate application, and when the maths works",
+      "Robotics and automation on a real block",
+      "Disease and pest models",
+      "What to adopt first, and what to skip",
+      "Working out payback for your own vineyard"
+    ],
+    "about": [
+      "Precision viticulture",
+      "Artificial intelligence in agriculture",
+      "Agricultural sensors",
+      "Agricultural robotics",
+      "Viticulture"
+    ]
+  },
+  {
+    "id": "seed-quality-control",
+    "title": "Seed Quality Control",
+    "subtitle": "A practical guide to imaging and automation in vegetable seed — from production field to certificate",
+    "fullTitle": "Seed Quality Control: A practical guide to imaging and automation in vegetable seed",
+    "series": { "name": "AI in Agriculture", "number": 2 },
+    "isbn": "979-8170857548",
+    "cover": "Maryna-Kuzmenko-Seed-Quality-Control",
+    "amazon": {
+      "kindle": "https://www.amazon.com/dp/B0HGZRPVQ2",
+      "paperback": "https://www.amazon.com/dp/B0HHCQQP6L"
+    },
+    "summary": "How imaging and automation are used across vegetable seed quality control, from the production field through to certification.",
+    "description": [
+      "Seed quality control is one of the places where machine vision has genuinely earned its keep — purity, vigour, health and germination assessment all now have automated counterparts.",
+      "This guide follows a seed lot from the production field to the certificate, covering what can be measured automatically at each step, how reliable it is, and where a trained human eye is still required."
+    ],
+    "contents": [
+      "What quality control means in vegetable seed",
+      "From production field to certificate: the chain",
+      "Imaging systems and what they measure",
+      "Purity and varietal identity",
+      "Germination and vigour testing",
+      "Seed health and pathogen detection",
+      "Automation, throughput and error",
+      "Standards, certification and what auditors expect"
+    ],
+    "about": [
+      "Seed quality control",
+      "Seed testing",
+      "Machine vision",
+      "Vegetable seed production",
+      "Artificial intelligence in agriculture"
+    ]
+  },
+  {
+    "id": "vertical-farming",
+    "title": "Vertical Farming",
+    "subtitle": "A Guide for Growing Minds",
+    "fullTitle": "Vertical Farming: A Guide for Growing Minds",
+    "series": null,
+    "isbn": "979-8335398282",
+    "cover": "Maryna-Kuzmenko-Vertical-Farming-Book-Cover",
+    "amazon": {
+      "kindle": "https://www.amazon.com/dp/B0D9TPZ1MB",
+      "paperback": "https://www.amazon.com/dp/B0DDPSHP3T"
+    },
+    "summary": "An accessible introduction to growing food in stacked, controlled environments — the science, the economics and the honest limits.",
+    "description": [
+      "Vertical farming attracts more excitement than scrutiny. This short book explains how controlled-environment agriculture actually works, what it is genuinely good at, and where the economics stop making sense.",
+      "Written for students, curious growers and anyone trying to separate the technology from the pitch."
+    ],
+    "contents": [
+      "What vertical farming is, and is not",
+      "Light, water and nutrients in a controlled environment",
+      "Which crops suit it, and which never will",
+      "Energy: the number that decides everything",
+      "Automation and monitoring",
+      "The economics, honestly",
+      "Where it fits in a wider food system"
+    ],
+    "about": [
+      "Vertical farming",
+      "Controlled-environment agriculture",
+      "Agricultural technology"
+    ]
+  }
+]

@@ -2,9 +2,9 @@
 layout: layouts/base.njk
 title: Books
 metaTitle: "Books by Dr. Maryna Kuzmenko — AI in Agriculture"
-description: "Books by Dr. Maryna Kuzmenko on practical AI in agriculture, including The Precision Vineyard, a grower's field guide to AI, sensors and robotics in viticulture."
+description: "Books by Dr. Maryna Kuzmenko on practical AI in agriculture: The Precision Vineyard, Seed Quality Control, and Vertical Farming — field guides for growers and the people who advise them."
 permalink: "/books/"
-image: "https://marynakuzmenko.com/assets/img/books/the-precision-vineyard-maryna-kuzmenko.jpg"
+image: "https://marynakuzmenko.com/assets/img/books/Maryna-Kuzmenko-The-Precision-Vineyard-Book-Cover.jpg"
 ogType: "book"
 ---
 
@@ -18,39 +18,50 @@ ogType: "book"
   </p>
 </section>
 
-<section class="section" style="border-top: 1px solid var(--border);">
-  <span class="eyebrow">AI in Agriculture — Book 1</span>
-  <h2>The Precision Vineyard</h2>
+{# Books come from src/_data/books.json. Covers load the 400/800px WebP
+   renditions of the master named in `cover`. #}
+{% for book in books %}
+<section class="section" id="{{ book.id }}" style="border-top: 1px solid var(--border);">
+  <span class="eyebrow">{% if book.series %}{{ book.series.name }} — Book {{ book.series.number }}{% else %}Also by Dr. Maryna Kuzmenko{% endif %}</span>
+  <h2>{{ book.title }}</h2>
 
   <div class="card book-card" style="margin-top: 24px;">
-    <a class="book-cover" href="https://www.amazon.com/dp/B0HFDHJ86H" target="_blank" rel="noopener"
-       aria-label="The Precision Vineyard on Amazon">
+    <a class="book-cover" href="{{ book.amazon.kindle }}" target="_blank" rel="noopener"
+       aria-label="{{ book.title }} on Amazon">
       <img
-        src="/assets/img/books/the-precision-vineyard-maryna-kuzmenko.jpg"
-        alt="Cover of The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics by Dr. Maryna Kuzmenko"
-        width="1600" height="2560" loading="eager" decoding="async">
+        src="/assets/img/books/{{ book.cover }}-800.webp"
+        srcset="/assets/img/books/{{ book.cover }}-400.webp 400w, /assets/img/books/{{ book.cover }}-800.webp 800w"
+        sizes="(max-width: 700px) 220px, 240px"
+        alt="Cover of {{ book.fullTitle }} by Dr. Maryna Kuzmenko"
+        width="800" height="1280" loading="{{ 'eager' if loop.first else 'lazy' }}" decoding="async">
     </a>
 
     <div class="book-detail">
-      <p style="font-size: 18px;">
-        <strong>The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics</strong>
-        — what to adopt, what to skip, and what it pays back in viticulture.
-      </p>
+      <p class="book-subtitle"><strong>{{ book.subtitle }}</strong></p>
 
-      <p style="color: var(--muted);">
-        The first book in the <em>AI in Agriculture</em> series. A practical guide for growers weighing up
-        precision viticulture: which tools are ready for the vineyard, which are still a demo, and how to
-        judge the payback before you commit.
-      </p>
+      {% for paragraph in book.description %}
+      <p>{{ paragraph }}</p>
+      {% endfor %}
 
-      <div style="margin-top: 20px;">
-        <a class="btn btn--primary" href="https://www.amazon.com/dp/B0HFDHJ86H" target="_blank" rel="noopener">
-          Find it on Amazon
-        </a>
+      <details class="book-contents">
+        <summary>What's inside</summary>
+        <ol>
+          {% for chapter in book.contents %}
+          <li>{{ chapter }}</li>
+          {% endfor %}
+        </ol>
+      </details>
+
+      <div class="book-actions">
+        <a class="btn btn--primary" href="{{ book.amazon.kindle }}" target="_blank" rel="noopener">Kindle on Amazon</a>
+        <a class="btn btn--ghost" href="{{ book.amazon.paperback }}" target="_blank" rel="noopener">Paperback on Amazon</a>
       </div>
+
+      <p class="book-meta">ISBN {{ book.isbn }}</p>
     </div>
   </div>
 </section>
+{% endfor %}
 
 <section class="section">
   <span class="eyebrow">More</span>
@@ -91,7 +102,7 @@ ogType: "book"
 </section>
 
 {# ── Book structured data ──────────────────────────────────────────
-   A standalone Book node with a stable @id, authored by the same
+   Standalone Book nodes with stable @ids, authored by the same
    Person @id used site-wide, so the authorship resolves rather than
    restating a name. #}
 <script type="application/ld+json">
@@ -99,36 +110,40 @@ ogType: "book"
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "BookSeries",
+      "@id": "{{ site.url }}/books/#ai-in-agriculture-series",
+      "name": "AI in Agriculture",
+      "author": { "@id": "{{ site.url }}/#person" }
+    },
+    {%- for book in books %}
+    {
       "@type": "Book",
-      "@id": "{{ site.url }}/books/#precision-vineyard",
-      "name": "The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics",
-      "alternateName": "The Precision Vineyard",
-      "description": "A practical guide for growers weighing up precision viticulture: which AI, sensor and robotics tools are ready for the vineyard, which are still a demo, and how to judge the payback before committing.",
-      "url": "https://www.amazon.com/dp/B0HFDHJ86H",
-      "image": "{{ site.url }}/assets/img/books/the-precision-vineyard-maryna-kuzmenko.jpg",
+      "@id": "{{ site.url }}/books/#{{ book.id }}",
+      "name": {{ book.fullTitle | dump | safe }},
+      "alternateName": {{ book.title | dump | safe }},
+      "description": {{ book.summary | dump | safe }},
+      "url": {{ book.amazon.kindle | dump | safe }},
+      "isbn": {{ book.isbn | replace("-", "") | dump | safe }},
+      "image": "{{ site.url }}/assets/img/books/{{ book.cover }}-800.webp",
       "author": { "@id": "{{ site.url }}/#person" },
       "inLanguage": "en",
-      "about": [
-        "Precision viticulture",
-        "Artificial intelligence in agriculture",
-        "Agricultural sensors",
-        "Agricultural robotics",
-        "Viticulture"
-      ],
-      "position": 1,
-      "isPartOf": {
-        "@type": "BookSeries",
-        "@id": "{{ site.url }}/books/#ai-in-agriculture-series",
-        "name": "AI in Agriculture"
-      }
+      "about": {{ book.about | dump | safe }}{% if book.series %},
+      "position": {{ book.series.number }},
+      "isPartOf": { "@id": "{{ site.url }}/books/#ai-in-agriculture-series" }{% endif %}
     },
+    {%- endfor %}
     {
       "@type": "CollectionPage",
       "@id": "{{ site.url }}{{ page.url }}#webpage-books",
       "url": "{{ site.url }}{{ page.url }}",
       "name": {{ metaTitle | dump | safe }},
       "about": { "@id": "{{ site.url }}/#person" },
-      "mainEntity": { "@id": "{{ site.url }}/books/#precision-vineyard" }
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [{% for book in books %}
+          { "@type": "ListItem", "position": {{ loop.index }}, "item": { "@id": "{{ site.url }}/books/#{{ book.id }}" } }{% if not loop.last %},{% endif %}{% endfor %}
+        ]
+      }
     }
   ]
 }

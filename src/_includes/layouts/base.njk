@@ -76,7 +76,16 @@
         "alumniOf": { "@type": "CollegeOrUniversity", "name": {{ site.alumniOf | dump | safe }} },
         "award": {{ site.awards | dump | safe }},
         "hasOccupation": { "@type": "Occupation", "name": "Educator, author and speaker on AI in agriculture" },
-        "author": {{ site.books | dump | safe }},
+        "author": [{% for book in books %}
+          {
+            "@type": "Book",
+            "@id": "{{ site.url }}/books/#{{ book.id }}",
+            "name": {{ book.fullTitle | dump | safe }},
+            "url": {{ book.amazon.kindle | dump | safe }}{% if book.series %},
+            "position": {{ book.series.number }},
+            "isPartOf": { "@type": "BookSeries", "name": {{ book.series.name | dump | safe }} }{% endif %}
+          }{% if not loop.last %},{% endif %}{% endfor %}
+        ],
         "knowsAbout": {{ site.knowsAbout | dump | safe }},
         "sameAs": {{ site.sameAs | dump | safe }}
       },
