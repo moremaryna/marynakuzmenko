@@ -1161,6 +1161,42 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     line-height: 1.6;
 }
 
+.bio-headshot {
+    display: grid;
+    grid-template-columns: minmax(0, 280px) 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.bio-headshot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+}
+
+.headshot-download {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    background: #315542;
+    color: #fffaf2;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.headshot-download:hover {
+    background: #244231;
+}
+
+.bio-card .headshot-meta {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
 .bio-page pre {
     overflow-x: auto;
     padding: 1.5rem;
@@ -1178,6 +1214,14 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 @media (max-width: 760px) {
     .bio-grid {
         grid-template-columns: 1fr;
+    }
+
+    .bio-headshot {
+        grid-template-columns: 1fr;
+    }
+
+    .bio-headshot img {
+        max-width: 320px;
     }
 
     .bio-page {

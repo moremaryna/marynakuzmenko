@@ -69,7 +69,8 @@
         "honorificPrefix": {{ site.honorificPrefix | dump | safe }},
         "url": "{{ site.url }}/",
         "jobTitle": {{ site.role | dump | safe }},
-        "description": {{ site.personDescription | dump | safe }},
+        {# personDescription keeps a {countries} placeholder, filled from stats.json #}
+        "description": {{ site.personDescription | replace("{countries}", stats.countries) | dump | safe }},
         "image": {{ site.image | dump | safe }},
         "worksFor": {{ site.worksFor | dump | safe }},
         "alumniOf": { "@type": "CollegeOrUniversity", "name": {{ site.alumniOf | dump | safe }} },
