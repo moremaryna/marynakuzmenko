@@ -141,6 +141,90 @@ module.exports = {
     caption: "Volodymyr Pugachov, Regional Director of Donau Soja Eastern Europe and Deputy Chair of the Agricultural and Food Committee, Ukrainian Chamber of Commerce.",
   }),
 
+  // --- World Agri-Tech, Day 2 (23 September 2026) ----------------------------
+  // Insights post "World Agri-Tech London 2026, Day 2".
+
+  watis2Stage: photo({
+    master: "events/2026-09-23-WATIS-2/17",
+    name: "events/2026-09-23-WATIS-2/autonomous-farming-panel-world-agri-tech-london-2026",
+    width: 1600,
+    height: 720,
+    alt: "A panel of speakers seated on the summit stage under two large screens, with the World Agri-Tech backdrop and dimmed hall around them.",
+    caption: "The expert panel on autonomous and precision farming, World Agri-Tech London, 23 September 2026.",
+  }),
+
+  watis2Panel: photo({
+    master: "events/2026-09-23-WATIS-2/4",
+    name: "events/2026-09-23-WATIS-2/elliott-grant-panel-speakers-world-agri-tech-london-2026",
+    width: 1200,
+    height: 672,
+    alt: "Panellists seated on stage beneath a screen showing the speakers' names and portraits: Elliott Grant, Institute for Manufacturing, University of Cambridge; Peter van der Vlugt, Kubota Holdings Europe; Norbert Schlingmann, Agricultural Industry Electronics Foundation.",
+    caption: "On stage: Dr Elliott Grant (Institute for Manufacturing, University of Cambridge), Peter van der Vlugt (Kubota Holdings Europe) and Norbert Schlingmann (Agricultural Industry Electronics Foundation).",
+  }),
+
+  watis2ElliottGrant: photo({
+    master: "events/2026-09-23-WATIS-2/10",
+    name: "events/2026-09-23-WATIS-2/maryna-kuzmenko-elliott-grant-cambridge-world-agri-tech-2026",
+    width: 1200,
+    height: 675,
+    alt: "Dr. Maryna Kuzmenko in a selfie with Dr Elliott Grant, in glasses and a checked jacket, in a wood-panelled conference foyer.",
+    caption: "Dr. Maryna Kuzmenko with Dr Elliott Grant, Institute for Manufacturing, University of Cambridge.",
+  }),
+
+  watis2RobLind: photo({
+    master: "events/2026-09-23-WATIS-2/12",
+    name: "events/2026-09-23-WATIS-2/maryna-kuzmenko-rob-lind-syngenta-spot-robot-world-agri-tech-2026",
+    width: 1200,
+    height: 540,
+    alt: "Dr. Maryna Kuzmenko and Rob Lind crouching either side of a yellow Spot quadruped robot on the summit floor, in front of the stage.",
+    caption: "Dr. Maryna Kuzmenko with Rob Lind from Syngenta, and a Spot robot.",
+  }),
+
+  watis2Spot: photo({
+    master: "events/2026-09-23-WATIS-2/13",
+    name: "events/2026-09-23-WATIS-2/spot-robot-world-agri-tech-london-2026",
+    width: 1200,
+    height: 540,
+    alt: "A yellow Spot quadruped robot standing on the patterned carpet of the summit hall, in front of the stage backdrop.",
+    caption: "A Spot robot on the summit floor.",
+  }),
+
+  watis2BelindaClarke: photo({
+    master: "events/2026-09-23-WATIS-2/16",
+    name: "events/2026-09-23-WATIS-2/maryna-kuzmenko-belinda-clarke-agri-teche-world-agri-tech-2026",
+    width: 1200,
+    height: 900,
+    alt: "Dr. Maryna Kuzmenko in a selfie with Belinda Clarke, in a patterned jacket and green lanyard, in front of a sponsor wall.",
+    caption: "Dr. Maryna Kuzmenko with Belinda Clarke from Agri-TechE.",
+  }),
+
+  watis2EmmaChapelhow: photo({
+    master: "events/2026-09-23-WATIS-2/18",
+    name: "events/2026-09-23-WATIS-2/maryna-kuzmenko-emma-chapelhow-world-agri-tech-2026",
+    width: 1200,
+    height: 900,
+    alt: "Dr. Maryna Kuzmenko in a selfie with Emma Chapelhow, in a cap and a floral blouse, in front of a sponsor wall.",
+    caption: "Dr. Maryna Kuzmenko with Emma Chapelhow, Rising Star of the Year at the National Women in Agriculture Awards 2026.",
+  }),
+
+  watis2SlideAgenticEra: photo({
+    master: "events/2026-09-23-WATIS-2/7",
+    name: "events/2026-09-23-WATIS-2/elliott-grant-agentic-era-slide-world-agri-tech-2026",
+    width: 1200,
+    height: 900,
+    alt: "A screen showing a slide titled 2026 is the start of the Agentic era, a chart of AI task horizons rising from the pre-agentic to the agentic era, captioned Dr Elliott Grant, Agentic AI is Coming to Food and Agriculture, Are you Ready?, World Agri-Tech Summit London, 23 September 2026.",
+    caption: "From Dr Elliott Grant's workshop: 2026 is the start of the agentic era.",
+  }),
+
+  watis2SlideAgenticReady: photo({
+    master: "events/2026-09-23-WATIS-2/9",
+    name: "events/2026-09-23-WATIS-2/elliott-grant-agentic-ai-ready-slide-world-agri-tech-2026",
+    width: 1200,
+    height: 900,
+    alt: "A screen showing a slide titled Getting your Org Agentic AI-ready, with a checklist beside a cartoon farmer in sunglasses standing in a green field, captioned Dr Elliott Grant, Agentic AI is Coming to Food and Agriculture, Are you Ready?",
+    caption: "From Dr Elliott Grant's workshop: getting your organisation agentic-AI-ready.",
+  }),
+
   // --- Teaching -------------------------------------------------------------
 
   // Home, "The work, in pictures". Events, AI Challenge Camp.
