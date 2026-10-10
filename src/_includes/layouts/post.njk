@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+ogType: article
+---
+{#
+  A blog post under /insights/. The post's front matter supplies:
+
+  `title`         the headline
+  `description`   the standfirst under it, also the meta description
+  `date`          publication date
+  `kicker`        the small line above the headline, e.g. "Field Notes · Events"
+  `event`/`place` where it happened, printed beside the date
+  `hero`          key of the photo in photos.js drawn under the header
+  `image`         absolute URL of a JPEG for link previews (og:image)
+  `linkedin`      the LinkedIn post this grew out of, linked in the footer
+  `hashtags`      printed as tags in the footer
+#}
+{% from "partials/photo.njk" import photo %}
+{% set postUrl = site.url + page.url %}
+
+<article class="post">
+  <header class="post-header">
+    <span class="eyebrow">{{ kicker or "Field Notes" }}</span>
+    <h1>{{ title }}</h1>
+    {% if description %}<p class="lead">{{ description }}</p>{% endif %}
+    <div class="post-meta">
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+      {% if event %}<span>{{ event }}</span>{% endif %}
+      {% if place %}<span>📍{{ place }}</span>{% endif %}
+    </div>
+  </header>
+
+  {% if hero %}
+  {{ photo(photos[hero], sizes="(max-width: 900px) 100vw, 860px", eager=true, class="post-hero") }}
+  {% endif %}
+
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    <div class="post-footer__links">
+      {% if linkedin %}
+      <a href="{{ linkedin }}" class="event-learn-more" target="_blank" rel="noopener">
+        <span>Read the LinkedIn version</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+      {% endif %}
+      <a href="/insights/" class="text-link">← All Insights</a>
+    </div>
+    {% if hashtags %}
+    <div class="post-tags">
+      {%- for tag in hashtags %}<span class="post-tag">#{{ tag }}</span>{% endfor -%}
+    </div>
+    {% endif %}
+  </footer>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{ postUrl }}#article",
+  "mainEntityOfPage": "{{ postUrl }}",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "image": {{ (image or site.image) | dump | safe }},
+  "datePublished": "{{ page.date | isoDate }}",
+  "dateModified": "{{ page.date | isoDate }}",
+  "inLanguage": "en",
+  "author": { "@id": "{{ site.url }}/#person" },
+  "publisher": { "@id": "{{ site.url }}/#person" },
+  "isPartOf": { "@id": "{{ site.url }}/#website" }{% if hashtags %},
+  "keywords": {{ hashtags | join(", ") | dump | safe }}{% endif %}
+}
+</script>

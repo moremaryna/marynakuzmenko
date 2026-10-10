@@ -16,10 +16,15 @@ metaDescription: "Essays and analysis on AI in agriculture by Dr. Maryna Kuzmenk
 <section class="section">
   <div style="display: grid; gap: 24px; max-width: 820px; margin: 0 auto;">
     {%- for post in collections.posts %}
-    <a class="card" href="{{ post.url }}" style="display: block; text-decoration: none;">
-      <span class="eyebrow" style="margin-bottom: 10px;">{{ post.date | readableDate }}</span>
-      <h3>{{ post.data.title }}</h3>
-      <p>{{ post.data.description }}</p>
+    <a class="card card--post" href="{{ post.url }}" style="display: block; text-decoration: none;">
+      {%- if post.data.hero %}{% set pic = photos[post.data.hero] %}
+      <img src="{{ pic.src }}" srcset="{{ pic.srcset }}" sizes="(max-width: 900px) 100vw, 820px" width="{{ pic.width }}" height="{{ pic.height }}" alt="{{ pic.alt }}" loading="lazy" decoding="async">
+      {%- endif %}
+      <div class="card__body">
+        <span class="eyebrow">{{ post.date | readableDate }}{% if post.data.event %} · {{ post.data.event }}{% endif %}</span>
+        <h3>{{ post.data.title }}</h3>
+        <p>{{ post.data.description }}</p>
+      </div>
     </a>
     {%- else %}
     <p class="lead" style="text-align: center; color: var(--muted);">New writing is on the way.</p>

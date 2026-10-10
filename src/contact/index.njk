@@ -13,8 +13,16 @@ description: Inquire about AI in agriculture teaching, guest lectures, books, ke
 
 <div class="contact-container">
   <div class="contact-form-wrapper">
-    <form action="https://formspree.io/f/xvzbnwdb" method="POST" class="contact-form">
-    <input type="hidden" name="_next" value="https://marynakuzmenko.com/success/">
+    {# The endpoint is site.contactEndpoint in _data/site.json: Formspree today,
+       the Cloudflare Worker in cloudflare/contact-worker once it is deployed. #}
+    <form action="{{ site.contactEndpoint }}" method="POST" class="contact-form">
+
+      {# Honeypot: hidden from people, filled in by bots. The Worker drops any
+         submission where it has a value. #}
+      <div class="form-group form-group--hp" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+      </div>
 
       <div class="form-group">
         <label for="name">Full Name</label>
@@ -23,7 +31,7 @@ description: Inquire about AI in agriculture teaching, guest lectures, books, ke
 
       <div class="form-group">
         <label for="email">Work Email</label>
-        <input type="email" name="_replyto" id="email" placeholder="jane@organization.com" required>
+        <input type="email" name="email" id="email" placeholder="jane@organization.com" required>
       </div>
 
       <div class="form-group">
@@ -149,6 +157,13 @@ description: Inquire about AI in agriculture teaching, guest lectures, books, ke
     min-height: 1em;
   }
   .inquiry-helper:empty { margin: 0; }
+  .form-group--hp {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
 </style>
 
 <script>
@@ -225,7 +240,7 @@ description: Inquire about AI in agriculture teaching, guest lectures, books, ke
 
         alert(msg);
       } catch (err) {
-        alert("Network error — please try again.");
+        alert("Network error — please try again, or message me on LinkedIn.");
       } finally {
         if (submitBtn) submitBtn.disabled = false;
       }

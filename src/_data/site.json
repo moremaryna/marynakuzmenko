@@ -4,6 +4,8 @@
   "suffix": "Ph.D.",
   "description": "Educator, author, and speaker on AI in agriculture.",
   "url": "https://marynakuzmenko.com",
+  "contactEndpoint": "https://formspree.io/f/xvzbnwdb",
+  "contactEndpointNote": "Where /contact/ posts. Switch to https://contact.marynakuzmenko.com/ once the Worker in cloudflare/contact-worker is deployed (see its README).",
   "personName": "Maryna Kuzmenko",
   "alternateName": "Dr Maryna Kuzmenko",
   "honorificPrefix": "Dr",

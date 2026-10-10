@@ -1,0 +1,25 @@
+# Contact-form Worker for marynakuzmenko.com
+# Receives the POST from /contact/ and emails it via Cloudflare Email Routing.
+# Deploy:  cd cloudflare/contact-worker && npm install && npx wrangler login && npm run deploy
+
+name = "marynakuzmenko-contact"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Serves the Worker at https://contact.marynakuzmenko.com/ (the zone must be on Cloudflare).
+routes = [
+  { pattern = "contact.marynakuzmenko.com", custom_domain = true }
+]
+
+# Outbound email. destination_address must be verified under
+# Cloudflare dashboard -> Email -> Email Routing -> Destination addresses.
+[[send_email]]
+name = "CONTACT_EMAIL"
+destination_address = "maryna@petioleapp.com"
+
+[vars]
+FROM_ADDRESS   = "maryna@marynakuzmenko.com"
+FROM_NAME      = "marynakuzmenko.com contact form"
+TO_ADDRESS     = "maryna@petioleapp.com"
+ALLOWED_ORIGIN = "https://marynakuzmenko.com"
+SUCCESS_URL    = "https://marynakuzmenko.com/success/"

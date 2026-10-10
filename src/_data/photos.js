@@ -57,6 +57,90 @@ function photo({ master, name, width, height, alt, caption, credit, crop }) {
 }
 
 module.exports = {
+  // --- World Agri-Tech Innovation Summit, London, 22-23 September 2026 ------
+  // Insights post "World Agri-Tech London 2026, Day 1"; the hero also on Events.
+
+  watisStage: photo({
+    master: "events/2026-09-28-WATIS/3",
+    name: "events/2026-09-28-WATIS/jane-byrne-opening-world-agri-tech-london-2026",
+    width: 1600,
+    height: 720,
+    alt: "Jane Byrne standing alone on a wide stage in front of a bright green and yellow backdrop reading World Agri-Tech, London, September 22 to 23, 2026, with two white chairs beside her.",
+    caption: "Jane Byrne opening the World Agri-Tech Innovation Summit, London, September 2026.",
+  }),
+
+  watisJaneByrne: photo({
+    master: "events/2026-09-28-WATIS/2",
+    name: "events/2026-09-28-WATIS/maryna-kuzmenko-jane-byrne-world-agri-tech-london-2026",
+    width: 1200,
+    height: 900,
+    alt: "Dr. Maryna Kuzmenko and Jane Byrne, both wearing green lanyards, in a selfie beside a World Agri-Tech banner in a hotel lobby.",
+    caption: "Dr. Maryna Kuzmenko with Jane Byrne, Conference Producer of World Agri-Tech London.",
+  }),
+
+  watisMinisterialAddress: photo({
+    master: "events/2026-09-28-WATIS/4",
+    name: "events/2026-09-28-WATIS/stephen-morgan-ministerial-address-world-agri-tech-london-2026",
+    width: 1200,
+    height: 675,
+    alt: "Stephen Morgan MP speaking from a lectern on the summit stage, with a large screen behind him reading Ministerial Address, Stephen Morgan MP, Department for Environment, Food and Rural Affairs.",
+    caption: "The Ministerial Address by Stephen Morgan MP, UK Minister for Agriculture and Food.",
+  }),
+
+  watisStephenMorgan: photo({
+    master: "events/2026-09-28-WATIS/5",
+    name: "events/2026-09-28-WATIS/maryna-kuzmenko-stephen-morgan-world-agri-tech-london-2026",
+    width: 1200,
+    height: 900,
+    alt: "Dr. Maryna Kuzmenko in a selfie with Stephen Morgan MP, who is wearing a dark suit and tie, in a wood-panelled conference foyer.",
+    caption: "Dr. Maryna Kuzmenko with Stephen Morgan MP, UK Minister for Agriculture and Food, at World Agri-Tech London 2026.",
+  }),
+
+  watisElevateDairy: photo({
+    master: "events/2026-09-28-WATIS/7",
+    name: "events/2026-09-28-WATIS/maryna-kuzmenko-ming-fung-chua-elevate-dairy-world-agri-tech-2026",
+    width: 1200,
+    height: 900,
+    alt: "Dr. Maryna Kuzmenko and Ming Fung Chua, both with green summit lanyards, smiling in a selfie in the conference foyer.",
+    caption: "Dr. Maryna Kuzmenko with Ming Fung Chua from Elevate Dairy, Australia's first dairy-focused landing pad, by the Gardiner Foundation.",
+  }),
+
+  watisMarioCaccamo: photo({
+    master: "events/2026-09-28-WATIS/9",
+    name: "events/2026-09-28-WATIS/maryna-kuzmenko-mario-caccamo-kaust-world-agri-tech-2026",
+    width: 1200,
+    height: 900,
+    alt: "Dr. Maryna Kuzmenko in a selfie with Professor Mario Caccamo, in a dark jacket and open shirt, in front of a marble wall in the conference foyer.",
+    caption: "Dr. Maryna Kuzmenko with Professor Mario Caccamo from KAUST, the King Abdullah University of Science and Technology.",
+  }),
+
+  watisChloeMarshall: photo({
+    master: "events/2026-09-28-WATIS/11",
+    name: "events/2026-09-28-WATIS/maryna-kuzmenko-chloe-marshall-hugh-lowe-farms-world-agri-tech-2026",
+    width: 1200,
+    height: 675,
+    alt: "Dr. Maryna Kuzmenko and Chloe Marshall smiling in a selfie in a wood-panelled conference hall, with a buffet table behind them.",
+    caption: "Dr. Maryna Kuzmenko with Chloe Marshall, Field Implementation Consultant at Hugh Lowe Farms.",
+  }),
+
+  watisMarkJarman: photo({
+    master: "events/2026-09-28-WATIS/13",
+    name: "events/2026-09-28-WATIS/maryna-kuzmenko-mark-jarman-agriterra-world-agri-tech-2026",
+    width: 1200,
+    height: 675,
+    alt: "Dr. Maryna Kuzmenko and Mark Jarman, in glasses and a light jacket, in a selfie in the conference foyer with delegates in the background.",
+    caption: "Dr. Maryna Kuzmenko with Mark Jarman from AgriTERRA.",
+  }),
+
+  watisVolodymyrPugachov: photo({
+    master: "events/2026-09-28-WATIS/15",
+    name: "events/2026-09-28-WATIS/volodymyr-pugachov-farming-at-the-edge-world-agri-tech-2026",
+    width: 1200,
+    height: 675,
+    alt: "Volodymyr Pugachov speaking on the summit stage with a microphone, beside a slide titled Farming at the Edge: Growing Food Under Extreme Constraints, showing the digital stack on a Ukrainian farm.",
+    caption: "Volodymyr Pugachov, Regional Director of Donau Soja Eastern Europe and Deputy Chair of the Agricultural and Food Committee, Ukrainian Chamber of Commerce.",
+  }),
+
   // --- Teaching -------------------------------------------------------------
 
   // Home, "The work, in pictures". Events, AI Challenge Camp.

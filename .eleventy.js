@@ -14,6 +14,20 @@ module.exports = function (eleventyConfig) {
     return Math.round(parseFloat(match[1].replace(/,/g, "")) * multiplier).toLocaleString("en-GB");
   });
 
+  // Blog posts: every page tagged "posts", newest first.
+  eleventyConfig.addCollection("posts", (api) =>
+    api.getFilteredByTag("posts").sort((a, b) => b.date - a.date)
+  );
+
+  // 2026-09-28 -> "28 September 2026"
+  eleventyConfig.addFilter("readableDate", (date) =>
+    new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
+      .format(new Date(date))
+  );
+
+  // 2026-09-28 -> "2026-09-28", for <time datetime> and structured data
+  eleventyConfig.addFilter("isoDate", (date) => new Date(date).toISOString().slice(0, 10));
+
   return {
     dir: {
       input: "src",
