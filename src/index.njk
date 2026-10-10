@@ -4,6 +4,7 @@ title: Dr. Maryna Kuzmenko
 metaTitle: "Dr. Maryna Kuzmenko — AI in Agriculture Educator & Author"
 description: Educator, author, and speaker on AI in agriculture — courses, books, and keynotes on what actually works in the field.
 ---
+{% from "partials/photo.njk" import photo %}
 
 <section class="hero">
   <span class="eyebrow">Human-First Innovation</span>
@@ -76,6 +77,13 @@ description: Educator, author, and speaker on AI in agriculture — courses, boo
       <p>Analysis and explainers on AI in agriculture for a global agrifood audience, plus selected brand collaborations built on credibility.</p>
       <a href="/insights/" class="text-link">Read Insights →</a>
     </div>
+  </div>
+
+  {# Teaching, building, speaking — one photograph each, in that order. #}
+  <div class="photo-band">
+    {{ photo(photos.aiCamp, sizes="(max-width: 860px) 100vw, 350px") }}
+    {{ photo(photos.petioleDemoStand, sizes="(max-width: 860px) 100vw, 350px") }}
+    {{ photo(photos.conferenceTalk, sizes="(max-width: 860px) 100vw, 350px") }}
   </div>
 </section>
 

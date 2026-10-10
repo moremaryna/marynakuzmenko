@@ -2,6 +2,9 @@
 module.exports = function (eleventyConfig) {
   // Copy /src/assets to /assets in the output
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  // Favicon and web manifest live at the site root
+  eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
+  eleventyConfig.addPassthroughCopy({ "src/site.webmanifest": "site.webmanifest" });
 
   // Expand a stats.json shorthand for prose: "3.4K+" -> "3,400"
   eleventyConfig.addFilter("fullCount", function (value) {

@@ -7,8 +7,10 @@
     "dev": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve",
-    "deploy:hosting": "npm run build && firebase deploy --only hosting --project marynakuzmenko-2812",
-    "git:push": "node scripts/git-push.js"
+    "deploy:hosting": "npm run build && npm run firebase:deploy",
+    "git:push": "node scripts/git-push.js",
+    "firebase:deploy": "firebase deploy --only hosting --project marynakuzmenko-2812",
+    "release": "node scripts/release.js"
   },
   "repository": {
     "type": "git",

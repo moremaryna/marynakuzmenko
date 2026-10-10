@@ -4,6 +4,7 @@ title: Recognition
 metaTitle: "Recognition & Press — Dr. Maryna Kuzmenko"
 metaDescription: "Awards recognising Dr. Maryna Kuzmenko's work in AI and agriculture — Innovate UK Women in Innovation Award 2026 winner, LinkedIn Top Voice, WIPO + ITC Fellow."
 ---
+{% from "partials/photo.njk" import photo %}
 
 <section class="hero">
   <span class="eyebrow">Recognition &amp; Press</span>
@@ -38,6 +39,15 @@ metaDescription: "Awards recognising Dr. Maryna Kuzmenko's work in AI and agricu
       <div class="cred-item"><strong>Women in Innovation</strong> <span>Pre-selected Member</span></div>
       <div class="cred-item"><strong>WIPO Geneva</strong> <span>Invited Panelist</span></div>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  {# What the recognition looks like from the inside: a seat at the Innovate UK
+     forum, and a certificate from a congress on the other side of the world. #}
+  <div class="photo-grid">
+    {{ photo(photos.womenInInnovationForum, sizes="(max-width: 700px) 100vw, 520px") }}
+    {{ photo(photos.coffeeCongress, sizes="(max-width: 700px) 100vw, 520px") }}
   </div>
 </section>
 

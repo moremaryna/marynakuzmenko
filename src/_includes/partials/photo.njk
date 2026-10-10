@@ -1,0 +1,37 @@
+{#
+  Draws a photograph from photos.js.
+
+  `pic`     an entry from the photos global data, e.g. photos.aiCamp
+  `sizes`   how wide the photo is drawn, so the browser can pick a rendition;
+            the default suits a photo across one of the site's text columns
+  `eager`   true for a photo above the fold, which should not wait for lazy
+            loading
+  `caption` false where the surrounding text already says where and when — an
+            event card, for instance, prints its own date and venue
+  `credit`  true to name the people in a group photo, left to right, where the
+            photo is drawn large enough for the list to be worth reading
+  `class`   extra classes on the <figure>, e.g. page-figure--portrait
+
+  The caption and the credit both come from photos.js.
+#}
+{% macro photo(pic, sizes="(max-width: 900px) 100vw, 860px", eager=false, caption=true, credit=false, class="") %}
+<figure class="page-figure{% if class %} {{ class }}{% endif %}">
+  <img
+    src="{{ pic.src }}"
+    srcset="{{ pic.srcset }}"
+    sizes="{{ sizes }}"
+    width="{{ pic.width }}"
+    height="{{ pic.height }}"
+    alt="{{ pic.alt }}"
+    loading="{{ "eager" if eager else "lazy" }}"
+    decoding="async">
+  {% set showCaption = caption and pic.caption %}
+  {% set showCredit = credit and pic.credit %}
+  {% if showCaption or showCredit %}
+  <figcaption>
+    {%- if showCaption %}{{ pic.caption }}{% endif -%}
+    {%- if showCredit %}<span class="figure-credit">{{ pic.credit }}</span>{% endif -%}
+  </figcaption>
+  {% endif %}
+</figure>
+{% endmacro %}

@@ -6,6 +6,7 @@ description: "Official bios for Dr. Maryna Kuzmenko — AI in agriculture educat
 permalink: "/about/"
 ogType: "profile"
 ---
+{% from "partials/photo.njk" import photo %}
 <section class="bio-page">
   <div class="bio-hero">
     <p class="eyebrow">Official biography resource</p>
@@ -50,6 +51,8 @@ ogType: "profile"
         She is co-founder and CEO of Petiole, a UK-based SME developing practical AI tools for agriculture and plant science. The global platform Petiole Pro, developed by Maryna’s team, was named a finalist in the GIST Tech-I 2015 competition in the USA, shortlisted for the UK FPC Fresh Awards 2023, and received three grants from Innovate UK — the UK government’s innovation agency — and one Horizon Europe grant, for practical AI applications in agricultural challenges such as pest and disease detection.
       </p>
 
+      {{ photo(photos.leafMeasurement, sizes="(max-width: 420px) 100vw, 380px", class="page-figure--portrait") }}
+
       <p>
         Maryna was recognised as an Expert Top Voice on LinkedIn in the May 2026 edition and has an active educational presence in social and business media.
       </p>
@@ -60,6 +63,8 @@ ogType: "profile"
         She is one of 16 Community Forum Members of the 2025/26 Cohort, pre-selected by the Innovate UK Women in Innovation team. Maryna is also an Oxford Farming Conference 2026 Inspire Fellow.
       </p>
 
+      {{ photo(photos.womenInInnovationForum, sizes="(max-width: 780px) 100vw, 760px") }}
+
       <p>
         Maryna is a fellow of the “Scaling Young Women’s Businesses Through IP Mentorship” programme by the World Intellectual Property Organization (WIPO) and the International Trade Centre’s SheTrades initiative. She is Virgin StartUp Alumna 2020.
       </p>
@@ -67,6 +72,8 @@ ogType: "profile"
       <p>
         She is a regular speaker at educational <a href="/events/">events</a> and has participated in high-level agriculture-focused meetings in the United Kingdom and internationally.
       </p>
+
+      {{ photo(photos.bridgeAiTalk, sizes="(max-width: 420px) 100vw, 380px", class="page-figure--portrait") }}
     </div>
   </section>
 

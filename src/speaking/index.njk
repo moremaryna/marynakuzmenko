@@ -4,6 +4,7 @@ title: Speaking & Lectures
 metaTitle: "AI in Agriculture Keynote Speaker | Dr. Maryna Kuzmenko"
 description: "Book Dr. Maryna Kuzmenko, AI in agriculture keynote speaker, for conferences, summits, and lectures on agrifood AI and the future of farming."
 ---
+{% from "partials/photo.njk" import photo %}
 
 <section class="speaking-hero">
   <span class="eyebrow">Keynotes · Panels · Lectures</span>
@@ -66,6 +67,15 @@ description: "Book Dr. Maryna Kuzmenko, AI in agriculture keynote speaker, for c
   </div>
 </section>
 
+<section class="section">
+  <span class="eyebrow">On the stage, and on the screen</span>
+  {# A remote lecture and an in-person one: both formats, as they look. #}
+  <div class="photo-grid">
+    {{ photo(photos.landscape2024, sizes="(max-width: 700px) 100vw, 520px") }}
+    {{ photo(photos.conferenceConversation, sizes="(max-width: 700px) 100vw, 520px") }}
+  </div>
+</section>
+
 <section class="section speaking-styles">
   <div class="style-grid">
     <div class="style-text">
@@ -80,7 +90,15 @@ description: "Book Dr. Maryna Kuzmenko, AI in agriculture keynote speaker, for c
       </ul>
     </div>
     <div class="style-visual">
-       <div class="speaking-photo-placeholder">
+       <div class="speaking-photo">
+         <img
+           src="{{ photos.conferenceTalk.src }}"
+           srcset="{{ photos.conferenceTalk.srcset }}"
+           sizes="(max-width: 900px) 100vw, 520px"
+           width="{{ photos.conferenceTalk.width }}"
+           height="{{ photos.conferenceTalk.height }}"
+           alt="{{ photos.conferenceTalk.alt }}"
+           loading="lazy" decoding="async">
          <span class="italic-text">"Dr. Kuzmenko’s ability to simplify complex policy into actionable steps is unparalleled."</span>
        </div>
     </div>

@@ -4,6 +4,7 @@ title: Partnerships
 metaTitle: "Partner with Dr. Maryna Kuzmenko — AI in Agriculture"
 metaDescription: "Partner with Dr. Maryna Kuzmenko, AI in agriculture educator and LinkedIn Top Voice — sponsored content, webinars, and collaborations for agritech brands."
 ---
+{% from "partials/photo.njk" import photo %}
 
 <section class="hero">
   <span class="eyebrow">Brand Partnerships</span>
@@ -43,6 +44,12 @@ metaDescription: "Partner with Dr. Maryna Kuzmenko, AI in agriculture educator a
     buyers who follow for substance. That makes partnerships here a route to genuine influence on how
     technology gets evaluated and adopted across the sector — not just impressions.
   </p>
+
+  {# The commentary comes with a working product behind it — here it is, running. #}
+  <div class="photo-grid">
+    {{ photo(photos.bridgeAiStand, sizes="(max-width: 700px) 100vw, 520px") }}
+    {{ photo(photos.petioleDemoStand, sizes="(max-width: 700px) 100vw, 520px") }}
+  </div>
 </section>
 
 <section class="section">
