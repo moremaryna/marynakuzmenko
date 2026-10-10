@@ -168,6 +168,40 @@ module.exports = {
     caption: "Another of the stand designs.",
   }),
 
+  // --- Insights index thumbnails --------------------------------------------
+  // A 3:2 crop of a selfie per post, so the index shows Maryna rather than the
+  // people on stage in the posts' own hero photos.
+
+  watisThumb: photo({
+    master: "events/2026-09-28-WATIS/1",
+    name: "events/2026-09-28-WATIS/world-agri-tech-london-2026-day-1-thumb",
+    crop: [255, 0, 3009, 1836],
+    width: 1200,
+    height: 800,
+    alt: "Dr. Maryna Kuzmenko holding up her delegate badge in front of the World Agri-Tech London 2026 partner wall.",
+    caption: "At the World Agri-Tech Innovation Summit, London, September 2026.",
+  }),
+
+  watis2Thumb: photo({
+    master: "events/2026-09-23-WATIS-2/1",
+    name: "events/2026-09-23-WATIS-2/world-agri-tech-london-2026-day-2-thumb",
+    crop: [0, 200, 3648, 2632],
+    width: 1200,
+    height: 800,
+    alt: "Dr. Maryna Kuzmenko in a selfie at a window, with the Canary Wharf skyline and the river behind her.",
+    caption: "The view of Canary Wharf from the summit venue, September 2026.",
+  }),
+
+  faThumb: photo({
+    master: "events/2026-10-08-Fruit-Attraction/1",
+    name: "events/2026-10-08-Fruit-Attraction/fruit-attraction-2026-thumb",
+    crop: [0, 800, 3345, 3030],
+    width: 1200,
+    height: 800,
+    alt: "Dr. Maryna Kuzmenko in a selfie in front of the Fruit Attraction entrance banner.",
+    caption: "At Fruit Attraction, IFEMA Madrid, October 2026.",
+  }),
+
   // --- World Agri-Tech Innovation Summit, London, 22-23 September 2026 ------
   // Insights post "World Agri-Tech London 2026, Day 1"; the selfie on Events.
 
