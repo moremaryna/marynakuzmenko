@@ -1542,6 +1542,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 .post-body ul, .post-body ol { margin: 0 0 22px; padding-left: 26px; }
 .post-body li { margin-bottom: 8px; }
 .post-body .page-figure, .post-body .photo-grid { margin: 36px 0; }
+.post-body .page-figure--portrait { max-width: 420px; margin-inline: auto; }
 
 /* The arrows of a "this became that" chain, drawn instead of numbers. */
 .post-steps { list-style: none; padding-left: 0; }

@@ -57,8 +57,128 @@ function photo({ master, name, width, height, alt, caption, credit, crop }) {
 }
 
 module.exports = {
+  // --- Fruit Attraction, Madrid, 6-8 October 2026 ---------------------------
+  // Insights post "Fruit Attraction 2026"; the entrance selfie on Events.
+
+  faEntranceSelfie: photo({
+    master: "events/2026-10-08-Fruit-Attraction/1",
+    name: "events/2026-10-08-Fruit-Attraction/maryna-kuzmenko-fruit-attraction-madrid-2026",
+    width: 640,
+    height: 1138,
+    alt: "Dr. Maryna Kuzmenko in a green cardigan and polka-dot blouse, in a selfie in front of the Fruit Attraction entrance banner.",
+    caption: "At Fruit Attraction, IFEMA Madrid, October 2026.",
+  }),
+
+  faLettuceWall: photo({
+    master: "events/2026-10-08-Fruit-Attraction/20",
+    name: "events/2026-10-08-Fruit-Attraction/living-lettuce-wall-stand-fruit-attraction-2026",
+    width: 1600,
+    height: 720,
+    alt: "A stand wall of living lettuces growing in rows of glass bowls on a vertical green panel, lit from above.",
+    caption: "One of the stand designs: a living lettuce wall.",
+  }),
+
+  faFruitPillar: photo({
+    master: "events/2026-10-08-Fruit-Attraction/5",
+    name: "events/2026-10-08-Fruit-Attraction/fruit-pillar-stand-fruit-attraction-2026",
+    width: 640,
+    height: 1422,
+    alt: "A tall pillar built entirely of fresh fruit: pineapples, dragon fruit, melons, grapes and leaves, stacked from floor to ceiling.",
+    caption: "A pillar of fresh fruit on a stand.",
+  }),
+
+  faMushrooms: photo({
+    master: "events/2026-10-08-Fruit-Attraction/16",
+    name: "events/2026-10-08-Fruit-Attraction/mushrooms-on-log-stand-fruit-attraction-2026",
+    width: 640,
+    height: 1422,
+    alt: "A cluster of brown mushrooms growing out of a white-coated log, displayed on a stand.",
+    caption: "Mushrooms growing on a log, on a produce display.",
+  }),
+
+  faJulianaBolanos: photo({
+    master: "events/2026-10-08-Fruit-Attraction/8",
+    name: "events/2026-10-08-Fruit-Attraction/maryna-kuzmenko-juliana-bolanos-castro-ifema-madrid-2026",
+    width: 1200,
+    height: 900,
+    alt: "Dr. Maryna Kuzmenko and Juliana Bolanos Castro standing in front of the large IFEMA Madrid letters in the exhibition entrance hall.",
+    caption: "Dr. Maryna Kuzmenko with Juliana Bolaños Castro at IFEMA Madrid.",
+  }),
+
+  faKacperDach: photo({
+    master: "events/2026-10-08-Fruit-Attraction/13",
+    name: "events/2026-10-08-Fruit-Attraction/maryna-kuzmenko-kacper-dach-agro-contracts-fruit-attraction-2026",
+    width: 640,
+    height: 1422,
+    alt: "Dr. Maryna Kuzmenko and Kacper Dach standing beside a stand on a pink carpet, with a display screen behind them.",
+    caption: "Dr. Maryna Kuzmenko with Kacper Dach from Agro Contracts.",
+  }),
+
+  faMarcJones: photo({
+    master: "events/2026-10-08-Fruit-Attraction/10",
+    name: "events/2026-10-08-Fruit-Attraction/maryna-kuzmenko-marc-jones-antobot-fruit-attraction-2026",
+    width: 1200,
+    height: 540,
+    alt: "Dr. Maryna Kuzmenko and Marc Jones standing in front of an Antobot stand with yellow field robots and a wall of strawberry plants.",
+    caption: "Dr. Maryna Kuzmenko with Marc Jones from Antobot.",
+  }),
+
+  faHumanoidRobot: photo({
+    master: "events/2026-10-08-Fruit-Attraction/7",
+    name: "events/2026-10-08-Fruit-Attraction/humanoid-robot-fruit-attraction-2026",
+    width: 640,
+    height: 1422,
+    alt: "A white humanoid robot on a wheeled base in an exhibition aisle, beside crates of produce.",
+    caption: "A humanoid robot on the show floor.",
+  }),
+
+  faCrateRobot: photo({
+    master: "events/2026-10-08-Fruit-Attraction/17",
+    name: "events/2026-10-08-Fruit-Attraction/crate-carrying-robot-fruit-attraction-2026",
+    width: 640,
+    height: 1422,
+    alt: "A compact wheeled robot with a red frame carrying a blue produce crate, on a stand.",
+    caption: "A wheeled robot built to carry produce crates.",
+  }),
+
+  faRobotArm: photo({
+    master: "events/2026-10-08-Fruit-Attraction/18",
+    name: "events/2026-10-08-Fruit-Attraction/robot-arm-post-harvest-fruit-attraction-2026",
+    width: 640,
+    height: 1422,
+    alt: "A white robot arm mounted over a blue tray, on a stand.",
+    caption: "A robot arm on the show floor.",
+  }),
+
+  faVolodymyrPechko: photo({
+    master: "events/2026-10-08-Fruit-Attraction/4",
+    name: "events/2026-10-08-Fruit-Attraction/maryna-kuzmenko-volodymyr-pechko-ukrsadvinprom-fruit-attraction-2026",
+    width: 1200,
+    height: 675,
+    alt: "Dr. Maryna Kuzmenko in a selfie with Volodymyr Pechko in front of the Ukraine national stand at Fruit Attraction.",
+    caption: "Dr. Maryna Kuzmenko with Volodymyr Pechko, Head of Ukrsadvinprom, at the Ukraine stand.",
+  }),
+
+  faDonkeyStand: photo({
+    master: "events/2026-10-08-Fruit-Attraction/21",
+    name: "events/2026-10-08-Fruit-Attraction/donkey-stand-design-fruit-attraction-2026",
+    width: 1200,
+    height: 540,
+    alt: "A life-size model donkey carrying baskets of produce, on green carpet in front of an avocado-themed stand.",
+    caption: "Another of the stand designs.",
+  }),
+
   // --- World Agri-Tech Innovation Summit, London, 22-23 September 2026 ------
-  // Insights post "World Agri-Tech London 2026, Day 1"; the hero also on Events.
+  // Insights post "World Agri-Tech London 2026, Day 1"; the selfie on Events.
+
+  watisSelfie: photo({
+    master: "events/2026-09-28-WATIS/1",
+    name: "events/2026-09-28-WATIS/maryna-kuzmenko-world-agri-tech-london-2026",
+    width: 1200,
+    height: 675,
+    alt: "Dr. Maryna Kuzmenko holding up her delegate badge, in a selfie in front of the World Agri-Tech London, September 22 to 23, 2026 partner wall.",
+    caption: "At the World Agri-Tech Innovation Summit, London, September 2026.",
+  }),
 
   watisStage: photo({
     master: "events/2026-09-28-WATIS/3",
