@@ -193,13 +193,13 @@ module.exports = {
   }),
 
   faThumb: photo({
-    master: "events/2026-10-08-Fruit-Attraction/1",
-    name: "events/2026-10-08-Fruit-Attraction/fruit-attraction-2026-thumb",
-    crop: [0, 800, 3345, 3030],
+    master: "events/2026-10-08-Fruit-Attraction/8",
+    name: "events/2026-10-08-Fruit-Attraction/fruit-attraction-2026-thumb-ifema",
+    crop: [400, 400, 4000, 2800],
     width: 1200,
     height: 800,
-    alt: "Dr. Maryna Kuzmenko in a selfie in front of the Fruit Attraction entrance banner.",
-    caption: "At Fruit Attraction, IFEMA Madrid, October 2026.",
+    alt: "Dr. Maryna Kuzmenko and Juliana Bolanos Castro standing in front of the large IFEMA Madrid letters in the exhibition entrance hall.",
+    caption: "Dr. Maryna Kuzmenko with Juliana Bolaños Castro at IFEMA Madrid.",
   }),
 
   // --- World Agri-Tech Innovation Summit, London, 22-23 September 2026 ------
