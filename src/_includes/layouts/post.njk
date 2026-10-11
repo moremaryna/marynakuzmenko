@@ -62,16 +62,27 @@ ogType: article
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "@id": "{{ postUrl }}#article",
-  "mainEntityOfPage": "{{ postUrl }}",
+  "mainEntityOfPage": { "@id": "{{ postUrl }}#webpage" },
+  "url": "{{ postUrl }}",
   "headline": {{ title | dump | safe }},
   "description": {{ description | dump | safe }},
-  "image": {{ (image or site.image) | dump | safe }},
+  "image": { "@type": "ImageObject", "url": {{ (image or site.image) | dump | safe }}, "width": 1200, "height": 630 },
+  "thumbnailUrl": {{ (image or site.image) | dump | safe }},
   "datePublished": "{{ page.date | isoDate }}",
-  "dateModified": "{{ page.date | isoDate }}",
+  "dateModified": "{{ page | lastModified | isoDate }}",
   "inLanguage": "en",
-  "author": { "@id": "{{ site.url }}/#person" },
+  "isAccessibleForFree": true,
+  "wordCount": {{ content | wordCount }},
+  "articleSection": {{ (kicker or "Field Notes") | dump | safe }},
+  "author": {
+    "@type": "Person",
+    "@id": "{{ site.url }}/#person",
+    "name": {{ site.name | dump | safe }},
+    "url": "{{ site.url }}/about/"
+  },
   "publisher": { "@id": "{{ site.url }}/#person" },
-  "isPartOf": { "@id": "{{ site.url }}/#website" }{% if hashtags %},
+  "isPartOf": { "@id": "{{ site.url }}/#website" }{% if event %},
+  "about": { "@type": "Event", "name": {{ event | dump | safe }}{% if place %}, "location": { "@type": "Place", "name": {{ place | dump | safe }} }{% endif %} }{% endif %}{% if hashtags %},
   "keywords": {{ hashtags | join(", ") | dump | safe }}{% endif %}
 }
 </script>

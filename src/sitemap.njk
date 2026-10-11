@@ -3,12 +3,22 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{#- lastmod is the page's last commit date (or its publication date, whichever
+    is later), not the file's timestamp on the machine that built the site.
+    Posts also list their link-preview image for image search. -#}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 {%- for item in collections.all %}
-{%- if item.url and item.data.sitemap != false %}
+{%- if item.url and item.data.sitemap != false and not item.data.noindex %}
   <url>
     <loc>{{ site.url }}{{ item.url }}</loc>
-    <lastmod>{{ item.date.toISOString() }}</lastmod>
+    <lastmod>{{ item | lastModified | isoDate }}</lastmod>
+    {%- if item.data.image and item.data.tags and "posts" in item.data.tags %}
+    <image:image>
+      <image:loc>{{ item.data.image }}</image:loc>
+      <image:title>{{ item.data.title }}</image:title>
+    </image:image>
+    {%- endif %}
   </url>
 {%- endif %}
 {%- endfor %}

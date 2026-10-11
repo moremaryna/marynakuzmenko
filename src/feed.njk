@@ -1,0 +1,38 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+{#- Atom feed of the Insights posts, for feed readers and for the crawlers that
+    prefer a feed to a sitemap for discovering new writing. -#}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Insights on AI in Agriculture — Dr. Maryna Kuzmenko</title>
+  <subtitle>Essays, talks, and field notes on where artificial intelligence meets agrifood.</subtitle>
+  <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="{{ site.url }}/insights/" rel="alternate" type="text/html"/>
+  <id>{{ site.url }}/insights/</id>
+  {%- if collections.posts.length %}
+  <updated>{{ collections.posts[0] | lastModified | isoDateTime }}</updated>
+  {%- else %}
+  <updated>{{ "now" | isoDateTime }}</updated>
+  {%- endif %}
+  <author>
+    <name>{{ site.name }}</name>
+    <uri>{{ site.url }}/</uri>
+  </author>
+  <icon>{{ site.url }}/assets/icons/icon-192.png</icon>
+  <rights>© {{ "now" | isoDateTime | truncate(4, true, "") }} {{ site.name }}</rights>
+  {%- for post in collections.posts %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ site.url }}{{ post.url }}" rel="alternate" type="text/html"/>
+    <id>{{ site.url }}{{ post.url }}</id>
+    <published>{{ post.date | isoDateTime }}</published>
+    <updated>{{ post | lastModified | isoDateTime }}</updated>
+    <summary>{{ post.data.description }}</summary>
+    {%- if post.data.hashtags %}{% for tag in post.data.hashtags %}
+    <category term="{{ tag }}"/>{% endfor %}{% endif %}
+    <content type="html" xml:base="{{ site.url }}{{ post.url }}">{{ post.templateContent }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

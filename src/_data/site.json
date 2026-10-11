@@ -4,6 +4,8 @@
   "suffix": "Ph.D.",
   "description": "Educator, author, and speaker on AI in agriculture.",
   "url": "https://marynakuzmenko.com",
+  "locale": "en_GB",
+  "twitterHandle": "@mary_kuzmenko",
   "contactEndpoint": "https://formspree.io/f/xvzbnwdb",
   "contactEndpointNote": "Where /contact/ posts. Switch to https://contact.marynakuzmenko.com/ once the Worker in cloudflare/contact-worker is deployed (see its README).",
   "personName": "Maryna Kuzmenko",
@@ -36,7 +38,11 @@
     "Dairy cattle lameness detection",
     "Thermal imaging",
     "Plant phenotyping",
-    "Agricultural technology"
+    "Agricultural technology",
+    "Generative AI in agrifood",
+    "Agricultural robotics and automation",
+    "Agritech adoption and regulation",
+    "Fresh produce quality control"
   ],
   "awards": [
     "Innovate UK Women in Innovation Award 2025/26 \u2014 winner, for MooMore (announced 5 August 2026)",

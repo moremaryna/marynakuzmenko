@@ -43,6 +43,45 @@ module.exports = function (eleventyConfig) {
       .format(new Date(date))
   );
 
+  // Full ISO timestamp, for feeds and structured data. "now" means now.
+  eleventyConfig.addFilter("isoDateTime", (date) =>
+    (date === "now" ? new Date() : new Date(date)).toISOString()
+  );
+
+  // When a page last changed: its last git commit, or its publication date
+  // if that is later, or now for a file not yet committed. The file's own
+  // timestamp would only say when this machine checked the repo out.
+  const { execSync } = require("child_process");
+  const gitDates = new Map();
+  const gitDate = (inputPath) => {
+    if (!inputPath) return null;
+    if (!gitDates.has(inputPath)) {
+      let out = "";
+      try {
+        const git = (args) => execSync(`git ${args} -- "${inputPath}"`, {
+          encoding: "utf8", stdio: ["ignore", "pipe", "ignore"],
+        }).trim();
+        // Edited since its last commit: it changes with this build, so "now".
+        out = git("status --porcelain") ? "now" : git("log -1 --format=%cI");
+      } catch { /* not a git checkout: fall through to "now" */ }
+      gitDates.set(inputPath, out === "now" ? new Date() : out ? new Date(out) : null);
+    }
+    return gitDates.get(inputPath);
+  };
+  eleventyConfig.addFilter("lastModified", (page) => {
+    const committed = gitDate(page && page.inputPath);
+    // Only a date set in front matter counts as publication; Eleventy's
+    // default page.date is just the file's timestamp on this machine.
+    const published = page && page.data && page.data.date ? new Date(page.data.date) : null;
+    if (committed && published) return committed > published ? committed : published;
+    return committed || published || new Date();
+  });
+
+  // Words in a rendered HTML fragment, for BlogPosting.wordCount
+  eleventyConfig.addFilter("wordCount", (html) =>
+    String(html || "").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length
+  );
+
   // 2026-09-28 -> "2026-09-28", for <time datetime> and structured data
   eleventyConfig.addFilter("isoDate", (date) => new Date(date).toISOString().slice(0, 10));
 

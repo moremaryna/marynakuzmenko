@@ -14,6 +14,9 @@
   {% set canonical = site.url + page.url %}
   {% set pageImage = image or site.image %}
   {% set pageOgType = ogType or "website" %}
+  {% set pageImageAlt = imageAlt or pageTitle %}
+  {% set pageModified = page | lastModified %}
+  {% set pageSchemaType = schemaType or "WebPage" %}
 
   <title>{{ pageTitle }}</title>
   <meta name="title" content="{{ pageTitle }}">
@@ -34,13 +37,28 @@
   <meta property="og:title" content="{{ pageTitle }}">
   <meta property="og:description" content="{{ pageDesc }}">
   <meta property="og:image" content="{{ pageImage }}">
+  <meta property="og:image:alt" content="{{ pageImageAlt }}">
   <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:locale" content="{{ site.locale }}">
+  {%- if pageOgType == "article" %}
+  <meta property="article:published_time" content="{{ page.date | isoDateTime }}">
+  <meta property="article:modified_time" content="{{ pageModified | isoDateTime }}">
+  <meta property="article:author" content="{{ site.url }}/about/">
+  {%- for tag in hashtags %}
+  <meta property="article:tag" content="{{ tag }}">
+  {%- endfor %}
+  {%- endif %}
 
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="{{ canonical }}">
   <meta property="twitter:title" content="{{ pageTitle }}">
   <meta property="twitter:description" content="{{ pageDesc }}">
   <meta property="twitter:image" content="{{ pageImage }}">
+  <meta property="twitter:image:alt" content="{{ pageImageAlt }}">
+  <meta name="twitter:site" content="{{ site.twitterHandle }}">
+  <meta name="twitter:creator" content="{{ site.twitterHandle }}">
+  <meta name="author" content="{{ site.name }}">
+  <link rel="alternate" type="application/atom+xml" title="Insights on AI in Agriculture — {{ site.name }}" href="{{ site.url }}/feed.xml">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
   <script>
@@ -76,6 +94,9 @@
         "alumniOf": { "@type": "CollegeOrUniversity", "name": {{ site.alumniOf | dump | safe }} },
         "award": {{ site.awards | dump | safe }},
         "hasOccupation": { "@type": "Occupation", "name": "Educator, author and speaker on AI in agriculture" },
+        "email": {{ site.author.email | dump | safe }},
+        "knowsLanguage": ["en", "uk"],
+        "workLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressCountry": "GB" } },
         "author": [{% for book in books %}
           {
             "@type": "Book",
@@ -98,14 +119,38 @@
         "publisher": { "@id": "{{ site.url }}/#person" }
       },
       {
-        "@type": "WebPage",
+        "@type": {{ pageSchemaType | dump | safe }},
         "@id": "{{ canonical }}#webpage",
         "url": "{{ canonical }}",
         "name": {{ pageTitle | dump | safe }},
         "description": {{ pageDesc | dump | safe }},
         "inLanguage": "en",
+        {%- if tags and "posts" in tags %}
+        "datePublished": "{{ page.date | isoDate }}",
+        {%- endif %}
+        "dateModified": "{{ pageModified | isoDate }}",
+        "primaryImageOfPage": { "@type": "ImageObject", "url": {{ pageImage | dump | safe }} },
         "isPartOf": { "@id": "{{ site.url }}/#website" },
-        "about": { "@id": "{{ site.url }}/#person" }
+        "about": { "@id": "{{ site.url }}/#person" },
+        {%- if pageSchemaType == "ProfilePage" %}
+        "mainEntity": { "@id": "{{ site.url }}/#person" },
+        {%- endif %}
+        "breadcrumb": { "@id": "{{ canonical }}#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "{{ canonical }}#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" }
+          {%- if page.url != "/" %}
+          {%- if page.url.startsWith("/insights/") and page.url != "/insights/" %},
+          { "@type": "ListItem", "position": 2, "name": "Insights", "item": "{{ site.url }}/insights/" },
+          { "@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}, "item": "{{ canonical }}" }
+          {%- else %},
+          { "@type": "ListItem", "position": 2, "name": {{ title | dump | safe }}, "item": "{{ canonical }}" }
+          {%- endif %}
+          {%- endif %}
+        ]
       }
     ]
   }
