@@ -1,63 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://marynakuzmenko.com/insights/</loc>
-    <lastmod>2026-06-30T16:02:21.512Z</lastmod>
+    <lastmod>2026-10-11</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/contact/</loc>
-    <lastmod>2026-08-19T12:09:04.311Z</lastmod>
+    <lastmod>2026-10-11</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/moomore/</loc>
-    <lastmod>2026-09-14T11:39:07.642Z</lastmod>
+    <lastmod>2026-09-14</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/services/</loc>
-    <lastmod>2026-09-14T12:15:21.047Z</lastmod>
+    <lastmod>2026-09-14</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/books/</loc>
-    <lastmod>2026-09-14T12:17:06.912Z</lastmod>
+    <lastmod>2026-09-14</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/</loc>
-    <lastmod>2026-09-17T22:00:23.778Z</lastmod>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/ai-in-agriculture/</loc>
-    <lastmod>2026-09-17T22:00:37.407Z</lastmod>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/speaking/</loc>
-    <lastmod>2026-09-17T22:01:23.485Z</lastmod>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/about/</loc>
-    <lastmod>2026-09-17T22:01:47.344Z</lastmod>
+    <lastmod>2026-10-11</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/recognition/</loc>
-    <lastmod>2026-09-17T22:01:59.271Z</lastmod>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/partner/</loc>
-    <lastmod>2026-09-17T22:02:11.376Z</lastmod>
-  </url>
-  <url>
-    <loc>https://marynakuzmenko.com/events/</loc>
-    <lastmod>2026-09-18T08:08:05.147Z</lastmod>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/insights/world-agri-tech-london-2026-day-1/</loc>
-    <lastmod>2026-09-28T00:00:00.000Z</lastmod>
+    <lastmod>2026-10-10</lastmod>
+    <image:image>
+      <image:loc>https://marynakuzmenko.com/assets/img/events/2026-09-28-WATIS/world-agri-tech-london-2026-day-1-og.jpg</image:loc>
+      <image:title>World Agri-Tech London 2026, Day 1: Invention Isn&#39;t the Problem. Adoption Is.</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/insights/world-agri-tech-london-2026-day-2/</loc>
-    <lastmod>2026-09-29T00:00:00.000Z</lastmod>
+    <lastmod>2026-10-10</lastmod>
+    <image:image>
+      <image:loc>https://marynakuzmenko.com/assets/img/events/2026-09-23-WATIS-2/world-agri-tech-london-2026-day-2-og.jpg</image:loc>
+      <image:title>World Agri-Tech London 2026, Day 2: AI in Agriculture, Excitement and a Healthy Alarm</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/insights/fruit-attraction-2026/</loc>
-    <lastmod>2026-10-08T00:00:00.000Z</lastmod>
+    <lastmod>2026-10-10</lastmod>
+    <image:image>
+      <image:loc>https://marynakuzmenko.com/assets/img/events/2026-10-08-Fruit-Attraction/fruit-attraction-2026-og.jpg</image:loc>
+      <image:title>Fruit Attraction 2026: The Festival of Fresh Connections, Attractive Technologies and Fruitful Opportunities</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://marynakuzmenko.com/insights/understanding-the-innovation-journey-webinar/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <image:image>
+      <image:loc>https://marynakuzmenko.com/assets/img/speaking/understanding-the-innovation-journey-webinar-og.jpg</image:loc>
+      <image:title>Business Networks, and the Organisation I Wish I&#39;d Called on Day One</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://marynakuzmenko.com/events/</loc>
+    <lastmod>2026-10-11</lastmod>
   </url>
 </urlset>

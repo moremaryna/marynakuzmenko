@@ -202,6 +202,30 @@ module.exports = {
     caption: "Dr. Maryna Kuzmenko with Juliana Bolaños Castro at IFEMA Madrid.",
   }),
 
+  // The webinar poster has no selfie to crop, so the index shows its title
+  // block, cut off just above the speakers' photos.
+  iukbcThumb: photo({
+    master: "speaking/maryna-kuzmenko-innovate-UK-business-connect",
+    name: "speaking/understanding-the-innovation-journey-webinar-thumb",
+    crop: [0, 0, 720, 480],
+    width: 720,
+    height: 480,
+    alt: "Webinar poster title: Webinar Series, Understanding the Innovation Journey, When to Engage with Innovate UK Business Connect, 19 October 2026, 1pm to 2pm, online.",
+    caption: "Understanding the Innovation Journey, a webinar by Innovate UK Business Connect.",
+  }),
+
+  // --- Innovate UK Business Connect webinar, online, 19 October 2026 --------
+  // Insights post "Understanding the Innovation Journey".
+
+  iukbcWebinar: photo({
+    master: "speaking/maryna-kuzmenko-innovate-UK-business-connect",
+    name: "speaking/maryna-kuzmenko-understanding-the-innovation-journey-webinar",
+    width: 800,
+    height: 1000,
+    alt: "Webinar poster from Innovate UK Business Connect: Webinar Series, Understanding the Innovation Journey, When to Engage with Innovate UK Business Connect, 19 October 2026, 1pm to 2pm, online, with photos of five speakers, Dr. Maryna Kuzmenko among them, and Register now.",
+    caption: "Understanding the Innovation Journey, online, 19 October 2026.",
+  }),
+
   // --- World Agri-Tech Innovation Summit, London, 22-23 September 2026 ------
   // Insights post "World Agri-Tech London 2026, Day 1"; the selfie on Events.
 

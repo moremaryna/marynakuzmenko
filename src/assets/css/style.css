@@ -1419,6 +1419,20 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
   max-width: 340px;
 }
 
+/* An event still to come: a badge above its tag. */
+.event-badge {
+  display: inline-block;
+  margin: 0 10px 8px 0;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 /* --- Book card: cover alongside the detail --- */
 .book-card {
     display: grid;
