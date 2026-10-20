@@ -202,6 +202,77 @@ module.exports = {
     caption: "Dr. Maryna Kuzmenko with Juliana Bolaños Castro at IFEMA Madrid.",
   }),
 
+  // --- Innovate UK Business Connect webinar recap, 19 October 2026 ----------
+  // Insights post "Over 350 People, and 5 Ways Innovate UK Business Connect
+  // Can Support You"; the call on Events. The slides are pages of
+  // assets/pdf/Innovate-UK-Business-Connect-Agrifood.pdf, rendered at 1080px.
+
+  iukbcRecapCall: photo({
+    master: "events/2026-10-19-Innovate-UK-Business-Connect/innovate-uk-business-connect-webinar",
+    name: "events/2026-10-19-Innovate-UK-Business-Connect/understanding-the-innovation-journey-webinar-call",
+    crop: [4, 5, 1900, 929],
+    width: 1600,
+    height: 780,
+    alt: "The webinar on a video call with 356 people: David Crole, Jamie Tong, Phoebe Kay and Fran McIntyre on camera, a column of attendees' initials, and Dr. Maryna Kuzmenko in the corner tile.",
+    caption: "Understanding the Innovation Journey, online, 19 October 2026: David Crole, Jamie Tong, Phoebe Kay and Fran McIntyre on camera, Dr. Maryna Kuzmenko bottom right, and 356 people on the call.",
+  }),
+
+  // The index shows Maryna from the carousel's closing slide.
+  iukbcRecapThumb: photo({
+    master: "events/2026-10-19-Innovate-UK-Business-Connect/slide-7",
+    name: "events/2026-10-19-Innovate-UK-Business-Connect/maryna-kuzmenko-innovate-uk-business-connect-thumb",
+    crop: [45, 680, 1050, 1350],
+    width: 720,
+    height: 480,
+    alt: "Dr. Maryna Kuzmenko, smiling, in a black MARYNA T-shirt on a purple slide reading: The right time to sign up is NOW. Dr. Maryna Kuzmenko, AI & Agrifood insights.",
+    caption: "From the carousel 5 ways to get support from Innovate UK Business Connect.",
+  }),
+
+  iukbcSlideNewsletter: photo({
+    master: "events/2026-10-19-Innovate-UK-Business-Connect/slide-2",
+    name: "events/2026-10-19-Innovate-UK-Business-Connect/innovate-uk-business-connect-sector-newsletter",
+    width: 840,
+    height: 1050,
+    alt: "Carousel slide 01, Sector Newsletter, free, with a beetroot. From my journey: Every time it arrives, I scroll for opportunities. It's been my habit since 2017.",
+    caption: "01 · Sector Newsletter.",
+  }),
+
+  iukbcSlideWebinars: photo({
+    master: "events/2026-10-19-Innovate-UK-Business-Connect/slide-3",
+    name: "events/2026-10-19-Innovate-UK-Business-Connect/innovate-uk-business-connect-webinars",
+    width: 840,
+    height: 1050,
+    alt: "Carousel slide 02, Webinars, free, with a cow looking into the camera. From my journey: Thought-provoking and people-linking with those who are in your niche topic.",
+    caption: "02 · Webinars.",
+  }),
+
+  iukbcSlideEvents: photo({
+    master: "events/2026-10-19-Innovate-UK-Business-Connect/slide-4",
+    name: "events/2026-10-19-Innovate-UK-Business-Connect/innovate-uk-business-connect-events",
+    width: 840,
+    height: 1050,
+    alt: "Carousel slide 03, Events, with an Innovate UK stand counter printed with bowls of beans: Brokerage events, workshops, networking mixers and the annual AgriFood Innovation Showcase, where startups exhibit and pitch. From my journey: The first event I ever attended in the UK was a free agrifood meeting organised by Innovate UK Business Connect.",
+    caption: "03 · Events.",
+  }),
+
+  iukbcSlideExperts: photo({
+    master: "events/2026-10-19-Innovate-UK-Business-Connect/slide-5",
+    name: "events/2026-10-19-Innovate-UK-Business-Connect/innovate-uk-business-connect-sector-experts",
+    width: 840,
+    height: 1050,
+    alt: "Carousel slide 04, Sector Experts, with a calendar invitation for a 1 hour 1-2-1 meeting: Knowledge Transfer Managers who refine your idea, spot new markets and make warm introductions. From my journey: An AI can give you a list, but it's not a person who listens and knows who you should meet.",
+    caption: "04 · Sector Experts.",
+  }),
+
+  iukbcSlideGrow: photo({
+    master: "events/2026-10-19-Innovate-UK-Business-Connect/slide-6",
+    name: "events/2026-10-19-Innovate-UK-Business-Connect/innovate-uk-business-connect-support-as-you-grow",
+    width: 840,
+    height: 1050,
+    alt: "Carousel slide 05, Support As You Grow, with a pound coin: For more established businesses, the support goes beyond the basics. From my journey: Need support with IP rights? University partnerships? Investor readiness? Yes, they can help with that too.",
+    caption: "05 · Support As You Grow.",
+  }),
+
   // The webinar poster has no selfie to crop, so the index shows its title
   // block, cut off just above the speakers' photos.
   iukbcThumb: photo({
