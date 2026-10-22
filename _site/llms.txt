@@ -46,6 +46,13 @@ Topics:
 - Responsible AI: data, privacy and trust: Who owns farm data, the basics of GDPR, bias and transparency, and writing an AI use policy for your organisation.
 - AI strategy for leaders: A briefing for executives and boards: where AI creates value in your business, how to assess vendors and pilots, what skills your teams need, and how to measure the return.
 
+The law (reviewed 17 October 2026): Article 4 of the EU AI Act requires organisations that provide or use AI systems to take measures to support their staff's AI literacy. It has applied since 2 February 2025. An amendment in force since 27 July 2026 kept the duty, but no longer requires any particular level of AI literacy to be reached. The Act does not name a course, and the European Commission's guidance says there is no need for a certificate: an internal record of training is enough. Training is one measure an organisation can take; on its own, it does not make an organisation compliant. National market surveillance authorities supervise Article 4 from 2 August 2026. This is a summary, not legal advice.
+
+UK figures:
+
+- 10 million UK workers the government and its industry partners aim to give AI skills by 2030, through the free AI Skills Boost programme. Source: DSIT and Skills England, 28 January 2026, https://www.gov.uk/government/news/free-ai-training-for-all-as-government-and-industry-programme-expands-to-provide-10-million-workers-with-key-ai-skills-by-2030
+- 21% of UK adults in work said they felt confident using AI tools at work, in an Ipsos survey for the government carried out in early 2024. Source: DSIT and DCMS, AI Skills for Life and Work, published 28 January 2026, https://www.gov.uk/government/publications/ai-skills-for-life-and-work-general-public-survey-findings
+
 Not accredited; no CPD or BASIS points. Participants can receive a certificate of attendance, which is not the free course's certificate of completion. Training is delivered in English. Enquiries: https://marynakuzmenko.com/contact/?type=training. Canonical description of the offer: https://aiinagriculture.org/ai-training-agrifood/
 
 ## Awards and recognition

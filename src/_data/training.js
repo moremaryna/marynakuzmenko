@@ -8,19 +8,30 @@
  * different set of formats, topics or answers. When that page changes, change
  * this one to match.
  *
- * Two differences, both on purpose:
+ * One difference, on purpose: enquiries go through this site's contact form
+ * (/contact/?type=training) rather than an email address, as every other
+ * enquiry here does.
  *
- *  - Enquiries go through this site's contact form (/contact/?type=training)
- *    rather than an email address, as every other enquiry here does.
- *  - The EU AI Act and UK figures are not repeated. They are reviewed every
- *    quarter on aiinagriculture.org, and a second copy here would go stale
- *    unnoticed; /training/ links to them instead.
+ * The EU AI Act and the UK figures are the part that goes stale without anyone
+ * editing it, and the numbers are the part that matters. `npm run
+ * check:figures` (scripts/check-figures.js) holds them to account: it fails
+ * when `reviewed` is more than three months old, when aiinagriculture.org says
+ * something different, or when a number can no longer be found in its own
+ * primary source. .github/workflows/check-figures.yml runs it every Monday and
+ * opens an issue when it fails. Change a figure only after reading it in the
+ * primary source, then change `reviewed`.
  *
  * The same advertising rules hold: no prices, no accreditation, no
  * "qualification". A session gives a certificate of *attendance*; the
  * certificate of completion belongs to the free course and is earned by its
  * quizzes.
  */
+
+/**
+ * The day the law and the figures were last checked against their sources.
+ * /training/ prints it as "Last reviewed"; check:figures fails 92 days on.
+ */
+const reviewed = "2026-10-17";
 
 /** The canonical page for the offer, on the course site. */
 const source = "https://aiinagriculture.org/ai-training-agrifood/";
@@ -75,6 +86,97 @@ const definition =
   "in farming, agronomy, food manufacturing and supply chains, and to use them responsibly. " +
   `It sits between ${named("awareness")} (knowing what AI is and its risks) and ` +
   `${named("fluency")} (confidently applying AI to solve new problems).`;
+
+/**
+ * The EU AI Act, as it stood on `reviewed`. Word for word from
+ * aiinagriculture.org, which check:figures compares.
+ *
+ * Article 4 first applied on 2 February 2025 and required "a sufficient level"
+ * of AI literacy. Regulation (EU) 2026/1744, the Digital Omnibus on AI, replaced
+ * it from 27 July 2026: providers and deployers must still "take measures to
+ * support the development of AI literacy" of their staff, but no level is set.
+ * Scope over a UK business is Article 2(1)(a) and (c).
+ *
+ * `dates` are the dates the page states. Each must appear in the answer or the
+ * note, and in the Commission's Q&A or the regulation itself — a moved date is
+ * exactly what makes the summary wrong.
+ */
+const act = {
+  answer:
+    "Article 4 of the EU AI Act requires organisations that provide or use AI systems to take " +
+    "measures to support their staff's AI literacy. It has applied since 2 February 2025. An " +
+    "amendment in force since 27 July 2026 kept the duty, but no longer requires any particular " +
+    "level of AI literacy to be reached.",
+  note:
+    "The Act does not name a course, and the European Commission's guidance says there is no " +
+    "need for a certificate: an internal record of training is enough. Training is one measure " +
+    "an organisation can take; on its own, it does not make an organisation compliant. National " +
+    "market surveillance authorities supervise Article 4 from 2 August 2026.",
+  scope:
+    "It can. The Act applies to providers that place AI systems on the EU market wherever they " +
+    "are based, and to providers and deployers outside the EU whose AI systems produce output " +
+    "used in the EU. Whether that includes your business depends on where your AI systems and " +
+    "their output are used, so take legal advice for your own situation.",
+  dates: ["2 February 2025", "27 July 2026", "2 August 2026"],
+  sources: [
+    {
+      name: "Regulation (EU) 2024/1689, the AI Act",
+      detail: "Articles 2 and 4",
+      url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      evidence: [["Article 4"], ["AI literacy"]],
+    },
+    {
+      name: "Regulation (EU) 2026/1744, the Digital Omnibus on AI",
+      detail: "in force from 27 July 2026",
+      url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+      evidence: [["AI literacy"]],
+    },
+    {
+      name: "European Commission, AI literacy: questions and answers",
+      detail: "updated 27 July 2026",
+      url: "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers",
+      evidence: [["2 February 2025"], ["2 August 2026"], ["certificate"]],
+    },
+  ],
+};
+
+/**
+ * UK figures, each with the source the page names and links beside it. Only
+ * figures someone has read in the primary source go here.
+ *
+ * `evidence` is what check:figures looks for in the source (the page and its
+ * HTML attachments on gov.uk): each inner list is one fact, written any of the
+ * ways the source might write it. If a source rewords a number without
+ * changing it, add the new wording; if it changes the number, change the
+ * figure.
+ *
+ * Left out on purpose, as on aiinagriculture.org: "13% of regular AI users are
+ * AI-fluent". Grammarly's 2024 Harris Poll split adds up across all knowledge
+ * workers asked, including those who avoid AI, so the population is wrong.
+ */
+const figures = [
+  {
+    value: "10 million",
+    text:
+      "UK workers the government and its industry partners aim to give AI skills by 2030, " +
+      "through the free AI Skills Boost programme.",
+    source: "DSIT and Skills England, 28 January 2026",
+    url: "https://www.gov.uk/government/news/free-ai-training-for-all-as-government-and-industry-programme-expands-to-provide-10-million-workers-with-key-ai-skills-by-2030",
+    evidence: [["10 million", "10m", "ten million"], ["2030"]],
+  },
+  {
+    // The press release says "UK workers". The survey behind it asked adults in
+    // work, in an Ipsos panel whose fieldwork ran in February and March 2024 —
+    // said here, because a 2024 figure presented as today's would mislead.
+    value: "21%",
+    text:
+      "of UK adults in work said they felt confident using AI tools at work, in an Ipsos " +
+      "survey for the government carried out in early 2024.",
+    source: "DSIT and DCMS, AI Skills for Life and Work, published 28 January 2026",
+    url: "https://www.gov.uk/government/publications/ai-skills-for-life-and-work-general-public-survey-findings",
+    evidence: [["21%", "21 per cent", "21 percent"], ["confident"]],
+  },
+];
 
 /** The ways the training is delivered, shortest first. Every one is quoted. */
 const formats = [
@@ -297,6 +399,18 @@ const faq = [
     answer: levels.map((level) => `${level.name} means ${level.means}.`).join(" "),
   },
   {
+    question: "Does the EU AI Act apply to UK agrifood companies?",
+    answer: act.scope,
+  },
+  {
+    question: "Does the EU AI Act require a certificate of AI literacy training?",
+    answer:
+      "No. Article 4 asks organisations to take measures to support their staff's AI literacy, " +
+      "and the European Commission's guidance says no certificate is needed: an internal record " +
+      "of training is enough. A certificate of completion can be part of that record, but it " +
+      "does not show that an organisation is compliant.",
+  },
+  {
     question: `Is the ${named("awareness")} course really free?`,
     answer:
       `Yes: all ${courses.awareness.lessons} video lessons, the quizzes and the certificate of ` +
@@ -306,11 +420,14 @@ const faq = [
 ];
 
 module.exports = {
+  reviewed,
   source,
   enquiry,
   courses,
   levels,
   definition,
+  act,
+  figures,
   formats,
   addOns,
   topics,

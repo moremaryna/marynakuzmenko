@@ -42,6 +42,13 @@ Topics:
 - {{ topic.title | safe }}: {{ topic.summary | safe }}
 {%- endfor %}
 
+The law (reviewed {{ training.reviewed | readableDate }}): {{ training.act.answer | safe }} {{ training.act.note | safe }} This is a summary, not legal advice.
+
+UK figures:
+{% for figure in training.figures %}
+- {{ figure.value | safe }} {{ figure.text | safe }} Source: {{ figure.source | safe }}, {{ figure.url }}
+{%- endfor %}
+
 Not accredited; no CPD or BASIS points. Participants can receive a certificate of attendance, which is not the free course's certificate of completion. Training is delivered in English. Enquiries: {{ site.url }}{{ training.enquiry }}. Canonical description of the offer: {{ training.source }}
 
 ## Awards and recognition

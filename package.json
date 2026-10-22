@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
+    "check:figures": "node scripts/check-figures.js",
     "start": "npx @11ty/eleventy --serve",
     "deploy:hosting": "npm run build && npm run firebase:deploy",
     "git:push": "node scripts/git-push.js",
