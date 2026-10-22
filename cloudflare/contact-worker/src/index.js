@@ -14,6 +14,10 @@ const MAX = { name: 200, email: 254, subject: 60, message: 10000, extra: 500 };
 
 // Fields the form may send besides name/email/subject/message.
 const EXTRA_FIELDS = [
+  ["organisation", "Organisation"],
+  ["training_format", "Training format"],
+  ["team_size", "Participants"],
+  ["training_delivery", "Delivery"],
   ["event_name", "Event / organisation"],
   ["event_date", "Event date"],
   ["event_format", "Format"],

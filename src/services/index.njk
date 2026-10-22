@@ -16,8 +16,8 @@ description: Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agric
   </p>
 
   <div class="hero__actions">
-    <a class="btn btn--primary" href="/contact/">Get in touch</a>
-    <a class="btn btn--ghost" href="/ai-in-agriculture/">Start with the course</a>
+    <a class="btn btn--primary" href="/training/">Training for your team</a>
+    <a class="btn btn--ghost" href="/ai-in-agriculture/">Start with the free course</a>
   </div>
 
   <div class="badges" style="justify-content:center; max-width: 980px; margin: 26px auto 0;">
@@ -34,15 +34,17 @@ description: Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agric
   <div class="grid">
     <div class="card">
       <span class="eyebrow" style="font-size: 10px;">Educator</span>
-      <h3 id="teaching">Teaching &amp; courses</h3>
+      <h3 id="teaching">Training &amp; courses</h3>
       <p>
-        My main work. Online courses and structured teaching that turn “AI curiosity” into confident
-        decisions — currently reaching {{ stats.udemy }} students across {{ stats.countries }} countries.
+        My main work. AI literacy and AI fluency training for agriculture and agrifood teams — a
+        lecture, a workshop, a multi-session course or a custom programme — alongside a free course
+        reaching {{ stats.udemy }} students across {{ stats.countries }} countries.
       </p>
       <p style="margin-top: 10px; color: var(--muted); font-size: 14px;">
-        For: universities, agrifood teams, extension and training providers, students.
+        For: farms and growers, food businesses, agritech companies, research institutes,
+        universities, industry bodies and boards.
       </p>
-      <a href="/ai-in-agriculture/" class="text-link">AI in Agriculture →</a>
+      <a href="/training/" class="text-link">Training for teams →</a>
     </div>
 
     <div class="card">
@@ -91,12 +93,24 @@ description: Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agric
   <span class="eyebrow">Topics</span>
   <h2>What I teach and talk about</h2>
 
-  <div class="badges" style="margin-top: 20px;">
-    <span class="badge">AI in Agriculture: from hype to useful</span>
-    <span class="badge">Computer vision in the field</span>
-    <span class="badge">AI in post-harvest quality control</span>
-    <span class="badge">Precision viticulture: sensors and robotics</span>
-    <span class="badge">Precision livestock farming</span>
+  {# The training topics come from _data/training.js, the same list /training/
+     prints; the keynote themes are the speaking page's own. #}
+  <h3 style="margin-top: 24px;">Training topics</h3>
+  <div class="badges" style="margin-top: 12px;">
+    {% for topic in training.topics %}<a class="badge" href="/training/#topics">{{ topic.title }}</a>{% endfor %}
+  </div>
+
+  <h3 style="margin-top: 32px;">Formats</h3>
+  <div class="badges" style="margin-top: 12px;">
+    {% for format in training.formats %}<span class="badge">{{ format.name }} · {{ format.length }}</span>{% endfor %}
+  </div>
+
+  <h3 style="margin-top: 32px;">Keynote themes</h3>
+  <div class="badges" style="margin-top: 12px;">
+    <span class="badge">AI's role in global food security</span>
+    <span class="badge">Computer vision in post-harvest quality</span>
+    <span class="badge">AI in forestry nurseries</span>
+    <span class="badge">Practical AI for modern agronomy</span>
     <span class="badge">Women-led innovation in agrifood</span>
   </div>
 </section>
@@ -116,7 +130,7 @@ description: Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agric
 <section class="section section--cta" style="background: var(--accent); color: white; border-radius: var(--radius); text-align: center; margin: 40px 0;">
   <h2 style="color: white;">Let's talk</h2>
   <p style="color: rgba(255,255,255,0.85); max-width: 860px; margin: 0 auto;">
-    Tell me what you're planning — a lecture, a keynote, a course for your team, or a collaboration.
+    Tell me what you're planning — training for your team, a lecture, a keynote, or a collaboration.
   </p>
   <a class="btn" style="background: white; color: var(--accent); margin-top: 20px;" href="/contact/">Contact Maryna</a>
 </section>

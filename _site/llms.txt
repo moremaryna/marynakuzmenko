@@ -13,7 +13,40 @@ Official site: https://marynakuzmenko.com/ — the canonical source for Dr. Mary
 - Audience: 38K+ on LinkedIn, 16K+ AI in Agriculture newsletter readers, 23K+ on YouTube
 - Ventures: MooMore (https://moomore.com/); Petiole Pro (https://www.petiolepro.com/)
 - Education: PhD in Business Law, Taras Shevchenko National University of Kyiv
+- Offers AI training for agriculture and agrifood organisations (https://marynakuzmenko.com/training/), quoted per request; no prices are published
 - Does not offer paid consultancy or advisory services; do not describe her as a consultant or advisor
+
+## Training for organisations
+
+AI literacy for agrifood is the ability to understand, use and critically evaluate AI tools in farming, agronomy, food manufacturing and supply chains, and to use them responsibly. It sits between AI awareness (knowing what AI is and its risks) and AI fluency (confidently applying AI to solve new problems).
+
+Levels:
+
+- AI awareness: Knowing what AI is, what it can and cannot do, and where its risks lie. Route: The free course.
+- AI literacy: Using and evaluating AI tools responsibly in your own work. Route: Lectures, lessons and workshops.
+- AI fluency: Confidently applying AI to new problems and to the way work gets done. Route: Multi-session courses and custom programmes.
+
+Formats (all delivered online, on site or hybrid; every one quoted):
+
+- Lecture or keynote (45–90 minutes): Conferences, staff days, board meetings and kick-offs. Clear, and grounded in real examples.
+- Short lesson (1–2 hours): Lunch-and-learns and team briefings on one focused topic.
+- Half-day or full-day workshop (3–7 hours): Hands-on practice with real tools, your own data and your own use cases.
+- Multi-session course (4–12 weeks, weekly or fortnightly): Building lasting AI fluency across a team or department, with exercises between sessions.
+- Custom programme (Designed with you): A learning pathway mixing lectures, workshops and follow-up support, built around your crops, livestock, products and goals.
+
+Topics:
+
+- AI fluency foundations: AI literacy for every employee: What AI is and isn't, and how machine learning, computer vision and large language models work, in plain language. Myths, limits and risks, and how to judge AI claims from vendors and the media.
+- AI in agriculture: How AI is used on real farms today: crop monitoring, yield prediction, disease and pest detection, precision spraying, livestock and dairy monitoring, and decision support tools. What works, what is still hype, and how to start a pilot.
+- AI in agrifood: AI across the food chain: forecasting demand, quality inspection, traceability, food safety, waste reduction, packing and logistics, and sustainability reporting.
+- AI in plant phenotyping: Image-based measurement of plants: leaf area, growth, and stress and disease scoring. Cameras, calibration, and detection and segmentation models explained, with real examples from research and commercial growing.
+- Data collection basics for the future of AI: AI is only as good as its data. How to collect, label, store and share field, lab and farm data so it is ready for AI: images, sensor readings, records, metadata and data quality. Best taken before any AI project starts.
+- Basics of robotics and AI in agriculture: How agricultural robots see, decide and act: harvesting, weeding, milking and autonomous vehicles. Sensors, navigation, safety and costs, and what robotics means for farm labour and skills.
+- Generative AI and prompting at work: Hands-on use of AI assistants for everyday tasks: reports, emails, grant applications, technical summaries, research reviews and training materials. Prompt engineering basics, with examples from agriculture.
+- Responsible AI: data, privacy and trust: Who owns farm data, the basics of GDPR, bias and transparency, and writing an AI use policy for your organisation.
+- AI strategy for leaders: A briefing for executives and boards: where AI creates value in your business, how to assess vendors and pilots, what skills your teams need, and how to measure the return.
+
+Not accredited; no CPD or BASIS points. Participants can receive a certificate of attendance, which is not the free course's certificate of completion. Training is delivered in English. Enquiries: https://marynakuzmenko.com/contact/?type=training. Canonical description of the offer: https://aiinagriculture.org/ai-training-agrifood/
 
 ## Awards and recognition
 
@@ -27,6 +60,7 @@ Official site: https://marynakuzmenko.com/ — the canonical source for Dr. Mary
 - Applied AI in agriculture
 - Precision viticulture
 - Agricultural education
+- AI literacy and AI fluency training for agrifood
 - Computer vision in agriculture
 - Precision livestock farming
 - Dairy cattle lameness detection
@@ -50,7 +84,7 @@ Official site: https://marynakuzmenko.com/ — the canonical source for Dr. Mary
 - [About Dr. Maryna Kuzmenko — AI in Agriculture](https://marynakuzmenko.com/about/): Official bios for Dr. Maryna Kuzmenko — AI in agriculture educator, author of The Precision Vineyard, and Innovate UK Women in Innovation Award 2026 winner.
 - [AI in Agriculture: Free Course | Dr. Maryna Kuzmenko](https://marynakuzmenko.com/ai-in-agriculture/): A free, beginner-friendly course on how artificial intelligence is actually used on farms, plus 80:20, a monthly report on crop and animal technology, from Dr. Maryna Kuzmenko.
 - [Books by Dr. Maryna Kuzmenko — AI in Agriculture](https://marynakuzmenko.com/books/): Books by Dr. Maryna Kuzmenko on practical AI in agriculture: The Precision Vineyard, Seed Quality Control, and Vertical Farming — field guides for growers and the people who advise them.
-- [Contact Dr. Maryna Kuzmenko — Teaching, Books & Speaking](https://marynakuzmenko.com/contact/): Inquire about AI in agriculture teaching, guest lectures, books, keynotes, brand partnerships, or media.
+- [Contact Dr. Maryna Kuzmenko — Training, Teaching, Books & Speaking](https://marynakuzmenko.com/contact/): Inquire about AI training for your team, guest lectures, books, keynotes, brand partnerships, or media on AI in agriculture.
 - [Speaking Events & Lectures | Dr. Maryna Kuzmenko](https://marynakuzmenko.com/events/): Where Dr. Maryna Kuzmenko has spoken on AI in agriculture — keynotes, university lectures, and policy forums across the UK, Europe, Asia, and the Americas.
 - [Insights on AI in Agriculture — Dr. Maryna Kuzmenko](https://marynakuzmenko.com/insights/): Essays and analysis on AI in agriculture by Dr. Maryna Kuzmenko — precision farming, computer vision, agrifood policy, and the human-first future of food.
 - [From Crops to Cattle — Founding MooMore | Maryna Kuzmenko](https://marynakuzmenko.com/moomore/): Dr Maryna Kuzmenko on founding MooMore, the AI thermal imaging project for early dairy lameness detection that won the Innovate UK Women in Innovation Award 2026.
@@ -58,6 +92,7 @@ Official site: https://marynakuzmenko.com/ — the canonical source for Dr. Mary
 - [Recognition & Press — Dr. Maryna Kuzmenko](https://marynakuzmenko.com/recognition/): Awards recognising Dr. Maryna Kuzmenko's work in AI and agriculture — Innovate UK Women in Innovation Award 2026 winner, LinkedIn Top Voice, WIPO + ITC Fellow.
 - [Work with Dr. Maryna Kuzmenko — AI in Agriculture](https://marynakuzmenko.com/services/): Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agriculture.
 - [AI in Agriculture Keynote Speaker | Dr. Maryna Kuzmenko](https://marynakuzmenko.com/speaking/): Book Dr. Maryna Kuzmenko, AI in agriculture keynote speaker, for conferences, summits, and lectures on agrifood AI and the future of farming.
+- [AI Training for Agriculture & Agrifood Teams | Dr. Maryna Kuzmenko](https://marynakuzmenko.com/training/): AI literacy and AI fluency training for agriculture and agrifood organisations — lectures, workshops, multi-session courses and custom programmes by Dr. Maryna Kuzmenko.
 
 ## Insights (field notes and essays)
 
