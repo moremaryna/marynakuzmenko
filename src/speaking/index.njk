@@ -5,74 +5,44 @@ metaTitle: "AI in Agriculture Keynote Speaker | Dr. Maryna Kuzmenko"
 description: "Book Dr. Maryna Kuzmenko, AI in agriculture keynote speaker, for conferences, summits, and lectures on agrifood AI and the future of farming."
 ---
 {% from "partials/photo.njk" import photo %}
+{% from "partials/event.njk" import spokenLine with context %}
+
+{# The organiser questions, written once: the page prints them and the
+   FAQPage structured data repeats them word for word. #}
+{% set faq = [
+  { q: "Can you speak online or hybrid?", a: "Yes — in person, online or hybrid." },
+  { q: "Which languages?", a: facts.languages.firstPerson },
+  { q: "Do you tailor the talk?", a: "Every session is customised. I don’t just deliver data; I deliver a perspective that resonates with the specific challenges of your region or sector." },
+  { q: "Do you also train teams?", a: "Yes — workshops and multi-week courses, with BASIS CPD points through Petiole Ltd, are on aiinagriculture.org." },
+  { q: "What does it cost?", a: "Fees depend on format, travel and preparation. Send the date and audience and I'll reply with a quote " + facts.replyTime + "." }
+] %}
 
 <section class="speaking-hero">
   <span class="eyebrow">Keynotes · Panels · Lectures</span>
-  <h1>Elevating the Conversation on <span class="italic-text">Future Farming.</span></h1>
-  <p class="lead">
-    Bringing a unique fusion of academic rigour and entrepreneurial grit to stages worldwide.
-    I help audiences look past the hype of AI to see the harvest of the future.
-  </p>
+  <h1>AI in agriculture <span class="italic-text">keynote speaker</span></h1>
+  <p class="lead">I help audiences look past the hype of AI to see the harvest of the future.</p>
   <div class="hero__actions" style="justify-content: center; margin-top: 30px;">
-    <a href="/contact/" class="btn btn--primary">Check availability</a>
+    <a href="/contact/?type=speaking" class="btn btn--primary">Check availability</a>
+    <a href="/press-kit/" class="btn btn--ghost">Press &amp; organiser kit</a>
   </div>
+  {% if facts.onesheetPdf %}
+  <p style="margin-top: 18px;"><a class="text-link" href="{{ facts.onesheetPdf }}" download>Download one-sheet (PDF)</a></p>
+  {% endif %}
 </section>
+
 <section class="section">
   <span class="eyebrow">Signature Topics</span>
   <div class="speaking-topics-grid">
-
-    <div class="topic-card">
-      <div class="topic-icon">01</div>
-      <h3>The Silicon Soil: AI’s Role in Global Food Security</h3>
-      <p>A high-level keynote for policy makers and investors on how AI is moving from laboratory experiments to essential global field infrastructure.</p>
+    {% for talk in talks %}
+    <div class="topic-card" id="{{ talk.slug }}">
+      <div class="topic-icon">{{ "0" + loop.index if loop.index < 10 else loop.index }}</div>
+      <h3>{{ talk.title }}</h3>
+      <p>{{ talk.blurb }}</p>
+      {% if talk.takeaway %}<p class="topic-meta"><strong>Takeaway:</strong> {{ talk.takeaway }}</p>{% endif %}
+      <p class="topic-meta"><strong>Best for:</strong> {{ talk.bestFor }}</p>
+      <p class="topic-formats">{{ talk.formats | join(" · ") }}</p>
     </div>
-
-    <div class="topic-card">
-      <div class="topic-icon">02</div>
-      <h3>Invisible Barriers: The Female Founder’s Journey in AgTech</h3>
-      <p>An empowering narrative on navigating the male-dominated intersection of Ag & Tech, and why diversity is a prerequisite for agricultural innovation.</p>
-    </div>
-
-    <div class="topic-card">
-      <div class="topic-icon">03</div>
-      <h3>Eyes of the Machine: Computer Vision in Post-Harvest Quality</h3>
-      <p>A deep dive into automating quality control for agrifood produce. How non-destructive AI sensing ensures shelf-life, reduces waste, and standardises global trade.</p>
-    </div>
-
-    <div class="topic-card">
-          <div class="topic-icon">04</div>
-          <h3>The First Leaf: AI & Computer Vision in Forestry Nurseries</h3>
-          <p>Transforming silviculture through automated seedling QC. How AI monitors viability and stress in the nursery to ensure higher survival rates, better timber quality, and more resilient reforestation at scale.</p>
-    </div>
-
-    <div class="topic-card">
-      <div class="topic-icon">05</div>
-      <h3>Beyond the Hype: Practical AI for Modern Agronomy</h3>
-      <p>A technical yet accessible session on plant phenotyping, variable-rate fertilisation, and the practical data ethics of the modern autonomous orchard.</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="section speaker-creds">
-  <div class="creds-container">
-    <h2>UK & Global Engagements</h2>
-    <div class="creds-grid">
-      <div class="cred-item"><a href="/moomore/"><strong>Innovate UK Women in Innovation Award</strong></a> <span>2025/26 Winner, for MooMore</span></div>
-      <div class="cred-item"><strong>Women in Innovation Community Forum</strong> <span>Pre-selected member</span></div>
-      <div class="cred-item"><strong>WIPO Geneva</strong> <span>Online Panelist</span></div>
-      <div class="cred-item"><strong>Virgin Startup Step-up</strong> <span>Female Founder</span></div>
-      <div class="cred-item"><strong>Oxford Farming Conference</strong> <span>Inspire Programme</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <span class="eyebrow">On the stage, and on the screen</span>
-  {# A remote lecture and an in-person one: both formats, as they look. #}
-  <div class="photo-grid">
-    {{ photo(photos.landscape2024, sizes="(max-width: 700px) 100vw, 520px") }}
-    {{ photo(photos.conferenceConversation, sizes="(max-width: 700px) 100vw, 520px") }}
+    {% endfor %}
   </div>
 </section>
 
@@ -86,7 +56,7 @@ description: "Book Dr. Maryna Kuzmenko, AI in agriculture keynote speaker, for c
         <li><strong>Keynote Addresses:</strong> Visionary and inspiring.</li>
         <li><strong>Technical Lectures:</strong> For universities and research institutes.</li>
         <li><strong>Panel Moderation:</strong> Driving deep, uncomfortable, and necessary discussions.</li>
-        <li><strong>Workshops:</strong> Practical "How-to" sessions for agrifood teams.</li>
+        <li><strong>Team training and workshops:</strong> half-day to multi-week programmes for agrifood teams, with CPD points, are on <a class="inline-link" href="{{ facts.links.training }}">aiinagriculture.org</a> ↗.</li>
       </ul>
     </div>
     <div class="style-visual">
@@ -103,3 +73,56 @@ description: "Book Dr. Maryna Kuzmenko, AI in agriculture keynote speaker, for c
     </div>
   </div>
 </section>
+
+<section class="section">
+  <span class="eyebrow">Where I've spoken</span>
+  <ul class="spoken-list">
+    {% for e in events %}{% if e.highlight and e.type == "spoken" %}{{ spokenLine(e) }}{% endif %}{% endfor %}
+  </ul>
+  <p style="margin-top: 24px;"><a class="text-link" href="/events/">All appearances →</a></p>
+</section>
+
+{% include "partials/testimonials.njk" %}
+
+<section class="section">
+  <span class="eyebrow">On the stage, and on the screen</span>
+  {# A remote lecture and an in-person one: both formats, as they look. #}
+  <div class="photo-grid">
+    {{ photo(photos.landscape2024, sizes="(max-width: 700px) 100vw, 520px") }}
+    {{ photo(photos.conferenceConversation, sizes="(max-width: 700px) 100vw, 520px") }}
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow">For organisers</span>
+  <h2>Questions, answered</h2>
+  <div class="faq-list">
+    {% for item in faq %}
+    <div class="card faq-item">
+      <h3>{{ item.q }}</h3>
+      <p>{{ item.a }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section section--cta" style="background: var(--accent); color: white; border-radius: var(--radius); text-align: center; margin: 40px 0;">
+  <h2 style="color: white;">Bring AI in agriculture to your stage.</h2>
+  <a class="btn" style="background: white; color: var(--accent); margin-top: 20px;" href="/contact/?type=speaking">Check availability</a>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ site.url }}{{ page.url }}#faq",
+  "about": { "@id": "{{ site.url }}/#person" },
+  "mainEntity": [{% for item in faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}{% endfor %}
+  ]
+}
+</script>

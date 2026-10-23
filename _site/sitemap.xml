@@ -77,7 +77,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://marynakuzmenko.com/events/</loc>
+    <loc>https://marynakuzmenko.com/</loc>
     <lastmod>2026-10-23</lastmod>
   </url>
   <url>
@@ -85,7 +85,11 @@
     <lastmod>2026-10-23</lastmod>
   </url>
   <url>
-    <loc>https://marynakuzmenko.com/</loc>
+    <loc>https://marynakuzmenko.com/events/</loc>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://marynakuzmenko.com/coverage/</loc>
     <lastmod>2026-10-23</lastmod>
   </url>
 </urlset>

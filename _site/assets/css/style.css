@@ -630,6 +630,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     text-align: center;
     background: linear-gradient(to bottom, rgba(30, 77, 58, 0.02), transparent);
 }
+.speaking-hero h1 { font-size: clamp(36px, 5vw, 56px); margin-bottom: 20px; }
 
 /* Topic Cards */
 .speaking-topics-grid {
@@ -1761,3 +1762,48 @@ html, body { overflow-x: clip; }
 .testimonial { min-height: 0; margin: 0; }
 .testimonial blockquote { margin: 0; font-family: var(--font-heading); font-size: 20px; line-height: 1.5; }
 .testimonial figcaption { font-size: 14px; color: var(--muted); }
+
+/* A link inside running text. */
+.inline-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(30, 77, 58, 0.35);
+    text-underline-offset: 3px;
+}
+.inline-link:hover { color: var(--gold); text-decoration-color: currentColor; }
+
+/* --- SPEAKING: where she has spoken, organiser FAQ ------------------------ */
+.spoken-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 40px;
+}
+.spoken-line {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+.spoken-line strong { color: var(--accent); font-weight: 600; }
+.spoken-line span { font-size: 15px; }
+.spoken-line .spoken-line__meta { font-size: 13px; color: var(--muted); }
+
+.faq-list { display: grid; gap: 20px; max-width: 860px; margin-top: 30px; }
+.faq-item { min-height: 0; padding: 28px 32px; }
+.faq-item h3 { font-size: 21px; }
+
+@media (max-width: 700px) {
+    .spoken-list { grid-template-columns: 1fr; }
+}
+
+/* The line under the Events and Coverage headings that points to the other. */
+.events-hero__aside {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto;
+}
