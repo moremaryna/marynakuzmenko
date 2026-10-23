@@ -23,6 +23,17 @@ module.exports = function (eleventyConfig) {
     return Math.round(parseFloat(match[1].replace(/,/g, "")) * multiplier).toLocaleString("en-GB");
   });
 
+  // An events.js date for the timeline: "2026-10-19" -> year 2026, day
+  // "19 Oct"; "2026-07" -> "July". Month names as the Events page has always
+  // written them.
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  eleventyConfig.addFilter("eventYear", (date) => String(date).slice(0, 4));
+  eleventyConfig.addFilter("eventDay", (date) => {
+    const [, month, day] = String(date).split("-");
+    if (!month) return "";
+    return (day ? `${Number(day)} ` : "") + MONTHS[Number(month) - 1];
+  });
+
   // "Speaker and trainer…" -> "speaker and trainer…", for a facts.json line
   // that runs on from "Dr. Maryna Kuzmenko is a".
   eleventyConfig.addFilter("lcfirst", (value) =>
