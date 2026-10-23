@@ -12,6 +12,8 @@
       { "source": "/advisory/**", "destination": "/speaking/", "type": 301 },
       { "source": "/work", "destination": "/services/", "type": 301 },
       { "source": "/work/**", "destination": "/services/", "type": 301 },
+      { "source": "/recognition", "destination": "/about/#recognition", "type": 301 },
+      { "source": "/recognition/**", "destination": "/about/#recognition", "type": 301 },
       { "source": "/more-maryna", "destination": "https://moremaryna.com", "type": 301 },
       { "source": "/more-maryna/**", "destination": "https://moremaryna.com", "type": 301 }
     ],
