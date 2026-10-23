@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+schemaType: CollectionPage
+title: Events I've covered
+metaTitle: "Agritech Events I've Covered | Dr. Maryna Kuzmenko"
+metaDescription: "Field notes from the agrifood shows, summits and field days Dr. Maryna Kuzmenko attends and reports on for her LinkedIn community, from Fruit Logistica to World Agri-Tech."
+---
+{# The shows Maryna attends and reports on: every "covered" entry in
+   src/_data/events.js, with her own label for her part kept as written. #}
+{% from "partials/event.njk" import eventItem with context %}
+
+<section class="events-hero">
+  <span class="eyebrow">On the ground</span>
+  <h1>Events I've <span class="italic-text">covered</span></h1>
+  <p class="lead">
+    I spend a good part of the year at agrifood shows, summits and field days, and report back for my LinkedIn
+    community and newsletter readers. This is the log, with links to the notes.
+  </p>
+  <p class="events-hero__aside">
+    Looking for keynotes and lectures? See <a class="inline-link" href="/events/">speaking appearances</a>.
+  </p>
+</section>
+
+<div class="events-timeline">
+  {% for e in events %}{% if e.type == "covered" %}
+  {{ eventItem(e) }}
+  {% endif %}{% endfor %}
+</div>
+
+<section class="section section--cta">
+  <h2>Launching something the sector should know about?</h2>
+  <div class="hero__actions" style="justify-content: center; flex-wrap: wrap;">
+    <a class="btn btn--primary" href="/partner/">Partner with me</a>
+    <a class="btn btn--ghost" href="{{ facts.newsletter.url }}">Read the newsletter ↗</a>
+  </div>
+</section>
