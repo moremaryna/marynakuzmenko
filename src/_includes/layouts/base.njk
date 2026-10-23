@@ -69,46 +69,19 @@
   </script>
 
   {# ── Structured data (schema.org) ──────────────────────────────
-     One @graph with three linked nodes:
-       • Person  — your entity, stable @id, reused site-wide
-       • WebSite — the site, published by the Person
-       • WebPage — this specific page, about the Person
-     All values are driven from _data/site.json so there is a single
-     source of truth and nothing can drift out of sync again. #}
+     The Person lives in partials/person-jsonld.njk, drawn on the home page
+     and About, from facts.json. The WebSite node is on the home page only.
+     Every page then describes itself — a WebPage (ProfilePage on About,
+     with the Person as its main entity) and its breadcrumb — and points at
+     the Person and the WebSite by @id. #}
+  {%- if page.url == "/" or page.url == "/about/" %}
+  {% include "partials/person-jsonld.njk" %}
+  {%- endif %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Person",
-        "@id": "{{ site.url }}/#person",
-        "name": {{ site.personName | dump | safe }},
-        "alternateName": {{ site.alternateName | dump | safe }},
-        "honorificPrefix": {{ site.honorificPrefix | dump | safe }},
-        "url": "{{ site.url }}/",
-        "jobTitle": {{ facts.positioning.jobTitle | dump | safe }},
-        "description": {{ bios.fiftyWords | dump | safe }},
-        "image": {{ site.image | dump | safe }},
-        "worksFor": {{ site.worksFor | dump | safe }},
-        "alumniOf": { "@type": "CollegeOrUniversity", "name": {{ site.alumniOf | dump | safe }} },
-        "award": {{ awardStrings | dump | safe }},
-        "hasOccupation": { "@type": "Occupation", "name": {{ facts.positioning.jobTitle | dump | safe }} },
-        "email": {{ site.author.email | dump | safe }},
-        "knowsLanguage": {{ facts.languages.codes | dump | safe }},
-        "workLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressCountry": "GB" } },
-        "author": [{% for book in books %}
-          {
-            "@type": "Book",
-            "@id": "{{ site.url }}/books/#{{ book.id }}",
-            "name": {{ book.fullTitle | dump | safe }},
-            "url": {{ book.amazon.kindle | dump | safe }}{% if book.series %},
-            "position": {{ book.series.number }},
-            "isPartOf": { "@type": "BookSeries", "name": {{ book.series.name | dump | safe }} }{% endif %}
-          }{% if not loop.last %},{% endif %}{% endfor %}
-        ],
-        "knowsAbout": {{ site.knowsAbout | dump | safe }},
-        "sameAs": {{ site.sameAs | dump | safe }}
-      },
+      {%- if page.url == "/" %}
       {
         "@type": "WebSite",
         "@id": "{{ site.url }}/#website",
@@ -117,6 +90,7 @@
         "inLanguage": "en",
         "publisher": { "@id": "{{ site.url }}/#person" }
       },
+      {%- endif %}
       {
         "@type": {{ pageSchemaType | dump | safe }},
         "@id": "{{ canonical }}#webpage",

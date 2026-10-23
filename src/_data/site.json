@@ -8,39 +8,7 @@
   "contactEndpoint": "https://formspree.io/f/xvzbnwdb",
   "contactEndpointNote": "Where /contact/ posts. Switch to https://contact.marynakuzmenko.com/ once the Worker in cloudflare/contact-worker is deployed (see its README).",
   "personName": "Maryna Kuzmenko",
-  "alternateName": "Dr Maryna Kuzmenko",
-  "honorificPrefix": "Dr",
   "image": "https://marynakuzmenko.com/assets/img/speaking/maryna-kuzmenko-speaking.jpg",
-  "worksFor": [
-    {
-      "@type": "Organization",
-      "@id": "https://moomore.com/#organization",
-      "name": "MooMore",
-      "url": "https://moomore.com/"
-    },
-    {
-      "@type": "Organization",
-      "name": "Petiole Pro",
-      "alternateName": "Petiole Ltd",
-      "url": "https://www.petiolepro.com/"
-    }
-  ],
-  "alumniOf": "Taras Shevchenko National University of Kyiv",
-  "knowsAbout": [
-    "Applied AI in agriculture",
-    "Precision viticulture",
-    "Agricultural education",
-    "Computer vision in agriculture",
-    "Precision livestock farming",
-    "Dairy cattle lameness detection",
-    "Thermal imaging",
-    "Plant phenotyping",
-    "Agricultural technology",
-    "Generative AI in agrifood",
-    "Agricultural robotics and automation",
-    "Agritech adoption and regulation",
-    "Fresh produce quality control"
-  ],
   "author": {
     "name": "Maryna Kuzmenko",
     "email": "support@petioleapp.com"

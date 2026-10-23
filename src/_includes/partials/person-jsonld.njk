@@ -1,0 +1,37 @@
+{#- The Person, from facts.json, bios.js and site.json. Drawn on the home page
+    and on About only, and the same there byte for byte; every other page
+    points at it by its @id. The @id must match the `founder` @id in the
+    moomore.com Organization. `award` repeats About's recognition list. -#}
+<script type="application/ld+json" id="person">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ site.url }}/#person",
+  "name": {{ facts.person.name | dump | safe }},
+  "alternateName": {{ facts.person.alternateName | dump | safe }},
+  "honorificPrefix": {{ facts.person.honorificPrefix | dump | safe }},
+  "url": "{{ site.url }}/",
+  "image": {{ facts.person.image | dump | safe }},
+  "jobTitle": {{ facts.positioning.jobTitle | dump | safe }},
+  "description": {{ bios.fiftyWords | dump | safe }},
+  "worksFor": {{ facts.person.worksFor | dump | safe }},
+  "award": {{ awardStrings | dump | safe }},
+  "knowsAbout": {{ facts.person.knowsAbout | dump | safe }},
+  "knowsLanguage": {{ facts.languages.codes | dump | safe }},
+  "alumniOf": [{% for school in facts.person.alumniOf %}{ "@type": "CollegeOrUniversity", "name": {{ school | dump | safe }} }{% if not loop.last %}, {% endif %}{% endfor %}],
+  "hasOccupation": { "@type": "Occupation", "name": {{ facts.positioning.jobTitle | dump | safe }} },
+  "email": {{ site.author.email | dump | safe }},
+  "workLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressCountry": "GB" } },
+  "author": [{% for book in books %}
+    {
+      "@type": "Book",
+      "@id": "{{ site.url }}/books/#{{ book.id }}",
+      "name": {{ book.fullTitle | dump | safe }},
+      "url": {{ book.amazon.kindle | dump | safe }}{% if book.series %},
+      "position": {{ book.series.number }},
+      "isPartOf": { "@type": "BookSeries", "name": {{ book.series.name | dump | safe }} }{% endif %}
+    }{% if not loop.last %},{% endif %}{% endfor %}
+  ],
+  "sameAs": {{ site.sameAs | dump | safe }}
+}
+</script>
