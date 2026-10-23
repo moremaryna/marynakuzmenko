@@ -2,137 +2,113 @@
 layout: layouts/base.njk
 schemaType: ProfilePage
 title: "About"
-metaTitle: "About Dr. Maryna Kuzmenko — AI in Agriculture"
+metaTitle: "About Dr. Maryna Kuzmenko — AI in Agriculture Speaker, Trainer and Founder"
 description: "The story, work and recognition of Dr. Maryna Kuzmenko: founder of MooMore, co-founder of Petiole, LinkedIn Top Voice and Innovate UK Women in Innovation Award 2025/26 winner."
 permalink: "/about/"
 ogType: "profile"
 ---
 {% from "partials/photo.njk" import photo %}
+{% set wiw = facts.award.wiw %}
+
 <section class="bio-page">
   <div class="bio-hero">
-    <p class="eyebrow">Official biography resource</p>
-    <h2>Bio of Dr. Maryna Kuzmenko</h2>
-
-    <p class="lead">
-      I created this page to make life easier for dear event organisers, journalists,
-      podcast hosts, collaborators, and conference teams — a practical resource for anyone
-      who needs a clear, accurate, publication-ready bio of
-      <strong>Dr. Maryna Kuzmenko</strong>.
-    </p>
+    <p class="eyebrow">About</p>
+    <h1>About Dr. Maryna Kuzmenko</h1>
+    <p class="lead">{{ bios.firstPerson }}</p>
   </div>
 
   <section class="bio-section">
-    <h2>Headshot</h2>
+    <h2>What I do now</h2>
 
-    <div class="bio-card bio-headshot">
-      <a href="/assets/img/Headshot-Maryna-Kuzmenko-Petiole-hi-res.jpg" download>
-        <img src="/assets/img/maryna-kuzmenko-headshot.webp" width="800" height="818" alt="Headshot of Dr. Maryna Kuzmenko">
-      </a>
+    <div class="bio-card featured">
+      <p>
+        <strong>Speaking.</strong> I give keynotes, panels and guest lectures on AI in agriculture for agrifood
+        conferences, industry meetings and universities, in person or online:
+        <a class="inline-link" href="/speaking/">topics and formats</a>.
+      </p>
 
-      <div>
-        <p>
-          Official high-resolution headshot of Dr. Maryna Kuzmenko for event programmes,
-          speaker pages, media features, and podcast listings.
-        </p>
-        <a class="headshot-download" href="/assets/img/Headshot-Maryna-Kuzmenko-Petiole-hi-res.jpg" download>Download hi-res headshot</a>
-        <p class="headshot-meta">JPG · 3382 × 3456 px · 2.8 MB</p>
-      </div>
+      {{ photo(photos.bridgeAiTalk, sizes="(max-width: 420px) 100vw, 380px", class="page-figure--portrait") }}
+
+      <p>
+        <strong>Training.</strong> I train agrifood teams in practical AI literacy, from a short workshop to a
+        multi-week course, through <a class="inline-link" href="{{ facts.links.training }}">aiinagriculture.org</a> ↗.
+      </p>
+
+      <p>
+        <strong>Writing and coverage.</strong> I write the {{ facts.newsletter.name }}, host a
+        <a class="inline-link" href="{{ facts.live.url }}">{{ facts.live.name | lcfirst }}</a> ↗, publish explainers on
+        <a class="inline-link" href="{{ site.social.youtube }}">YouTube</a> ↗ and write the AI in Agriculture
+        <a class="inline-link" href="/books/">book series</a>. I also report from the sector's main shows:
+        <a class="inline-link" href="/insights/">Insights</a> · <a class="inline-link" href="/coverage/">events I've covered</a>.
+      </p>
     </div>
   </section>
 
   <section class="bio-section">
-    <h2>Professional bio</h2>
+    <h2>What I build</h2>
 
     <div class="bio-card featured">
       <p>
-        Dr. Maryna Kuzmenko brings nearly 10 years of practical experience in applying digital technologies in agriculture, with a primary focus on computer vision and deep learning for plant phenotyping and food quality assurance.
+        I bring nearly 10 years of practical experience in applying digital technologies in agriculture, with a primary
+        focus on computer vision and deep learning for plant phenotyping and food quality assurance.
       </p>
 
       <p>
-        She is co-founder and CEO of Petiole, a UK-based SME developing practical AI tools for agriculture and plant science. The global platform Petiole Pro, developed by Maryna’s team, was named a finalist in the GIST Tech-I 2015 competition in the USA, shortlisted for the UK FPC Fresh Awards 2023, and received three grants from Innovate UK — the UK government’s innovation agency — and one Horizon Europe grant, for practical AI applications in agricultural challenges such as pest and disease detection.
+        I am co-founder and CEO of Petiole, a UK-based SME developing practical AI tools for agriculture and plant
+        science. The global platform Petiole Pro, developed by my team, was named a finalist in the GIST Tech-I 2015
+        competition in the USA, shortlisted for the UK FPC Fresh Awards 2023, and received {{ facts.petiole.grants }},
+        for practical AI applications in agricultural challenges such as pest and disease detection. Petiole Pro is
+        {{ facts.petiole.reach }}.
       </p>
 
       {{ photo(photos.leafMeasurement, sizes="(max-width: 420px) 100vw, 380px", class="page-figure--portrait") }}
 
       <p>
-        Maryna was recognised as a LinkedIn Top Voice in May 2026 and has an active educational presence in social and business media.
+        I also founded <a class="inline-link" href="{{ facts.links.moomore }}">MooMore</a> ↗, an AI and thermal imaging
+        system that detects inflammation in dairy cows before lameness develops. It won the {{ wiw.name }}, announced on
+        {{ wiw.announced }}, with a {{ wiw.grant }} grant and a {{ wiw.programme }}. {{ facts.moomore.status }}.
       </p>
+    </div>
+  </section>
 
+  <section class="bio-section">
+    <h2>The problem I keep coming back to</h2>
+
+    <div class="bio-card">
       <p>
-        Dr Maryna Kuzmenko is a winner of the Innovate UK Women in Innovation Award 2025/26, announced on 5 August 2026, for <a href="https://moomore.com/" target="_blank" rel="noopener">MooMore</a> — an AI and thermal imaging system that detects inflammation in dairy cows before lameness develops. The award carries a £75,000 grant and a twelve-month programme running to June 2027. She was one of 61 grant winners among 100 women founders recognised from 1,590 applications.</p>
-      <p>
-        She is one of 16 Community Forum Members of the 2025/26 Cohort, pre-selected by the Innovate UK Women in Innovation team. Maryna is also an Oxford Farming Conference 2026 Inspire Fellow.
+        A measurement that matters is locked behind specialist equipment, so the people who need it never take it.
       </p>
+      <p>
+        With Petiole Pro that measurement was leaf area, and the answer was a smartphone camera. With MooMore it is
+        inflammation, and the answer is a thermal sensor. The crop and the cow are different; the shape of the problem
+        is identical. <a class="inline-link" href="/moomore/">Why I added dairy cattle to my crop AI work</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="bio-section" id="recognition">
+    <h2>Recognition</h2>
+
+    {# The canonical list. The Person structured data repeats these sentences
+       word for word, from the same facts.json entries. #}
+    <div class="bio-card">
+      <ul class="recognition-list">
+        {% for item in facts.recognition %}
+        <li>
+          <strong>{{ item.title }}</strong> — {{ item.text }}
+          {% for link in item.links %}{% set external = link.url.startsWith("http") %}<a class="inline-link" href="{{ link.url }}"{% if external %} target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>{{ " ↗" if external else " →" }}{% if not loop.last %} · {% endif %}{% endfor %}
+        </li>
+        {% endfor %}
+        <li>
+          <strong>Petiole Pro</strong>
+          <ul>
+            {% for item in facts.petiole.recognition %}<li>{{ item }}</li>{% endfor %}
+            <li>{{ facts.petiole.grantsLine }}</li>
+          </ul>
+        </li>
+      </ul>
 
       {{ photo(photos.womenInInnovationForum, sizes="(max-width: 780px) 100vw, 760px") }}
-
-      <p>
-        Maryna is a fellow of the “Scaling Young Women’s Businesses Through IP Mentorship” programme by the World Intellectual Property Organization (WIPO) and the International Trade Centre’s SheTrades initiative. She is Virgin StartUp Alumna 2020.
-      </p>
-
-      <p>
-        She is a regular speaker at educational <a href="/events/">events</a> and has participated in high-level agriculture-focused meetings in the United Kingdom and internationally.
-      </p>
-
-      {{ photo(photos.bridgeAiTalk, sizes="(max-width: 420px) 100vw, 380px", class="page-figure--portrait") }}
-    </div>
-  </section>
-
-  <section class="bio-section">
-    <h2>Short bio — 300 characters</h2>
-
-    <div class="bio-card featured">
-      <p>
-        {{ bios.short }}
-      </p>
-    </div>
-  </section>
-
-  <section class="bio-section">
-    <h2>Other commonly requested bios</h2>
-
-    <div class="bio-grid">
-      <article class="bio-card">
-        <h3>One-line bio</h3>
-        <p>
-          {{ bios.oneLine }}
-        </p>
-      </article>
-
-      <article class="bio-card">
-        <h3>50-word bio</h3>
-        <p>
-          {{ bios.fiftyWords }}
-        </p>
-      </article>
-
-      <article class="bio-card">
-        <h3>100-word bio</h3>
-        <p>
-          {{ bios.hundredWords }}
-        </p>
-      </article>
-
-      <article class="bio-card">
-        <h3>Speaker introduction</h3>
-        <p>
-          {{ bios.speakerIntroduction }}
-        </p>
-      </article>
-
-      <article class="bio-card">
-        <h3>Media bio</h3>
-        <p>
-          {{ bios.media }}
-        </p>
-      </article>
-
-      <article class="bio-card">
-        <h3>First-person bio</h3>
-        <p>
-          {{ bios.firstPerson }}
-        </p>
-      </article>
     </div>
   </section>
 
@@ -157,228 +133,37 @@ ogType: "profile"
       <ul class="bio-list">
         <li><strong>Name:</strong> Dr. Maryna Kuzmenko</li>
         <li><strong>Role:</strong> {{ facts.positioning.line }}</li>
+        <li><strong>Ventures:</strong> {{ facts.roles | join("; ") }}</li>
         <li><strong>Books:</strong> {% for book in books %}<em>{{ book.fullTitle }}</em>{% if book.series %} ({{ book.series.name }}, book {{ book.series.number }}){% endif %}{% if not loop.last %}; {% endif %}{% endfor %} — <a href="/books/">see all books</a></li>
-        <li><strong>Teaching reach:</strong> {{ facts.reach.students }} students across {{ facts.reach.countries }} countries</li>
-        <li><strong>Audience:</strong> {{ facts.reach.linkedin }} on LinkedIn · {{ facts.reach.newsletter }} AI in Agriculture newsletter readers · {{ facts.reach.youtube }} on YouTube</li>
-        <li><strong>Current venture:</strong> MooMore — AI thermal imaging for early dairy lameness detection, <a href="https://moomore.com/" target="_blank" rel="noopener">moomore.com</a></li>
+        <li><strong>Audience:</strong> LinkedIn, the {{ facts.newsletter.name }}, the {{ facts.live.short }} and YouTube; current figures are on the <a href="/partner/">Partnerships page</a></li>
+        <li><strong>Current venture:</strong> MooMore — AI thermal imaging for early dairy lameness detection, <a href="{{ facts.links.moomore }}" target="_blank" rel="noopener">moomore.com</a></li>
         <li><strong>Location:</strong> United Kingdom</li>
+        <li><strong>Languages:</strong> {{ facts.languages.list | join(", ") }}</li>
         <li><strong>Main field:</strong> AI in agriculture, food quality assurance, entrepreneurship, female leadership</li>
-        <li><strong>Award:</strong> Innovate UK Women in Innovation Award 2025/26 — Winner</li>
-        <li><strong>Award announced:</strong> 5 August 2026</li>
-        <li><strong>Awarded for:</strong> MooMore, AI and thermal imaging for early lameness detection in dairy cattle</li>
-        <li><strong>Grant value:</strong> £75,000</li>
-        <li><strong>Programme duration:</strong> Twelve months, running to June 2027</li>
-        <li><strong>Selection:</strong> One of 61 grant winners among 100 women recognised from 1,590 applications</li>
-        <li><strong>Award profile:</strong> <a href="https://iuk-business-connect.org.uk/projects/women-in-innovation/maryna-kuzmenko/" target="_blank" rel="noopener">Innovate UK project page</a></li>
+        <li><strong>Award:</strong> {{ wiw.name }} — {{ wiw.status }}</li>
+        <li><strong>Award announced:</strong> {{ wiw.announced }}</li>
+        <li><strong>Awarded for:</strong> {{ wiw.forLong }}</li>
+        <li><strong>Grant value:</strong> {{ wiw.grant }}</li>
+        <li><strong>Programme duration:</strong> {{ wiw.programme | capitalize }}</li>
+        <li><strong>Selection:</strong> {{ wiw.selection | capitalize }}</li>
+        <li><strong>Award profile:</strong> <a href="{{ wiw.url }}" target="_blank" rel="noopener">Innovate UK project page</a></li>
         <li><strong>Recognition:</strong> {{ facts.award.topVoice.name }}, {{ facts.award.topVoice.when }}</li>
-        <li><strong>Media presence:</strong> Active educational presence in social and business media</li>
-        <li><strong>Innovate UK:</strong> Women in Innovation Community Forum Member 2025/26; Petiole received three Innovate UK grants and one Horizon Europe grant (separate from Maryna's {{ facts.award.wiw.name }} for MooMore)</li>
-        <li><strong>Oxford Farming Conference:</strong> Inspire Fellow 2026</li>
-        <li><strong>WIPO / ITC SheTrades:</strong> Fellow of the IP mentorship programme for young women’s businesses</li>
-        <li><strong>Virgin StartUp:</strong> Step UP Alumna 2020
-        <li><strong>Petiole Pro recognition:</strong> GIST Tech-I 2015 finalist, Top 20 Hottest Startup Ideas 2015 by CNBC, UK FPC Fresh Awards 2023 shortlist</li>
+        <li><strong>Innovate UK:</strong> Women in Innovation Community Forum Member {{ facts.award.wiwForum.cohort }}; {{ facts.petiole.grantsLine }}</li>
+        <li><strong>Oxford Farming Conference:</strong> {{ facts.award.ofc.name }}</li>
+        <li><strong>WIPO / ITC SheTrades:</strong> Fellow of the IP mentorship programme for young women’s businesses, {{ facts.award.wipo.year }}</li>
+        <li><strong>Virgin StartUp:</strong> Step Up Alumna {{ facts.award.virgin.year }}</li>
+        <li><strong>Petiole Pro recognition:</strong> {{ facts.petiole.recognition | join(", ") }}</li>
       </ul>
     </div>
   </section>
 
   <section class="bio-section">
-    <h2>Suggested JSON format</h2>
-
-    <p>
-      This structure can be copied, adapted, and used by respected event organisers, collaborators,
-      media teams, website developers, or AI assistants when preparing a bio.
+    <p class="pointer-box">
+      Need a bio or a headshot for your programme? → <a class="inline-link" href="/press-kit/">Press &amp; organiser kit</a>
     </p>
-
-    <div class="copy-box">
-      <div class="copy-box-header">
-        <span>JSON bio profile</span>
-        <button class="copy-btn" type="button" data-copy-target="bioJson">Copy JSON</button>
-      </div>
-
-      <textarea id="bioJson" class="copy-textarea" rows="36" readonly>{
-  "name": "Dr. Maryna Kuzmenko",
-  "role": {{ facts.positioning.line | dump | safe }},
-  "books": [{% for book in books %}
-    {
-      "title": {{ book.fullTitle | dump | safe }},
-      "summary": {{ book.summary | dump | safe }},{% if book.series %}
-      "series": "{{ book.series.name }}, book {{ book.series.number }}",{% endif %}
-      "url": {{ book.amazon.kindle | dump | safe }}
-    }{% if not loop.last %},{% endif %}{% endfor %}
-  ],
-  "teachingReach": "{{ facts.reach.students }} students across {{ facts.reach.countries }} countries",
-  "audience": {
-    "linkedin": "{{ facts.reach.linkedin }}",
-    "newsletter": "{{ facts.reach.newsletter }}",
-    "youtube": "{{ facts.reach.youtube }}",
-    "courseStudents": "{{ facts.reach.students }}",
-    "countries": "{{ facts.reach.countries }}"
-  },
-  "company": "Petiole",
-  "currentVenture": {
-    "name": "MooMore",
-    "url": "https://moomore.com/",
-    "description": "AI and thermal imaging for early detection of inflammation in dairy cows, before lameness becomes visible",
-    "status": "In validation on a 650-cow crossbred herd in Staffordshire"
-  },
-  "location": "United Kingdom",
-  "shortBio": {{ bios.short | dump | safe }},
-  "professionalBio": "Dr. Maryna Kuzmenko brings nearly 10 years of practical experience in applying digital technologies in agriculture, with a primary focus on computer vision and deep learning for plant phenotyping and food quality assurance.",
-  "award": {
-    "name": "Innovate UK Women in Innovation Award 2025/26",
-    "status": "Winner",
-    "announced": "5 August 2026",
-    "awardedFor": "MooMore — AI and thermal imaging for early lameness detection in dairy cattle",
-    "grantValue": "£75,000",
-    "programmeDuration": "Twelve months, running to June 2027",
-    "selection": "One of 61 grant winners among 100 women recognised from 1,590 applications",
-    "url": "https://iuk-business-connect.org.uk/projects/women-in-innovation/maryna-kuzmenko/"
-  },
-  "recognition": [
-    "Innovate UK Women in Innovation Award 2025/26 Winner, announced 5 August 2026, for MooMore",
-    "LinkedIn Top Voice, May 2026",
-    "Innovate UK Women in Innovation Community Forum Member, 2025/26 Cohort",
-    "Oxford Farming Conference 2026 Inspire Fellow",
-    "WIPO and ITC SheTrades IP mentorship fellow"
-  ],
-  "experience": "Nearly 10 years of practical experience applying digital technologies in agriculture",
-  "specialisms": [
-    "AI in agriculture",
-    "Computer vision",
-    "Deep learning",
-    "Plant phenotyping",
-    "Food quality assurance",
-    "Plant health assessment",
-    "Pest and disease detection",
-    "Agritech entrepreneurship",
-    "Female leadership"
-  ],
-  "mediaPresence": "Active educational presence in social and business media",
-  "companyRecognition": [
-    "Petiole Pro was a finalist in the GIST Tech-I 2015 competition, USA",
-    "Petiole Pro was named one of CNBC's Top 20 Hottest Startup Ideas in 2015",
-    "Petiole Pro was shortlisted for the UK FPC Fresh Awards 2023",
-    "Petiole received three Innovate UK grants and one Horizon Europe grant for practical AI applications in agriculture"
-  ],
-  "education": [
-    {
-      "qualification": "UPOV Examination of Applications for Plant Breeders’ Rights",
-      "year": 2024
-    },
-    {
-      "qualification": "UPOV Certification: Introduction to the UPOV System of Plant Variety Protection under the UPOV Convention",
-      "year": 2024
-    },
-    {
-      "qualification": "IEMA Foundation Certificate in Environmental Management",
-      "year": 2023
-    },
-    {
-      "qualification": "PhD in Business Law",
-      "institution": "Taras Shevchenko National University of Kyiv, Ukraine",
-      "year": 2015
-    },
-    {
-      "qualification": "LL.M in International Commercial Law",
-      "institution": "London Metropolitan University, United Kingdom",
-      "year": 2012,
-      "note": "Fully funded scholarship"
-    }
-  ],
-  "headshot": "{{ site.url }}/assets/img/Headshot-Maryna-Kuzmenko-Petiole-hi-res.jpg",
-  "website": "https://marynakuzmenko.com",
-  "linkedin": "https://www.linkedin.com/in/kuzmenkomaryna/"
-}</textarea>
-    </div>
   </section>
 
-  <section class="bio-section">
-    <h2>Prompt to create a suitable bio</h2>
-
-    <p>
-      Copy, paste, and adapt this prompt when you need a specific version of my bio
-      for a conference, podcast, grant profile, media feature, article, or speaker page.
-    </p>
-
-    <div class="copy-box">
-      <div class="copy-box-header">
-        <span>Reusable bio prompt</span>
-        <button class="copy-btn" type="button" data-copy-target="bioPrompt">Copy Prompt</button>
-      </div>
-
-      <textarea id="bioPrompt" class="copy-textarea" rows="32" readonly>Write a professional bio for Dr. Maryna Kuzmenko.
-
-Context:
-- Speaker and trainer on AI in agriculture first; teaches AI in agriculture to more than {{ facts.reach.students | fullCount }} students across {{ facts.reach.countries }} countries
-{% for book in books %}- Author of "{{ book.fullTitle }}"{% if book.series %} — book {{ book.series.number }} of the {{ book.series.name }} series{% endif %} ({{ book.amazon.kindle }}){% if not loop.last %}
-{% endif %}{% endfor %}
-- Speaker at agrifood conferences, universities, and policy forums
-- Expert voice and influencer on AI in agriculture; LinkedIn Top Voice
-- Does not offer paid consultancy or advisory services — do not describe her as a consultant or advisor
-- Founder of MooMore (https://moomore.com/), which uses thermal imaging and on-device AI to detect inflammation in dairy cows before lameness becomes visible; in validation on a 650-cow crossbred herd in Staffordshire
-- Winner of the Innovate UK Women in Innovation Award 2025/26, announced 5 August 2026, for MooMore — £75,000 grant and a twelve-month programme running to June 2027; one of 61 grant winners among 100 women recognised from 1,590 applications
-- Teaches AI in agriculture to more than {{ facts.reach.students | fullCount }} students across {{ facts.reach.countries }} countries
-- Co-founder and CEO of Petiole, a UK-based SME
-- Nearly 10 years of practical experience applying digital technologies in agriculture
-- Main focus: computer vision and deep learning for plant phenotyping and food quality assurance
-- Recognised as a LinkedIn Top Voice, May 2026
-- Active educational presence in social and business media
-- Petiole Pro was a finalist in the GIST Tech-I 2015 competition in the USA
-- Petiole Pro was shortlisted for the UK FPC Fresh Awards 2023
-- Petiole received three Innovate UK grants and one Horizon Europe grant for practical AI applications in agricultural challenges such as pest and disease detection (counted separately from Maryna's {{ facts.award.wiw.name }} for MooMore)
-- Innovate UK award profile: https://iuk-business-connect.org.uk/projects/women-in-innovation/maryna-kuzmenko/
-- Maryna is one of 16 Community Forum Members of the 2025/26 Cohort, pre-selected by the Innovate UK Women in Innovation team
-- Maryna is an Oxford Farming Conference 2026 Inspire Fellow
-- Maryna is a fellow of the WIPO and ITC SheTrades IP mentorship programme
-- Background includes government relations in Ukraine, AXA Insurance, entrepreneurship, and work with smallholder farmers internationally
-- Education includes PhD in Business Law, LL.M in International Commercial Law, IEMA Foundation Certificate, and UPOV plant variety protection training
-
-Tone:
-Clear, warm, professional, credible, not exaggerated.
-
-Audience:
-[conference / journalist / podcast host / grant panel / website visitor / academic event / policy meeting]
-
-Length:
-[300 characters / 50 words / 100 words / 150 words / 200 words]
-
-Point of view:
-[first person / third person]
-
-Please make it accurate, concise, and suitable for publication.</textarea>
-    </div>
+  <section class="bio-section" style="text-align: center;">
+    <a class="btn btn--primary" href="/contact/?type=speaking">Book Maryna</a>
   </section>
 </section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const copyButtons = document.querySelectorAll("[data-copy-target]");
-
-    copyButtons.forEach(function (button) {
-      button.addEventListener("click", async function () {
-        const targetId = button.getAttribute("data-copy-target");
-        const target = document.getElementById(targetId);
-
-        if (!target) return;
-
-        const text = target.value || target.innerText;
-        const originalText = button.textContent;
-
-        try {
-          await navigator.clipboard.writeText(text);
-          button.textContent = "Copied!";
-          button.classList.add("copied");
-
-          setTimeout(function () {
-            button.textContent = originalText;
-            button.classList.remove("copied");
-          }, 1800);
-        } catch (error) {
-          target.focus();
-          target.select();
-          button.textContent = "Select + copy";
-        }
-      });
-    });
-  });
-</script>

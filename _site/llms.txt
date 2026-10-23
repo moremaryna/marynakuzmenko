@@ -53,7 +53,7 @@ Official site: https://marynakuzmenko.com/ — the canonical source for Dr. Mary
 ## Pages
 
 - [Dr. Maryna Kuzmenko — AI in Agriculture Speaker & Trainer](https://marynakuzmenko.com/): Keynotes, team training and expert commentary on AI in agriculture from Dr. Maryna Kuzmenko, LinkedIn Top Voice and founder of MooMore and Petiole.
-- [About Dr. Maryna Kuzmenko — AI in Agriculture](https://marynakuzmenko.com/about/): The story, work and recognition of Dr. Maryna Kuzmenko: founder of MooMore, co-founder of Petiole, LinkedIn Top Voice and Innovate UK Women in Innovation Award 2025/26 winner.
+- [About Dr. Maryna Kuzmenko — AI in Agriculture Speaker, Trainer and Founder](https://marynakuzmenko.com/about/): The story, work and recognition of Dr. Maryna Kuzmenko: founder of MooMore, co-founder of Petiole, LinkedIn Top Voice and Innovate UK Women in Innovation Award 2025/26 winner.
 - [AI in Agriculture: Free Course | Dr. Maryna Kuzmenko](https://marynakuzmenko.com/ai-in-agriculture/): A free, beginner-friendly course on how artificial intelligence is actually used on farms, plus 80:20, a monthly report on crop and animal technology, from Dr. Maryna Kuzmenko.
 - [Books by Dr. Maryna Kuzmenko — AI in Agriculture](https://marynakuzmenko.com/books/): Books by Dr. Maryna Kuzmenko on practical AI in agriculture: The Precision Vineyard, Seed Quality Control, and Vertical Farming — field guides for growers and the people who advise them.
 - [Contact Dr. Maryna Kuzmenko — Teaching, Books & Speaking](https://marynakuzmenko.com/contact/): Inquire about AI in agriculture teaching, guest lectures, books, keynotes, brand partnerships, or media.
@@ -62,7 +62,7 @@ Official site: https://marynakuzmenko.com/ — the canonical source for Dr. Mary
 - [Insights on AI in Agriculture — Dr. Maryna Kuzmenko](https://marynakuzmenko.com/insights/): Essays and analysis on AI in agriculture by Dr. Maryna Kuzmenko — precision farming, computer vision, agrifood policy, and the human-first future of food.
 - [From Crops to Cattle — Founding MooMore | Maryna Kuzmenko](https://marynakuzmenko.com/moomore/): Dr Maryna Kuzmenko on founding MooMore, the AI thermal imaging project for early dairy lameness detection that won the Innovate UK Women in Innovation Award 2025/26.
 - [Partner with Dr. Maryna Kuzmenko — AI in Agriculture](https://marynakuzmenko.com/partner/): Partner with Dr. Maryna Kuzmenko, LinkedIn Top Voice on AI in agriculture — sponsored content, webinars, and collaborations for agritech brands.
-- [Recognition & Press — Dr. Maryna Kuzmenko](https://marynakuzmenko.com/recognition/): Awards recognising Dr. Maryna Kuzmenko's work in AI and agriculture — Innovate UK Women in Innovation Award 2025/26 winner, LinkedIn Top Voice, WIPO + ITC Fellow.
+- [Press & Organiser Kit — Dr. Maryna Kuzmenko](https://marynakuzmenko.com/press-kit/): Official bios in every length, a hi-res headshot and event photos of Dr. Maryna Kuzmenko for programmes, articles and podcasts.
 - [Work with Dr. Maryna Kuzmenko — AI in Agriculture](https://marynakuzmenko.com/services/): Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agriculture.
 - [AI in Agriculture Keynote Speaker | Dr. Maryna Kuzmenko](https://marynakuzmenko.com/speaking/): Book Dr. Maryna Kuzmenko, AI in agriculture keynote speaker, for conferences, summits, and lectures on agrifood AI and the future of farming.
 
@@ -84,4 +84,5 @@ Feed: https://marynakuzmenko.com/feed.xml
 - YouTube: https://www.youtube.com/@drmarynakuzmenko
 - X: https://x.com/mary_kuzmenko
 - ORCID: https://orcid.org/0009-0002-3923-5168
-- Official headshot and publication-ready bios: https://marynakuzmenko.com/about/
+- Official headshot, photos and publication-ready bios: https://marynakuzmenko.com/press-kit/
+- Recognition (canonical list): https://marynakuzmenko.com/about/#recognition

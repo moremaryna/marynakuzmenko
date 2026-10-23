@@ -1807,3 +1807,63 @@ html, body { overflow-x: clip; }
     max-width: 640px;
     margin: 0 auto;
 }
+
+/* --- ABOUT and PRESS KIT ------------------------------------------------- */
+.recognition-list { list-style: none; padding: 0; margin: 0; }
+.recognition-list > li { margin-bottom: 18px; line-height: 1.7; }
+.recognition-list ul { margin: 8px 0 0; padding-left: 1.2rem; }
+.recognition-list ul li { margin-bottom: 6px; }
+
+.pointer-box {
+    margin: 0;
+    padding: 24px 28px;
+    border-left: 3px solid var(--gold);
+    background: rgba(30, 77, 58, 0.04);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 17px;
+}
+
+/* A bio with its copy button on the same line as the heading. */
+.bio-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+.bio-card__head h3 { margin: 0; }
+.bio-card__head .copy-btn { width: auto; flex-shrink: 0; }
+
+/* Downloadable photographs, three to a row. */
+.kit-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+.kit-photo { margin: 0; }
+.kit-photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+.kit-photo figcaption { margin-top: 10px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.kit-photo__download {
+    display: inline-block;
+    margin-left: 6px;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.kit-photo__meta { display: block; font-size: 12px; }
+
+@media (max-width: 860px) {
+    .kit-photos { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+    .kit-photos { grid-template-columns: 1fr; }
+}

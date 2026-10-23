@@ -1,0 +1,339 @@
+---
+layout: layouts/base.njk
+title: Press & organiser kit
+metaTitle: "Press & Organiser Kit — Dr. Maryna Kuzmenko"
+metaDescription: "Official bios in every length, a hi-res headshot and event photos of Dr. Maryna Kuzmenko for programmes, articles and podcasts."
+---
+{#
+  Everything an organiser or editor needs, in one place: headshot, photos,
+  bios in every length, a JSON profile and a prompt for writing a new bio.
+  The bios come from src/_data/bios.js, the figures from facts.json.
+
+  Photo downloads link the largest file in the repository, the master each
+  photos.js entry is rendered from; nothing is upscaled.
+#}
+{% set kitPhotos = [
+  { key: "conferenceTalk", file: "maryna-kuzmenko-speaking.jpeg", size: "JPG · 1200 × 800 px · 142 KB" },
+  { key: "bridgeAiTalk", file: "maryna-kuzmenko-speaking-at-bridgeai.jpeg", size: "JPG · 1200 × 1600 px · 248 KB" },
+  { key: "landscape2024", file: "maryna-online-conference-2024.jpg", size: "JPG · 4032 × 2268 px · 1.3 MB" },
+  { key: "leafMeasurement", file: "maryna-kuzmenko-leaf-area-measurement.png", size: "PNG · 1152 × 2048 px · 5.1 MB" },
+  { key: "raspberryPi", file: "raspberri-pi.jpg", size: "JPG · 2268 × 4032 px · 2.2 MB" },
+  { key: "petioleDemoStand", file: "maryna-kuzmenko-stand.jpg", size: "JPG · 4032 × 2268 px · 831 KB" },
+  { key: "bridgeAiStand", file: "Image.jpeg", size: "JPG · 4032 × 3024 px · 6.1 MB" }
+] %}
+{% set bioList = [
+  { id: "oneLine", label: "One-line bio" },
+  { id: "short", label: "Short bio — 300 characters" },
+  { id: "fiftyWords", label: "50-word bio" },
+  { id: "hundredWords", label: "100-word bio" },
+  { id: "speakerIntroduction", label: "Speaker introduction (to read aloud)" },
+  { id: "media", label: "Media bio" },
+  { id: "firstPerson", label: "First-person bio" }
+] %}
+
+<section class="bio-page">
+  <div class="bio-hero">
+    <p class="eyebrow">Official biography resource</p>
+    <h1>Press &amp; organiser kit</h1>
+
+    <p class="lead">
+      I created this page to make life easier for dear event organisers, journalists,
+      podcast hosts, collaborators, and conference teams — a practical resource for anyone
+      who needs a clear, accurate, publication-ready bio of
+      <strong>Dr. Maryna Kuzmenko</strong>.
+    </p>
+  </div>
+
+  <section class="bio-section">
+    <h2>Headshot</h2>
+
+    <div class="bio-card bio-headshot">
+      <a href="/assets/img/Headshot-Maryna-Kuzmenko-Petiole-hi-res.jpg" download>
+        <img src="/assets/img/maryna-kuzmenko-headshot.webp" width="800" height="818" alt="Headshot of Dr. Maryna Kuzmenko">
+      </a>
+
+      <div>
+        <p>
+          Official high-resolution headshot of Dr. Maryna Kuzmenko for event programmes,
+          speaker pages, media features, and podcast listings.
+        </p>
+        <a class="headshot-download" href="/assets/img/Headshot-Maryna-Kuzmenko-Petiole-hi-res.jpg" download>Download hi-res headshot</a>
+        <p class="headshot-meta">JPG · 3382 × 3456 px · 2.8 MB</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bio-section">
+    <h2>Photos</h2>
+    <p>On stage, in the field and at the demo stand. Each links to the largest file there is.</p>
+
+    <div class="kit-photos">
+      {% for item in kitPhotos %}{% set pic = photos[item.key] %}
+      <figure class="kit-photo">
+        <img src="{{ pic.src }}" srcset="{{ pic.srcset }}" sizes="(max-width: 700px) 100vw, 340px"
+             width="{{ pic.width }}" height="{{ pic.height }}" alt="{{ pic.alt }}" loading="lazy" decoding="async">
+        <figcaption>
+          {{ pic.caption }}
+          <a class="kit-photo__download" href="/assets/img/{{ item.file }}" download>Download</a>
+          <span class="kit-photo__meta">{{ item.size }}</span>
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="bio-section">
+    <h2>Bios</h2>
+
+    <div class="bio-grid">
+      {% for item in bioList %}
+      <article class="bio-card">
+        <div class="bio-card__head">
+          <h3>{{ item.label }}</h3>
+          <button class="copy-btn" type="button" data-copy-target="bio-{{ item.id }}">Copy</button>
+        </div>
+        <p id="bio-{{ item.id }}">{{ bios[item.id] }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  {% if facts.onesheetPdf %}
+  <section class="bio-section">
+    <h2>Speaker one-sheet</h2>
+    <a class="headshot-download" href="{{ facts.onesheetPdf }}" download>Download the one-sheet (PDF)</a>
+  </section>
+  {% endif %}
+
+  <section class="bio-section">
+    <h2>Talk titles</h2>
+    <p>Signature talks, with who each is for and the formats it comes in, are on the <a class="inline-link" href="/speaking/">speaking page</a>.</p>
+  </section>
+
+  <section class="bio-section">
+    <h2>Suggested JSON format</h2>
+
+    <p>
+      This structure can be copied, adapted, and used by respected event organisers, collaborators,
+      media teams, website developers, or AI assistants when preparing a bio.
+    </p>
+
+    <div class="copy-box">
+      <div class="copy-box-header">
+        <span>JSON bio profile</span>
+        <button class="copy-btn" type="button" data-copy-target="bioJson">Copy JSON</button>
+      </div>
+
+      <textarea id="bioJson" class="copy-textarea" rows="36" readonly>{
+  "name": "Dr. Maryna Kuzmenko",
+  "role": {{ facts.positioning.line | dump | safe }},
+  "books": [{% for book in books %}
+    {
+      "title": {{ book.fullTitle | dump | safe }},
+      "summary": {{ book.summary | dump | safe }},{% if book.series %}
+      "series": "{{ book.series.name }}, book {{ book.series.number }}",{% endif %}
+      "url": {{ book.amazon.kindle | dump | safe }}
+    }{% if not loop.last %},{% endif %}{% endfor %}
+  ],
+  "teachingReach": "{{ facts.reach.students }} students across {{ facts.reach.countries }} countries",
+  "audience": {
+    "linkedin": "{{ facts.reach.linkedin }}",
+    "newsletter": "{{ facts.reach.newsletter }}",
+    "youtube": "{{ facts.reach.youtube }}",
+    "courseStudents": "{{ facts.reach.students }}",
+    "countries": "{{ facts.reach.countries }}"
+  },
+  "company": "Petiole",
+  "currentVenture": {
+    "name": "MooMore",
+    "url": "https://moomore.com/",
+    "description": "AI and thermal imaging for early detection of inflammation in dairy cows, before lameness becomes visible",
+    "status": {{ facts.moomore.status | dump | safe }}
+  },
+  "location": "United Kingdom",
+  "shortBio": {{ bios.short | dump | safe }},
+  "professionalBio": "Dr. Maryna Kuzmenko brings nearly 10 years of practical experience in applying digital technologies in agriculture, with a primary focus on computer vision and deep learning for plant phenotyping and food quality assurance.",
+  "award": {
+    "name": {{ facts.award.wiw.name | dump | safe }},
+    "status": {{ facts.award.wiw.status | dump | safe }},
+    "announced": {{ facts.award.wiw.announced | dump | safe }},
+    "awardedFor": {{ facts.award.wiw.forLong | dump | safe }},
+    "grantValue": {{ facts.award.wiw.grant | dump | safe }},
+    "programmeDuration": {{ facts.award.wiw.programme | capitalize | dump | safe }},
+    "selection": {{ facts.award.wiw.selection | capitalize | dump | safe }},
+    "url": {{ facts.award.wiw.url | dump | safe }}
+  },
+  "recognition": [
+    "{{ facts.award.wiw.name }} Winner, announced {{ facts.award.wiw.announced }}, for MooMore",
+    "LinkedIn Top Voice, May 2026",
+    "Innovate UK Women in Innovation Community Forum Member, 2025/26 Cohort",
+    "Oxford Farming Conference 2026 Inspire Fellow",
+    "WIPO and ITC SheTrades IP mentorship fellow"
+  ],
+  "experience": "Nearly 10 years of practical experience applying digital technologies in agriculture",
+  "specialisms": [
+    "AI in agriculture",
+    "Computer vision",
+    "Deep learning",
+    "Plant phenotyping",
+    "Food quality assurance",
+    "Plant health assessment",
+    "Pest and disease detection",
+    "Agritech entrepreneurship",
+    "Female leadership"
+  ],
+  "mediaPresence": "Active educational presence in social and business media",
+  "companyRecognition": [
+    "Petiole Pro was a finalist in the GIST Tech-I 2015 competition, USA",
+    "Petiole Pro was named one of CNBC's Top 20 Hottest Startup Ideas in 2015",
+    "Petiole Pro was shortlisted for the UK FPC Fresh Awards 2023",
+    "Petiole received {{ facts.petiole.grants }} for practical AI applications in agriculture"
+  ],
+  "education": [
+    {
+      "qualification": "UPOV Examination of Applications for Plant Breeders’ Rights",
+      "year": 2024
+    },
+    {
+      "qualification": "UPOV Certification: Introduction to the UPOV System of Plant Variety Protection under the UPOV Convention",
+      "year": 2024
+    },
+    {
+      "qualification": "IEMA Foundation Certificate in Environmental Management",
+      "year": 2023
+    },
+    {
+      "qualification": "PhD in Business Law",
+      "institution": "Taras Shevchenko National University of Kyiv, Ukraine",
+      "year": 2015
+    },
+    {
+      "qualification": "LL.M in International Commercial Law",
+      "institution": "London Metropolitan University, United Kingdom",
+      "year": 2012,
+      "note": "Fully funded scholarship"
+    }
+  ],
+  "headshot": "{{ site.url }}/assets/img/Headshot-Maryna-Kuzmenko-Petiole-hi-res.jpg",
+  "website": "https://marynakuzmenko.com",
+  "speaking": "https://marynakuzmenko.com/speaking/",
+  "training": "{{ facts.links.training }}",
+  "linkedin": "https://www.linkedin.com/in/kuzmenkomaryna/"
+}</textarea>
+    </div>
+  </section>
+
+  <section class="bio-section">
+    <h2>Prompt to create a suitable bio</h2>
+
+    <p>
+      Copy, paste, and adapt this prompt when you need a specific version of my bio
+      for a conference, podcast, grant profile, media feature, article, or speaker page.
+    </p>
+
+    <div class="copy-box">
+      <div class="copy-box-header">
+        <span>Reusable bio prompt</span>
+        <button class="copy-btn" type="button" data-copy-target="bioPrompt">Copy Prompt</button>
+      </div>
+
+      <textarea id="bioPrompt" class="copy-textarea" rows="32" readonly>Write a professional bio for Dr. Maryna Kuzmenko.
+
+Context:
+- Speaker and trainer on AI in agriculture first; teaches AI in agriculture to more than {{ facts.reach.students | fullCount }} students across {{ facts.reach.countries }} countries
+{% for book in books %}- Author of "{{ book.fullTitle }}"{% if book.series %} — book {{ book.series.number }} of the {{ book.series.name }} series{% endif %} ({{ book.amazon.kindle }}){% if not loop.last %}
+{% endif %}{% endfor %}
+- Speaker at agrifood conferences, universities, and policy forums
+- Trains agrifood teams (AI literacy and fluency) via aiinagriculture.org
+- Expert voice and influencer on AI in agriculture; LinkedIn Top Voice
+- Does not offer paid consultancy or advisory services — do not describe her as a consultant or advisor
+- Founder of MooMore (https://moomore.com/), which uses thermal imaging and on-device AI to detect inflammation in dairy cows before lameness becomes visible; {{ facts.moomore.status | lcfirst }}
+- Winner of the {{ facts.award.wiw.name }}, announced {{ facts.award.wiw.announced }}, for MooMore — {{ facts.award.wiw.grant }} grant and a {{ facts.award.wiw.programme }}; {{ facts.award.wiw.selection }}
+- Teaches AI in agriculture to more than {{ facts.reach.students | fullCount }} students across {{ facts.reach.countries }} countries
+- Co-founder and CEO of Petiole, a UK-based SME
+- Nearly 10 years of practical experience applying digital technologies in agriculture
+- Main focus: computer vision and deep learning for plant phenotyping and food quality assurance
+- Recognised as a LinkedIn Top Voice, May 2026
+- Active educational presence in social and business media
+- Petiole Pro was a finalist in the GIST Tech-I 2015 competition in the USA
+- Petiole Pro was shortlisted for the UK FPC Fresh Awards 2023
+- Petiole received {{ facts.petiole.grants }} for practical AI applications in agricultural challenges such as pest and disease detection (counted separately from Maryna's {{ facts.award.wiw.name }} for MooMore)
+- Innovate UK award profile: https://iuk-business-connect.org.uk/projects/women-in-innovation/maryna-kuzmenko/
+- Maryna is one of 16 Community Forum Members of the 2025/26 Cohort, pre-selected by the Innovate UK Women in Innovation team
+- Maryna is an Oxford Farming Conference 2026 Inspire Fellow
+- Maryna is a fellow of the WIPO and ITC SheTrades IP mentorship programme
+- Background includes government relations in Ukraine, AXA Insurance, entrepreneurship, and work with smallholder farmers internationally
+- Education includes PhD in Business Law, LL.M in International Commercial Law, IEMA Foundation Certificate, and UPOV plant variety protection training
+
+Tone:
+Clear, warm, professional, credible, not exaggerated.
+
+Audience:
+[conference / journalist / podcast host / grant panel / website visitor / academic event / policy meeting]
+
+Length:
+[300 characters / 50 words / 100 words / 150 words / 200 words]
+
+Point of view:
+[first person / third person]
+
+Please make it accurate, concise, and suitable for publication.</textarea>
+    </div>
+  </section>
+
+  {% if facts.press.length %}
+  <section class="bio-section">
+    <h2>Featured in and writing elsewhere</h2>
+    <div class="archive-grid">
+      {% for item in facts.press %}
+      <div class="archive-item">
+        <a href="{{ item.url }}" target="_blank" rel="noopener"><strong>{{ item.title }}</strong></a>
+        <span>{{ item.outlet }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="bio-section">
+    <h2>Press contact</h2>
+    <div class="bio-card">
+      <p>Media enquiries → <a class="inline-link" href="/contact/?type=media">contact form</a>.</p>
+      <p>For urgent press inquiries or quick professional intros, LinkedIn is often the fastest route.
+        <a class="inline-link" href="{{ site.social.linkedin }}" target="_blank" rel="noopener">Message on LinkedIn</a> ↗</p>
+    </div>
+  </section>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const copyButtons = document.querySelectorAll("[data-copy-target]");
+
+    copyButtons.forEach(function (button) {
+      button.addEventListener("click", async function () {
+        const targetId = button.getAttribute("data-copy-target");
+        const target = document.getElementById(targetId);
+
+        if (!target) return;
+
+        const text = target.value || target.innerText;
+        const originalText = button.textContent;
+
+        try {
+          await navigator.clipboard.writeText(text);
+          button.textContent = "Copied!";
+          button.classList.add("copied");
+
+          setTimeout(function () {
+            button.textContent = originalText;
+            button.classList.remove("copied");
+          }, 1800);
+        } catch (error) {
+          target.focus();
+          target.select();
+          button.textContent = "Select + copy";
+        }
+      });
+    });
+  });
+</script>
