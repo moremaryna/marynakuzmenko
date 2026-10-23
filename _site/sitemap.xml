@@ -2,11 +2,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://marynakuzmenko.com/insights/</loc>
-    <lastmod>2026-10-11</lastmod>
-  </url>
-  <url>
-    <loc>https://marynakuzmenko.com/contact/</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/moomore/</loc>
@@ -90,6 +86,10 @@
   </url>
   <url>
     <loc>https://marynakuzmenko.com/about/</loc>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://marynakuzmenko.com/contact/</loc>
     <lastmod>2026-10-23</lastmod>
   </url>
 </urlset>

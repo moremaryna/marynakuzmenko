@@ -2,29 +2,24 @@
 layout: layouts/base.njk
 title: Work With Me
 metaTitle: "Work with Dr. Maryna Kuzmenko — AI in Agriculture"
-description: Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agriculture.
+description: "Book Dr. Maryna Kuzmenko to speak, train your team, or partner on AI in agriculture."
 ---
 
 <section class="hero">
   <span class="eyebrow">Work with me</span>
-  <h1>Teaching, writing and speaking on <span class="italic-text">AI in agriculture.</span></h1>
+  <h1>Speaking, training and writing on <span class="italic-text">AI in agriculture.</span></h1>
 
   <p style="font-size: 20px; max-width: 900px; margin: 0 auto 30px;">
     Innovation with a human heartbeat — grounded in real agrifood systems.
-    My work is educating: courses, books, lectures and talks that make AI in agriculture
+    Keynotes, team training, books and brand partnerships that make AI in agriculture
     practical, honest, and useful to the people actually growing things.
   </p>
 
   <div class="hero__actions">
-    <a class="btn btn--primary" href="/contact/">Get in touch</a>
-    <a class="btn btn--ghost" href="/ai-in-agriculture/">Start with the course</a>
+    <a class="btn btn--primary" href="/contact/?type=speaking">Book Maryna</a>
+    <a class="btn btn--ghost" href="{{ facts.links.training }}">Train your team ↗</a>
   </div>
 
-  <div class="badges" style="justify-content:center; max-width: 980px; margin: 26px auto 0;">
-    <span class="badge">Udemy: {{ facts.reach.students }} students · {{ facts.reach.countries }} countries</span>
-    <span class="badge">LinkedIn: {{ facts.reach.linkedin }} followers · {{ facts.reach.newsletter }} newsletter readers</span>
-    <span class="badge">YouTube: {{ facts.reach.youtube }} subscribers</span>
-  </div>
 </section>
 
 <section class="section" style="padding-top: 40px;">
@@ -33,16 +28,29 @@ description: Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agric
 
   <div class="grid">
     <div class="card">
-      <span class="eyebrow" style="font-size: 10px;">Educator</span>
-      <h3 id="teaching">Teaching &amp; courses</h3>
+      <span class="eyebrow" style="font-size: 10px;">Speaker</span>
+      <h3 id="speaking">Keynotes, lectures &amp; moderation</h3>
       <p>
-        My main work. Online courses and structured teaching that turn “AI curiosity” into confident
-        decisions — currently reaching {{ facts.reach.students }} students across {{ facts.reach.countries }} countries.
+        Talks that connect the soil to the silicon — practical, human-first, and audience-aware.
+        For agrifood conferences, universities, and innovation programmes.
       </p>
       <p style="margin-top: 10px; color: var(--muted); font-size: 14px;">
-        For: universities, agrifood teams, extension and training providers, students.
+        For: conferences, universities, summits, guest lectures.
       </p>
-      <a href="/ai-in-agriculture/" class="text-link">AI in Agriculture →</a>
+      <a href="/speaking/" class="text-link">Speaking topics →</a>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow" style="font-size: 10px;">Trainer</span>
+      <h3 id="teaching">Team training</h3>
+      <p>
+        Workshops and courses for agrifood teams that turn “AI curiosity” into confident decisions,
+        from 45 minutes to 12 weeks, with BASIS CPD points.
+      </p>
+      <p style="margin-top: 10px; color: var(--muted); font-size: 14px;">
+        For: agrifood teams, extension and training providers, universities.
+      </p>
+      <a href="{{ facts.links.training }}" class="text-link">aiinagriculture.org ↗</a>
     </div>
 
     <div class="card">
@@ -60,19 +68,6 @@ description: Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agric
     </div>
 
     <div class="card">
-      <span class="eyebrow" style="font-size: 10px;">Speaker</span>
-      <h3 id="speaking">Keynotes, lectures &amp; moderation</h3>
-      <p>
-        Talks that connect the soil to the silicon — practical, human-first, and audience-aware.
-        For agrifood conferences, universities, and innovation programmes.
-      </p>
-      <p style="margin-top: 10px; color: var(--muted); font-size: 14px;">
-        For: conferences, universities, summits, guest lectures.
-      </p>
-      <a href="/speaking/" class="text-link">Speaking topics →</a>
-    </div>
-
-    <div class="card">
       <span class="eyebrow" style="font-size: 10px;">Influencer &amp; expert</span>
       <h3 id="partnerships">Brand partnerships</h3>
       <p>
@@ -84,6 +79,9 @@ description: Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agric
       </p>
       <a href="/partner/" class="text-link">Partner with me →</a>
     </div>
+
+
+
   </div>
 </section>
 
@@ -104,7 +102,7 @@ description: Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agric
 <section class="section" style="border-top: 1px solid var(--border);">
   <span class="eyebrow" style="text-align: center;">Recognition</span>
   <div class="badges" style="justify-content: center; max-width: 900px; margin: 20px auto;">
-    <a href="/moomore/" class="badge">{{ facts.award.wiw.name }} Winner — for MooMore</a>
+    <a href="/about/#recognition" class="badge">{{ facts.award.wiw.name }} Winner — for MooMore</a>
     <span class="badge">Oxford Farming Conference Inspire Fellow 2026</span>
     <span class="badge">Women in Innovation Community Forum 2025/26</span>
     <span class="badge">WIPO + ITC Programme Fellow 2024</span>
@@ -118,5 +116,5 @@ description: Invite Dr. Maryna Kuzmenko to teach, speak, or write on AI in agric
   <p style="color: rgba(255,255,255,0.85); max-width: 860px; margin: 0 auto;">
     Tell me what you're planning — a lecture, a keynote, a course for your team, or a collaboration.
   </p>
-  <a class="btn" style="background: white; color: var(--accent); margin-top: 20px;" href="/contact/">Contact Maryna</a>
+  <a class="btn" style="background: white; color: var(--accent); margin-top: 20px;" href="/contact/?type=speaking">Contact Maryna</a>
 </section>
