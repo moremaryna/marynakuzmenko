@@ -1,0 +1,59 @@
+{#
+  One entry of the events timeline, from src/_data/events.js. Used by
+  /events/ (what Maryna spoke at) and /coverage/ (what she attended and
+  reported on). Absolute links and PDFs open in a new tab.
+
+  Import it `with context`, so the macros can reach the photos data.
+#}
+
+{% macro linkIcon(video) %}
+{%- if video -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+{%- else -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+{%- endif -%}
+{% endmacro %}
+
+{% macro eventItem(e) %}
+{% from "partials/photo.njk" import photo %}
+<article class="event-item">
+  <div class="event-date">
+    <span class="year">{{ e.date | eventYear }}</span>
+    <span class="day">{{ e.date | eventDay }}</span>
+  </div>
+  <div class="event-details">
+    {% if e.upcoming %}<span class="event-badge">Upcoming</span>{% endif %}
+    <span class="event-tag">{{ e.role }}</span>
+    <h2>{{ e.title }}</h2>
+    <p>{{ e.summary | safe }}</p>
+    <div class="event-meta">
+      {% if e.dateLine %}<span>📅 {{ e.dateLine }}</span>{% elif e.location %}<span>📍 {{ e.location }}</span>{% endif %}
+      <span>{{ e.mode }}</span>
+    </div>
+    {% if e.photo %}
+    {% set portrait = e.photoClass == "page-figure--portrait" %}
+    {{ photo(photos[e.photo], sizes=("(max-width: 420px) 100vw, 340px" if portrait else "(max-width: 560px) 100vw, 520px"), caption=false, credit=e.credit, class=e.photoClass) }}
+    {% endif %}
+    {% if e.links.length %}
+    <div class="event-links">
+      {% for link in e.links %}
+      {% set newTab = link.url.startsWith("http") or link.url.endsWith(".pdf") %}
+      <a href="{{ link.url }}" class="event-learn-more{% if link.video %} event-learn-more--video{% endif %}"{% if newTab %} target="_blank" rel="noopener"{% endif %}>
+        <span>{{ link.label }}</span>
+        {{ linkIcon(link.video) }}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}
+
+{# A compact line for lists of past appearances: organiser, event, role, year. #}
+{% macro spokenLine(e) %}
+<li class="spoken-line">
+  <strong>{{ e.organiser or e.title }}</strong>
+  {% if e.organiser %}<span>{{ e.title }}</span>{% endif %}
+  <span class="spoken-line__meta">{% if e.role %}{{ e.role }} · {% endif %}{{ e.date | eventYear }}</span>
+</li>
+{% endmacro %}

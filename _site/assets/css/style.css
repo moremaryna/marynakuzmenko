@@ -1642,6 +1642,7 @@ a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 .card--post { min-height: 0; padding: 0; overflow: hidden; gap: 0; }
 .card--post img {
   width: 100%;
+  height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
   display: block;
@@ -1664,3 +1665,99 @@ html, body { overflow-x: clip; }
 @media (max-width: 480px) {
     .footer__grid { grid-template-columns: 1fr; }
 }
+
+/* --- HOME: hero with a photo, proof line, names, follow links ------------- */
+.hero--split {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 56px;
+    align-items: center;
+    text-align: left;
+}
+.hero--split h1 { font-size: clamp(36px, 4.6vw, 56px); margin-inline: 0; }
+.hero--split .lead { font-size: 19px; margin: 0 0 32px; max-width: 620px; }
+.hero--split .hero__actions { justify-content: flex-start; flex-wrap: wrap; }
+.hero__photo { margin: 0; }
+.hero__photo img { aspect-ratio: 4 / 3; object-fit: cover; }
+
+@media (max-width: 900px) {
+    .hero--split { grid-template-columns: 1fr; gap: 36px; padding: 48px 0; }
+}
+
+/* Three short lines of recognition under the hero. */
+.proof-line {
+    list-style: none;
+    margin: 0;
+    padding: 22px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 36px;
+    font-size: 15px;
+    color: var(--muted);
+}
+.proof-line strong { color: var(--accent); font-weight: 600; }
+.proof-line a:hover strong { color: var(--gold); }
+
+.section--tight { padding: 48px 0; }
+
+/* Organisers' names in a row, set apart by gold dots. */
+.spoken-strip {
+    font-family: var(--font-heading);
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.6;
+    color: var(--accent);
+    margin: 0 0 18px;
+}
+.spoken-strip span + span::before {
+    content: "·";
+    color: var(--gold);
+    margin: 0 12px;
+}
+
+/* A topic card's audience line. */
+.topic-meta { font-size: 14px; color: var(--muted); margin-top: 12px; }
+.topic-meta strong { color: var(--accent); }
+.topic-card .topic-formats { font-size: 13px; color: var(--gold); font-weight: 600; letter-spacing: 0.02em; }
+
+/* Cards that lead with a photo, beyond the Insights index. */
+.card--post .text-link { margin-top: 6px; }
+.card--post img.card__img--contain {
+    object-fit: contain;
+    background: #f2f5f3;
+    padding: 18px 0;
+}
+
+/* Newsletter, livestream, YouTube: three links side by side. */
+.follow-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.follow-links a {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 100%;
+    padding: 24px 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+.follow-links a:hover { border-color: var(--gold); }
+.follow-links strong { font-family: var(--font-heading); font-weight: 400; font-size: 20px; color: var(--accent); }
+.follow-links span { font-size: 14px; color: var(--muted); }
+
+@media (max-width: 900px) {
+    .follow-links { grid-template-columns: 1fr; }
+}
+
+/* A testimonial card, when there are any to show. */
+.testimonial { min-height: 0; margin: 0; }
+.testimonial blockquote { margin: 0; font-family: var(--font-heading); font-size: 20px; line-height: 1.5; }
+.testimonial figcaption { font-size: 14px; color: var(--muted); }

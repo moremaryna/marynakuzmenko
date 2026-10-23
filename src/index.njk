@@ -5,114 +5,144 @@ metaTitle: "Dr. Maryna Kuzmenko — AI in Agriculture Speaker & Trainer"
 description: "Keynotes, team training and expert commentary on AI in agriculture from Dr. Maryna Kuzmenko, LinkedIn Top Voice and founder of MooMore and Petiole."
 ---
 {% from "partials/photo.njk" import photo %}
+{% set wiw = facts.award.wiw %}
 
-<section class="hero">
-  <span class="eyebrow">Human-First Innovation</span>
-  <h1>Where Agriculture Meets <span class="italic-text">AI.</span></h1>
-  <p style="font-size: 20px; max-width: 800px; margin: 0 auto 30px;">
-    I help agrifood leaders, educators, and innovators navigate the AI revolution.
-    From policy rooms to global classrooms, we aren't just changing how we farm and produce food — we’re changing how we think.
-  </p>
-
-  <div class="hero__actions">
-    <a class="btn btn--primary" href="/speaking/">Invite me to Speak</a>
-    <a class="btn btn--ghost" href="/events/">Check my Events</a>
+<section class="hero hero--split">
+  <div class="hero__text">
+    <span class="eyebrow">Where Agriculture Meets AI.</span>
+    <h1>AI in agriculture keynotes and team training, <span class="italic-text">from someone who builds it.</span></h1>
+    <p class="lead">
+      I'm Dr. Maryna Kuzmenko. I build AI for farms with MooMore and Petiole, write for a {{ facts.reach.linkedin }}
+      LinkedIn community as a LinkedIn Top Voice, and help agrifood organisations see what AI can and can't do in the field.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="/contact/?type=speaking">Book Maryna to speak</a>
+      <a class="btn btn--ghost" href="{{ facts.links.training }}">Train your team ↗</a>
+    </div>
   </div>
+  {{ photo(photos.conferenceTalk, sizes="(max-width: 900px) 100vw, 520px", eager=true, caption=false, class="hero__photo") }}
+</section>
 
-  <div class="stats" style="margin-top: 50px;">
-    {% if site.social.linkedin %}<a href="{{ facts.reachLinks.students }}" aria-label="Udemy">
-    <div class="stat">
-      <strong>{{ facts.reach.students }}</strong>
-      <span>Global Students</span>
-    </div></a>{% endif %}
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7433798234336104448/" target="_blank">
-    <div class="stat">
-      <strong>{{ facts.reach.countries }}</strong>
-      <span>Countries Reached</span>
-    </div></a>
+<ul class="proof-line">
+  <li><a href="/moomore/"><strong>{{ wiw.name }}</strong>, winner</a></li>
+  <li><strong>{{ facts.award.topVoice.name }}</strong>, {{ facts.award.topVoice.when }}</li>
+  <li><strong>{{ facts.award.ofc.name }}</strong></li>
+</ul>
 
-    {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}" aria-label="LinkedIn">
-    <div class="stat">
-      <strong>{{ facts.reach.linkedin }}</strong>
-      <span>LinkedIn Community</span>
-    </div></a>{% endif %}
+<section class="section section--tight">
+  <span class="eyebrow">Where I've spoken</span>
+  <p class="spoken-strip">
+    {%- for e in events %}{% if e.highlight and e.type == "spoken" %}<span>{{ e.organiser or e.title }}</span>{% endif %}{% endfor -%}
+  </p>
+  <a class="text-link" href="/events/">All appearances →</a>
+</section>
 
-    {% if site.social.youtube %}<a href="{{ site.social.youtube }}" aria-label="YouTube">
-    <div class="stat">
-      <strong>{{ facts.reach.youtube }}</strong>
-      <span>YouTube Visionaries</span>
-    </div></a>{% endif %}
+<section class="section section--tight">
+  <span class="eyebrow">The reach</span>
+  {% include "partials/reach.njk" %}
+</section>
+
+<section class="section">
+  <span class="eyebrow">Three ways to work with me</span>
+  <div class="grid">
+    <a class="card card--post" href="/speaking/">
+      {% set pic = photos.landscape2024 %}
+      <img src="{{ pic.src }}" srcset="{{ pic.srcset }}" sizes="(max-width: 900px) 100vw, 360px" width="{{ pic.width }}" height="{{ pic.height }}" alt="{{ pic.alt }}" loading="lazy" decoding="async">
+      <div class="card__body">
+        <h3>Keynotes &amp; panels</h3>
+        <p>For conferences, AGMs and industry events, in person or online.</p>
+        <span class="text-link">Speaking →</span>
+      </div>
+    </a>
+    <a class="card card--post" href="{{ facts.links.training }}">
+      {% set pic = photos.aiCamp %}
+      <img src="{{ pic.src }}" srcset="{{ pic.srcset }}" sizes="(max-width: 900px) 100vw, 360px" width="{{ pic.width }}" height="{{ pic.height }}" alt="{{ pic.alt }}" loading="lazy" decoding="async">
+      <div class="card__body">
+        <h3>Team training</h3>
+        <p>Workshops and courses for agrifood teams, from 45 minutes to 12 weeks, with BASIS CPD points.</p>
+        <span class="text-link">aiinagriculture.org ↗</span>
+      </div>
+    </a>
+    <a class="card card--post" href="/partner/">
+      {% set pic = photos.bridgeAiStand %}
+      <img src="{{ pic.src }}" srcset="{{ pic.srcset }}" sizes="(max-width: 900px) 100vw, 360px" width="{{ pic.width }}" height="{{ pic.height }}" alt="{{ pic.alt }}" loading="lazy" decoding="async">
+      <div class="card__body">
+        <h3>Brand partnerships</h3>
+        <p>Disclosed content and live sessions for agritech brands, for an audience that evaluates technology for a living.</p>
+        <span class="text-link">Partnerships →</span>
+      </div>
+    </a>
   </div>
 </section>
 
 <section class="section">
-  <span class="eyebrow">What I do</span>
-  <h2>Expertise & Impact</h2>
-
-  <div class="grid">
-    <div class="card">
-      <span class="eyebrow" style="font-size: 10px;">The Teaching</span>
-      <h3>Courses & Education</h3>
-      <p>My main work: structured courses that make AI in agriculture practical and honest — reaching {{ facts.reach.students }} students across {{ facts.reach.countries }} countries.</p>
-      <a href="/ai-in-agriculture/" class="text-link">AI in Agriculture →</a>
+  <span class="eyebrow">Signature talks</span>
+  <div class="speaking-topics-grid">
+    {% for talk in talks %}{% if talk.homepage %}
+    <div class="topic-card">
+      <h3>{{ talk.title }}</h3>
+      {% if talk.takeaway %}<p>{{ talk.takeaway }}</p>{% endif %}
+      <p class="topic-meta"><strong>Best for:</strong> {{ talk.bestFor }}</p>
     </div>
-
-    <div class="card">
-      <span class="eyebrow" style="font-size: 10px;">The Writing</span>
-      <h3>Books</h3>
-      <p>Field guides for growers and the people who advise them — plain about what a technology does, what it costs, and whether it earns its place.</p>
-      <a href="/books/" class="text-link">See the books →</a>
-    </div>
-
-    <div class="card">
-      <span class="eyebrow" style="font-size: 10px;">The Voice</span>
-      <h3>Keynotes & Lectures</h3>
-      <p>From university halls to international summits, delivering high-impact sessions on AI integration and the future of agrifood.</p>
-      <a href="/speaking/" class="text-link">View Speaking Portfolio →</a>
-    </div>
-
-    <div class="card">
-      <span class="eyebrow" style="font-size: 10px;">The Reach</span>
-      <h3>Expert Commentary</h3>
-      <p>Analysis and explainers on AI in agriculture for a global agrifood audience, plus selected brand collaborations built on credibility.</p>
-      <a href="/insights/" class="text-link">Read Insights →</a>
-    </div>
+    {% endif %}{% endfor %}
   </div>
+  <p style="margin-top: 28px;"><a class="text-link" href="/speaking/">All topics and formats →</a></p>
+</section>
 
-  {# Teaching, building, speaking — one photograph each, in that order. #}
-  <div class="photo-band">
-    {{ photo(photos.aiCamp, sizes="(max-width: 860px) 100vw, 350px") }}
-    {{ photo(photos.petioleDemoStand, sizes="(max-width: 860px) 100vw, 350px") }}
-    {{ photo(photos.conferenceTalk, sizes="(max-width: 860px) 100vw, 350px") }}
+{% if facts.showreelUrl %}
+<section class="section section--tight">
+  <span class="eyebrow">Showreel</span>
+  <p><a class="btn btn--ghost" href="{{ facts.showreelUrl }}">Watch the showreel ↗</a></p>
+</section>
+{% endif %}
+
+<section class="section">
+  <span class="eyebrow">Why listen to someone who builds it</span>
+  <div class="grid">
+    <a class="card card--post" href="{{ facts.links.petiole }}">
+      {% set pic = photos.petioleDemoStand %}
+      <img src="{{ pic.src }}" srcset="{{ pic.srcset }}" sizes="(max-width: 900px) 100vw, 360px" width="{{ pic.width }}" height="{{ pic.height }}" alt="{{ pic.alt }}" loading="lazy" decoding="async">
+      <div class="card__body">
+        <h3>Petiole Pro</h3>
+        <p>Smartphone crop measurement used by research organisations on six continents.</p>
+        <span class="text-link">petiolepro.com ↗</span>
+      </div>
+    </a>
+    <a class="card card--post" href="/moomore/">
+      <img src="/assets/img/women-in-innovation-2026/maryna-kuzmenko-moomore-women-in-innovation-2026.webp" width="1920" height="1080"
+           alt="Innovate UK Women in Innovation Awards 2026 winner card: Dr. Maryna Kuzmenko, Founder, MooMore" loading="lazy" decoding="async">
+      <div class="card__body">
+        <h3>MooMore</h3>
+        <p>Thermal imaging and on-device AI to catch lameness in dairy cows before it shows. {{ facts.moomore.statusShort }}.</p>
+        <span class="text-link">From crops to cattle →</span>
+      </div>
+    </a>
+    <a class="card card--post" href="/books/">
+      {% set book = books[0] %}
+      <img class="card__img--contain" src="/assets/img/books/{{ book.cover }}-400.webp" width="400" height="640"
+           alt="Cover of {{ book.fullTitle }} by Dr. Maryna Kuzmenko" loading="lazy" decoding="async">
+      <div class="card__body">
+        <h3>Books</h3>
+        <p>The AI in Agriculture series: field guides on what technology actually pays back.</p>
+        <span class="text-link">See the books →</span>
+      </div>
+    </a>
   </div>
 </section>
 
-<section class="section" style="border-top: 1px solid var(--border);">
-  <span class="eyebrow" style="text-align: center;">Global Recognition</span>
-  <ul class="recognition-list" style="max-width: 900px; margin: 20px auto; list-style: none; padding: 0;">
-    <li style="margin-bottom: 18px;">
-      <strong>{{ facts.award.wiw.name }}</strong> — Dr. Maryna Kuzmenko was named a winner in August 2026 for <a href="https://moomore.com/" target="_blank" rel="noopener">MooMore</a>, AI thermal imaging for early lameness detection in dairy cattle. <a href="/moomore/">Read more →</a>
-    </li>
-    <li style="margin-bottom: 18px;">
-      <strong>Oxford Farming Conference Inspire Programme 2026</strong> — Dr. Maryna Kuzmenko was selected as one of 15 Inspire Fellows for the 2026 cohort of the UK's leading agrifood policy conference.
-    </li>
-    <li style="margin-bottom: 18px;">
-      <strong>Innovate UK Women in Innovation Community Forum 2025/26</strong> — Dr. Maryna Kuzmenko is one of 16 Community Forum Members pre-selected for the 2025/26 cohort, advising on support for female entrepreneurship in the UK.
-    </li>
-    <li style="margin-bottom: 18px;">
-      <strong>Udemy educator</strong> — Dr. Maryna Kuzmenko teaches AI in agriculture to more than {{ facts.reach.students | fullCount }} students across {{ facts.reach.countries }} countries.
-    </li>
-    <li style="margin-bottom: 18px;">
-      <strong>WIPO and ITC SheTrades Fellow 2024</strong> — Dr. Maryna Kuzmenko was selected as a fellow of the “Scaling Young Women's Businesses Through IP Mentorship” programme run by the World Intellectual Property Organization and the International Trade Centre.
-    </li>
-    <li style="margin-bottom: 18px;">
-      <strong>Virgin StartUp Step Up Alumna 2020</strong> — Dr. Maryna Kuzmenko completed the Virgin StartUp Step Up programme for founders scaling early-stage businesses.
-    </li>
+{% include "partials/testimonials.njk" %}
+
+<section class="section section--tight">
+  <span class="eyebrow">Follow</span>
+  <ul class="follow-links">
+    <li><a href="{{ facts.newsletter.url }}"><strong>{{ facts.newsletter.name }}</strong><span>Subscribe ↗</span></a></li>
+    <li><a href="{{ facts.live.url }}"><strong>{{ facts.live.short }}</strong><span>Weekly, on understanding agricultural AI ↗</span></a></li>
+    <li><a href="{{ site.social.youtube }}"><strong>YouTube</strong><span>Explainers and event recaps ↗</span></a></li>
   </ul>
 </section>
 
 <section class="section section--cta" style="background: var(--accent); color: white; border-radius: var(--radius); text-align: center; margin: 40px 0;">
-  <h2 style="color: white;">Ready to shape the agrifood frontier?</h2>
-  <p style="color: rgba(255,255,255,0.8);">Available for select speaking engagements, guest lectures, and collaborations.</p>
-  <a class="btn" style="background: white; color: var(--accent); margin-top: 20px;" href="/contact/">Get in Touch</a>
+  <h2 style="color: white;">Planning an agrifood event or a team day?</h2>
+  <p style="color: rgba(255,255,255,0.8);">Tell me the date and who'll be in the room. I reply {{ facts.replyTime }}.</p>
+  <a class="btn" style="background: white; color: var(--accent); margin-top: 20px;" href="/contact/?type=speaking">Check availability</a>
 </section>

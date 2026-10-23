@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "beyond-the-hype",
+    "title": "Beyond the Hype: Practical AI for Modern Agronomy",
+    "blurb": "A technical yet accessible session on plant phenotyping, variable-rate fertilisation, and the practical data ethics of the modern autonomous orchard.",
+    "takeaway": "What plant phenotyping, variable-rate fertilisation and data ethics look like in a working, increasingly autonomous orchard.",
+    "bestFor": "Growers, agronomists, technical teams",
+    "formats": ["Keynote (45–90 min)", "Technical lecture", "Online"],
+    "homepage": true
+  },
+  {
+    "slug": "eyes-of-the-machine",
+    "title": "Eyes of the Machine: Computer Vision in Post-Harvest Quality",
+    "blurb": "A deep dive into automating quality control for agrifood produce. How non-destructive AI sensing ensures shelf-life, reduces waste, and standardises global trade.",
+    "takeaway": "How non-destructive AI sensing protects shelf-life, reduces waste and standardises trade.",
+    "bestFor": "Packers, fresh-produce businesses, quality and supply-chain teams",
+    "formats": ["Keynote (45–90 min)", "Technical lecture", "Online"],
+    "homepage": true
+  },
+  {
+    "slug": "invisible-barriers",
+    "title": "Invisible Barriers: The Female Founder’s Journey in AgTech",
+    "blurb": "An empowering narrative on navigating the male-dominated intersection of Ag & Tech, and why diversity is a prerequisite for agricultural innovation.",
+    "takeaway": "Why diversity is a prerequisite for agricultural innovation, not a nice-to-have.",
+    "bestFor": "Conferences, leadership events, women-in-agrifood programmes",
+    "formats": ["Keynote (45–90 min)", "Panel", "Online"],
+    "homepage": true
+  },
+  {
+    "slug": "the-silicon-soil",
+    "title": "The Silicon Soil: AI’s Role in Global Food Security",
+    "blurb": "A high-level keynote for policy makers and investors on how AI is moving from laboratory experiments to essential global field infrastructure.",
+    "takeaway": "How AI is moving from laboratory experiments to essential field infrastructure.",
+    "bestFor": "Policy makers, investors, international forums",
+    "formats": ["Keynote (45–90 min)", "Panel", "Online"],
+    "homepage": false
+  },
+  {
+    "slug": "the-first-leaf",
+    "title": "The First Leaf: AI & Computer Vision in Forestry Nurseries",
+    "blurb": "Transforming silviculture through automated seedling QC. How AI monitors viability and stress in the nursery to ensure higher survival rates, better timber quality, and more resilient reforestation at scale.",
+    "takeaway": "How AI monitors seedling viability and stress for higher survival rates and more resilient reforestation.",
+    "bestFor": "Forestry and nursery sector, research institutes",
+    "formats": ["Technical lecture", "Online"],
+    "homepage": false
+  }
+]

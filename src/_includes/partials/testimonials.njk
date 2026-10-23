@@ -1,0 +1,22 @@
+{#
+  Testimonials from facts.json. Only those with permission to publish the
+  name, role and organisation are shown, and the whole section is left out
+  while there are none.
+#}
+{% set approved = [] %}
+{% for t in facts.testimonials %}{% if t.permission %}{% set approved = (approved.push(t), approved) %}{% endif %}{% endfor %}
+{% if approved.length %}
+<section class="section">
+  <span class="eyebrow">What organisers say</span>
+  <div class="grid">
+    {% for t in approved %}
+    <figure class="card testimonial">
+      <blockquote>“{{ t.quote }}”</blockquote>
+      <figcaption>
+        <strong>{{ t.name }}</strong>, {{ t.role }}, {{ t.organisation }}{% if t.event %} · {{ t.event }}{% endif %}
+      </figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
