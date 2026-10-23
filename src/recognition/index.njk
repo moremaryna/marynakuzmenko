@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 title: Recognition
 metaTitle: "Recognition & Press — Dr. Maryna Kuzmenko"
-metaDescription: "Awards recognising Dr. Maryna Kuzmenko's work in AI and agriculture — Innovate UK Women in Innovation Award 2026 winner, LinkedIn Top Voice, WIPO + ITC Fellow."
+metaDescription: "Awards recognising Dr. Maryna Kuzmenko's work in AI and agriculture — Innovate UK Women in Innovation Award 2025/26 winner, LinkedIn Top Voice, WIPO + ITC Fellow."
 ---
 {% from "partials/photo.njk" import photo %}
 
@@ -11,7 +11,7 @@ metaDescription: "Awards recognising Dr. Maryna Kuzmenko's work in AI and agricu
   <h1>A Track Record at the Intersection of <span class="italic-text">AI & Agriculture.</span></h1>
   <p class="lead" style="max-width: 740px; margin: 0 auto;">
     A decade of work across computer vision, agrifood policy, and education — recognised by global
-    institutions and an engaged community in {{ stats.countries }} countries.
+    institutions and an engaged community in {{ facts.reach.countries }} countries.
   </p>
 </section>
 
@@ -19,11 +19,11 @@ metaDescription: "Awards recognising Dr. Maryna Kuzmenko's work in AI and agricu
   <span class="eyebrow">The Reach</span>
   <h2>Influence, in Numbers</h2>
   <div class="stats" style="margin-top: 30px;">
-    <div class="stat"><strong>{{ stats.linkedin }}</strong><span>LinkedIn · Top Voice</span></div>
-    <div class="stat"><strong>{{ stats.newsletter }}</strong><span>Newsletter Readers</span></div>
-    <div class="stat"><strong>{{ stats.youtube}}</strong><span>YouTube Subscribers</span></div>
-    <div class="stat"><strong>{{ stats.udemy }}</strong><span>Course Students</span></div>
-    <div class="stat"><strong>{{ stats.countries }}</strong><span>Countries Reached</span></div>
+    <div class="stat"><strong>{{ facts.reach.linkedin }}</strong><span>LinkedIn · Top Voice</span></div>
+    <div class="stat"><strong>{{ facts.reach.newsletter }}</strong><span>Newsletter Readers</span></div>
+    <div class="stat"><strong>{{ facts.reach.youtube}}</strong><span>YouTube Subscribers</span></div>
+    <div class="stat"><strong>{{ facts.reach.students }}</strong><span>Course Students</span></div>
+    <div class="stat"><strong>{{ facts.reach.countries }}</strong><span>Countries Reached</span></div>
   </div>
 </section>
 
@@ -31,8 +31,8 @@ metaDescription: "Awards recognising Dr. Maryna Kuzmenko's work in AI and agricu
   <div class="creds-container">
     <h2>Awards &amp; Recognition</h2>
     <div class="creds-grid">
-      <div class="cred-item"><a href="/moomore/"><strong>Innovate UK Women in Innovation Award</strong></a> <span>2026 Winner, for MooMore</span></div>
-      <div class="cred-item"><strong>LinkedIn Top Voice</strong> <span>AI in Agriculture</span></div>
+      <div class="cred-item"><a href="/moomore/"><strong>Innovate UK Women in Innovation Award</strong></a> <span>2025/26 Winner, for MooMore</span></div>
+      <div class="cred-item"><strong>LinkedIn Top Voice</strong> <span>{{ facts.award.topVoice.when }}</span></div>
       <div class="cred-item"><strong>WIPO + ITC</strong> <span>Global Fellow 2024</span></div>
       <div class="cred-item"><strong>Oxford Farming Conference</strong> <span>Inspire Programme</span></div>
       <div class="cred-item"><strong>Virgin StartUp Step-Up</strong> <span>Female Founder</span></div>
@@ -60,11 +60,11 @@ metaDescription: "Awards recognising Dr. Maryna Kuzmenko's work in AI and agricu
     </div>
     <div class="card">
       <h3>Education</h3>
-      <p>Author of an AI in Agriculture course with {{ stats.udemy }} students, plus explainers and talks for {{ stats.youtube }} YouTube subscribers.</p>
+      <p>Author of an AI in Agriculture course with {{ facts.reach.students }} students, plus explainers and talks for {{ facts.reach.youtube }} YouTube subscribers.</p>
     </div>
     <div class="card">
       <h3>Thought Leadership</h3>
-      <p>A LinkedIn Top Voice writing the AI in Agriculture newsletter for {{ stats.newsletter }} readers across the global agrifood community.</p>
+      <p>A LinkedIn Top Voice writing the AI in Agriculture newsletter for {{ facts.reach.newsletter }} readers across the global agrifood community.</p>
     </div>
   </div>
 </section>

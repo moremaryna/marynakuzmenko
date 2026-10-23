@@ -1,8 +1,8 @@
 ---
 layout: layouts/base.njk
 title: Dr. Maryna Kuzmenko
-metaTitle: "Dr. Maryna Kuzmenko — AI in Agriculture Educator & Author"
-description: Educator, author, and speaker on AI in agriculture — courses, books, and keynotes on what actually works in the field.
+metaTitle: "Dr. Maryna Kuzmenko — AI in Agriculture Speaker & Trainer"
+description: "Keynotes, team training and expert commentary on AI in agriculture from Dr. Maryna Kuzmenko, LinkedIn Top Voice and founder of MooMore and Petiole."
 ---
 {% from "partials/photo.njk" import photo %}
 
@@ -20,26 +20,26 @@ description: Educator, author, and speaker on AI in agriculture — courses, boo
   </div>
 
   <div class="stats" style="margin-top: 50px;">
-    {% if site.social.linkedin %}<a href="{{ site.links.udemy }}" aria-label="Udemy">
+    {% if site.social.linkedin %}<a href="{{ facts.reachLinks.students }}" aria-label="Udemy">
     <div class="stat">
-      <strong>{{ stats.udemy }}</strong>
+      <strong>{{ facts.reach.students }}</strong>
       <span>Global Students</span>
     </div></a>{% endif %}
     <a href="https://www.linkedin.com/feed/update/urn:li:activity:7433798234336104448/" target="_blank">
     <div class="stat">
-      <strong>{{ stats.countries }}</strong>
+      <strong>{{ facts.reach.countries }}</strong>
       <span>Countries Reached</span>
     </div></a>
 
     {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}" aria-label="LinkedIn">
     <div class="stat">
-      <strong>{{ stats.linkedin }}</strong>
+      <strong>{{ facts.reach.linkedin }}</strong>
       <span>LinkedIn Community</span>
     </div></a>{% endif %}
 
     {% if site.social.youtube %}<a href="{{ site.social.youtube }}" aria-label="YouTube">
     <div class="stat">
-      <strong>{{ stats.youtube }}</strong>
+      <strong>{{ facts.reach.youtube }}</strong>
       <span>YouTube Visionaries</span>
     </div></a>{% endif %}
   </div>
@@ -53,7 +53,7 @@ description: Educator, author, and speaker on AI in agriculture — courses, boo
     <div class="card">
       <span class="eyebrow" style="font-size: 10px;">The Teaching</span>
       <h3>Courses & Education</h3>
-      <p>My main work: structured courses that make AI in agriculture practical and honest — reaching {{ stats.udemy }} students across {{ stats.countries }} countries.</p>
+      <p>My main work: structured courses that make AI in agriculture practical and honest — reaching {{ facts.reach.students }} students across {{ facts.reach.countries }} countries.</p>
       <a href="/ai-in-agriculture/" class="text-link">AI in Agriculture →</a>
     </div>
 
@@ -91,7 +91,7 @@ description: Educator, author, and speaker on AI in agriculture — courses, boo
   <span class="eyebrow" style="text-align: center;">Global Recognition</span>
   <ul class="recognition-list" style="max-width: 900px; margin: 20px auto; list-style: none; padding: 0;">
     <li style="margin-bottom: 18px;">
-      <strong>Innovate UK Women in Innovation Award 2026</strong> — Dr. Maryna Kuzmenko was named a winner in August 2026 for <a href="https://moomore.com/" target="_blank" rel="noopener">MooMore</a>, AI thermal imaging for early lameness detection in dairy cattle. <a href="/moomore/">Read more →</a>
+      <strong>{{ facts.award.wiw.name }}</strong> — Dr. Maryna Kuzmenko was named a winner in August 2026 for <a href="https://moomore.com/" target="_blank" rel="noopener">MooMore</a>, AI thermal imaging for early lameness detection in dairy cattle. <a href="/moomore/">Read more →</a>
     </li>
     <li style="margin-bottom: 18px;">
       <strong>Oxford Farming Conference Inspire Programme 2026</strong> — Dr. Maryna Kuzmenko was selected as one of 15 Inspire Fellows for the 2026 cohort of the UK's leading agrifood policy conference.
@@ -100,7 +100,7 @@ description: Educator, author, and speaker on AI in agriculture — courses, boo
       <strong>Innovate UK Women in Innovation Community Forum 2025/26</strong> — Dr. Maryna Kuzmenko is one of 16 Community Forum Members pre-selected for the 2025/26 cohort, advising on support for female entrepreneurship in the UK.
     </li>
     <li style="margin-bottom: 18px;">
-      <strong>Udemy educator</strong> — Dr. Maryna Kuzmenko teaches AI in agriculture to more than {{ stats.udemy | fullCount }} students across {{ stats.countries }} countries.
+      <strong>Udemy educator</strong> — Dr. Maryna Kuzmenko teaches AI in agriculture to more than {{ facts.reach.students | fullCount }} students across {{ facts.reach.countries }} countries.
     </li>
     <li style="margin-bottom: 18px;">
       <strong>WIPO and ITC SheTrades Fellow 2024</strong> — Dr. Maryna Kuzmenko was selected as a fellow of the “Scaling Young Women's Businesses Through IP Mentorship” programme run by the World Intellectual Property Organization and the International Trade Centre.
@@ -113,6 +113,6 @@ description: Educator, author, and speaker on AI in agriculture — courses, boo
 
 <section class="section section--cta" style="background: var(--accent); color: white; border-radius: var(--radius); text-align: center; margin: 40px 0;">
   <h2 style="color: white;">Ready to shape the agrifood frontier?</h2>
-  <p style="color: rgba(255,255,255,0.8);">Available for select speaking engagements, guest lectures, and collaborations in 2026.</p>
+  <p style="color: rgba(255,255,255,0.8);">Available for select speaking engagements, guest lectures, and collaborations.</p>
   <a class="btn" style="background: white; color: var(--accent); margin-top: 20px;" href="/contact/">Get in Touch</a>
 </section>

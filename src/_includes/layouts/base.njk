@@ -10,7 +10,7 @@
      Set `metaTitle` in a page's front matter to use the long Phase 0 titles
      WITHOUT changing the visible heading/brand. #}
   {% set pageTitle = metaTitle or title or site.title %}
-  {% set pageDesc  = metaDescription or description or site.description %}
+  {% set pageDesc  = metaDescription or description or facts.positioning.line %}
   {% set canonical = site.url + page.url %}
   {% set pageImage = image or site.image %}
   {% set pageOgType = ogType or "website" %}
@@ -86,16 +86,15 @@
         "alternateName": {{ site.alternateName | dump | safe }},
         "honorificPrefix": {{ site.honorificPrefix | dump | safe }},
         "url": "{{ site.url }}/",
-        "jobTitle": {{ site.role | dump | safe }},
-        {# personDescription keeps a {countries} placeholder, filled from stats.json #}
-        "description": {{ site.personDescription | replace("{countries}", stats.countries) | dump | safe }},
+        "jobTitle": {{ facts.positioning.jobTitle | dump | safe }},
+        "description": {{ bios.fiftyWords | dump | safe }},
         "image": {{ site.image | dump | safe }},
         "worksFor": {{ site.worksFor | dump | safe }},
         "alumniOf": { "@type": "CollegeOrUniversity", "name": {{ site.alumniOf | dump | safe }} },
-        "award": {{ site.awards | dump | safe }},
-        "hasOccupation": { "@type": "Occupation", "name": "Educator, author and speaker on AI in agriculture" },
+        "award": {{ awardStrings | dump | safe }},
+        "hasOccupation": { "@type": "Occupation", "name": {{ facts.positioning.jobTitle | dump | safe }} },
         "email": {{ site.author.email | dump | safe }},
-        "knowsLanguage": ["en", "uk"],
+        "knowsLanguage": {{ facts.languages.codes | dump | safe }},
         "workLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressCountry": "GB" } },
         "author": [{% for book in books %}
           {
@@ -219,7 +218,7 @@
           <span class="footer__label">Insights</span>
                    {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}" aria-label="LinkedIn">LinkedIn</a>{% endif %}
                    {% if site.social.youtube %}<a href="{{ site.social.youtube }}" aria-label="YouTube">YouTube</a>{% endif %}
-                   {% if site.links.udemy %}<a href="{{ site.links.udemy }}" aria-label="Udemy">Udemy</a>{% endif %}
+                   <a href="{{ facts.reachLinks.students }}" aria-label="Udemy">Udemy</a>
            <a href="https://moremaryna.com" target="_blank" rel="noopener">More Maryna</a>
         </div>
       </div>
@@ -227,7 +226,7 @@
 
     <div class="container footer__bottom">
       <div class="footer__copyright">
-        © 2026 · <a href="/">{{ site.name }}</a> · {{ site.description }}
+        © 2026 · <a href="/">{{ site.name }}</a> · {{ facts.positioning.footer }}
       </div>
       <div class="footer__motto italic-text">
         Where Agriculture Meets AI.

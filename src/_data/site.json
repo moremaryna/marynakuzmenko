@@ -2,7 +2,6 @@
   "title": "Dr. Maryna Kuzmenko",
   "name": "Dr. Maryna Kuzmenko",
   "suffix": "Ph.D.",
-  "description": "Educator, author, and speaker on AI in agriculture.",
   "url": "https://marynakuzmenko.com",
   "locale": "en_GB",
   "twitterHandle": "@mary_kuzmenko",
@@ -11,8 +10,6 @@
   "personName": "Maryna Kuzmenko",
   "alternateName": "Dr Maryna Kuzmenko",
   "honorificPrefix": "Dr",
-  "role": "Educator, Author and Speaker on AI in Agriculture",
-  "personDescription": "UK-based educator, author, and speaker on AI in agriculture. Teaches AI in agriculture to students in {countries} countries and writes the AI in Agriculture book series. Founder of MooMore, which uses thermal imaging and on-device AI to detect inflammation in dairy cows before lameness develops, and winner of the Innovate UK Women in Innovation Award 2025/26.",
   "image": "https://marynakuzmenko.com/assets/img/speaking/maryna-kuzmenko-speaking.jpg",
   "worksFor": [
     {
@@ -44,12 +41,6 @@
     "Agritech adoption and regulation",
     "Fresh produce quality control"
   ],
-  "awards": [
-    "Innovate UK Women in Innovation Award 2025/26 \u2014 winner, for MooMore (announced 5 August 2026)",
-    "LinkedIn Top Voice in Agritech, May 2026",
-    "Oxford Farming Conference 2026 Inspire Fellow",
-    "WIPO/ITC SheTrades IP mentorship programme fellow"
-  ],
   "author": {
     "name": "Maryna Kuzmenko",
     "email": "support@petioleapp.com"
@@ -73,8 +64,5 @@
   ],
   "analytics": {
     "google": "G-8SR2ZG841F"
-  },
-  "links": {
-    "udemy": "https://www.udemy.com/course/ai-in-agriculture/?referralCode=19C904CE9CE14A84F140"
   }
 }

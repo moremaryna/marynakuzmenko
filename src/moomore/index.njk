@@ -1,8 +1,8 @@
 ---
 layout: layouts/base.njk
-title: "Why I added AI for dairy cattle to my crop AI portfolio"
+title: "Why I added dairy cattle to my crop AI work"
 metaTitle: "From Crops to Cattle — Founding MooMore | Maryna Kuzmenko"
-description: "Dr Maryna Kuzmenko on founding MooMore, the AI thermal imaging project for early dairy lameness detection that won the Innovate UK Women in Innovation Award 2026."
+description: "Dr Maryna Kuzmenko on founding MooMore, the AI thermal imaging project for early dairy lameness detection that won the Innovate UK Women in Innovation Award 2025/26."
 permalink: "/moomore/"
 image: "https://marynakuzmenko.com/assets/img/women-in-innovation-2026/maryna-kuzmenko-moomore-women-in-innovation-2026.webp"
 ogType: "article"
@@ -10,7 +10,7 @@ ogType: "article"
 <section class="bio-page">
   <div class="bio-hero">
     <p class="eyebrow">Founder's note</p>
-    <h2>Why I added AI to dairy cattle into my crop AI portfolio</h2>
+    <h2>Why I added dairy cattle to my crop AI work</h2>
 
     <p class="lead">
       I spent a decade measuring plants. In 2026 I started measuring cows. This page explains why, and what MooMore is for.
@@ -27,7 +27,7 @@ ogType: "article"
         alt="Innovate UK Women in Innovation Awards 2026 winner card: Dr. Maryna Kuzmenko, Founder, MooMore"
         width="1920" height="1080" loading="eager" decoding="async">
       <figcaption>
-        Innovate UK Women in Innovation Awards 2026 — Dr. Maryna Kuzmenko, Founder, MooMore.
+        {{ facts.award.wiw.name }} — Dr. Maryna Kuzmenko, Founder, MooMore.
       </figcaption>
     </figure>
   </div>
@@ -38,12 +38,12 @@ ogType: "article"
     <div class="bio-card featured">
       <p>
         MooMore uses thermal imaging and on-device AI to detect inflammation in dairy cows before lameness becomes visible.
-        It won the Innovate UK Women in Innovation Award 2025/26, announced on 5 August 2026, with a £75,000 grant and a
-        twelve-month programme running to June 2027.
+        It won the {{ facts.award.wiw.name }}, announced on {{ facts.award.wiw.announced }}, with a {{ facts.award.wiw.grant }} grant and a
+        {{ facts.award.wiw.programme }}.
       </p>
 
       <p>
-        It is currently in validation on a 650-cow crossbred herd in Staffordshire.
+        {{ facts.moomore.status }}.
         <a href="https://moomore.com/" target="_blank" rel="noopener">Full project details at moomore.com</a>.
       </p>
     </div>
@@ -119,7 +119,7 @@ ogType: "article"
           alt="Portrait grid of the 100 Innovate UK Women in Innovation Awards 2026 winners"
           width="1500" height="1000" loading="lazy" decoding="async">
         <figcaption>
-          All 100 winners of the Innovate UK Women in Innovation Awards 2026, recognised from 1,590 applications in the
+          All 100 winners of the {{ facts.award.wiw.name }}, recognised from 1,590 applications in the
           programme's tenth-anniversary round.
         </figcaption>
       </figure>
@@ -140,7 +140,7 @@ ogType: "article"
           continents and cited in peer-reviewed research
         </li>
         <li>
-          <strong>Teaching</strong> — AI in agriculture, to more than {{ stats.udemy | fullCount }} students across {{ stats.countries }} countries
+          <strong>Teaching</strong> — AI in agriculture, to more than {{ facts.reach.students | fullCount }} students across {{ facts.reach.countries }} countries
         </li>
       </ul>
     </div>

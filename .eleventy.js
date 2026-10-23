@@ -23,6 +23,12 @@ module.exports = function (eleventyConfig) {
     return Math.round(parseFloat(match[1].replace(/,/g, "")) * multiplier).toLocaleString("en-GB");
   });
 
+  // "Speaker and trainer…" -> "speaker and trainer…", for a facts.json line
+  // that runs on from "Dr. Maryna Kuzmenko is a".
+  eleventyConfig.addFilter("lcfirst", (value) =>
+    String(value).charAt(0).toLowerCase() + String(value).slice(1)
+  );
+
   // The stylesheet is served with a one-year immutable cache, so its URL
   // carries a hash of its contents: a changed file gets a new URL, and no
   // visitor is left with yesterday's styles on today's pages.
@@ -31,6 +37,15 @@ module.exports = function (eleventyConfig) {
     "cssVersion",
     require("crypto").createHash("sha1").update(css).digest("hex").slice(0, 10)
   );
+
+  // The About page's recognition list as plain sentences, word for word, for
+  // the Person's `award` in the structured data.
+  const facts = require("./src/_data/facts.json");
+  eleventyConfig.addGlobalData("awardStrings", [
+    ...facts.recognition.map((item) => `${item.title} — ${item.text}`),
+    ...facts.petiole.recognition.map((item) => `Petiole Pro — ${item}`),
+    `Petiole Pro — ${facts.petiole.grantsLine}`,
+  ]);
 
   // Blog posts: every page tagged "posts", newest first.
   eleventyConfig.addCollection("posts", (api) =>

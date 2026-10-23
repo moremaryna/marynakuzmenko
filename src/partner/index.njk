@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 title: Partnerships
 metaTitle: "Partner with Dr. Maryna Kuzmenko — AI in Agriculture"
-metaDescription: "Partner with Dr. Maryna Kuzmenko, AI in agriculture educator and LinkedIn Top Voice — sponsored content, webinars, and collaborations for agritech brands."
+metaDescription: "Partner with Dr. Maryna Kuzmenko, LinkedIn Top Voice on AI in agriculture — sponsored content, webinars, and collaborations for agritech brands."
 ---
 {% from "partials/photo.njk" import photo %}
 
@@ -23,11 +23,11 @@ metaDescription: "Partner with Dr. Maryna Kuzmenko, AI in agriculture educator a
   <span class="eyebrow">The Reach</span>
   <h2>An Engaged Agritech Audience</h2>
   <div class="stats" style="margin-top: 30px;">
-    <div class="stat"><strong>{{ stats.linkedin }}</strong><span>LinkedIn · Top Voice</span></div>
-    <div class="stat"><strong>{{ stats.newsletter }}</strong><span>Newsletter Readers</span></div>
-    <div class="stat"><strong>{{ stats.youtube }}</strong><span>YouTube Subscribers</span></div>
-    <div class="stat"><strong>{{ stats.udemy }}</strong><span>Course Students</span></div>
-    <div class="stat"><strong>{{ stats.countries }}</strong><span>Countries Reached</span></div>
+    <div class="stat"><strong>{{ facts.reach.linkedin }}</strong><span>LinkedIn · Top Voice</span></div>
+    <div class="stat"><strong>{{ facts.reach.newsletter }}</strong><span>Newsletter Readers</span></div>
+    <div class="stat"><strong>{{ facts.reach.youtube }}</strong><span>YouTube Subscribers</span></div>
+    <div class="stat"><strong>{{ facts.reach.students }}</strong><span>Course Students</span></div>
+    <div class="stat"><strong>{{ facts.reach.countries }}</strong><span>Countries Reached</span></div>
   </div>
 </section>
 
@@ -83,7 +83,7 @@ metaDescription: "Partner with Dr. Maryna Kuzmenko, AI in agriculture educator a
     <div class="topic-card">
       <div class="topic-icon">05</div>
       <h3>Educational Collaborations</h3>
-      <p>Course modules, explainers, and YouTube content that pair your technology with credible, accessible teaching for {{ stats.udemy }} students and a {{ stats.youtube }} subscriber base.</p>
+      <p>Course modules, explainers, and YouTube content that pair your technology with credible, accessible teaching for {{ facts.reach.students }} students and a {{ facts.reach.youtube }} subscriber base.</p>
     </div>
 
   </div>
@@ -93,7 +93,7 @@ metaDescription: "Partner with Dr. Maryna Kuzmenko, AI in agriculture educator a
   <div class="creds-container">
     <h2>Recognition & Platforms</h2>
     <div class="creds-grid">
-      <div class="cred-item"><strong>LinkedIn Top Voice</strong> <span>AI in Agriculture</span></div>
+      <div class="cred-item"><strong>LinkedIn Top Voice</strong> <span>{{ facts.award.topVoice.when }}</span></div>
       <div class="cred-item"><strong>WIPO + ITC</strong> <span>Global Fellow 2024</span></div>
       <div class="cred-item"><strong>Oxford Farming Conference</strong> <span>Inspire Programme</span></div>
       <div class="cred-item"><strong>Virgin StartUp</strong> <span>Female Founder Alumna</span></div>

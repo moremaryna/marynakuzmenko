@@ -1,0 +1,168 @@
+{
+  "_note": "The one source for every figure, award name and positioning line on the site. Pages render these values and never retype them. Keys flagged CONFIRM in docs/RESTRUCTURE-REPORT.md keep the defaults below until Maryna checks them.",
+
+  "asOf": "October 2026",
+
+  "positioning": {
+    "short": "AI in agriculture speaker and trainer",
+    "line": "Speaker and trainer on AI in agriculture, LinkedIn Top Voice, founder of MooMore and co-founder of Petiole",
+    "footer": "Speaker and trainer on AI in agriculture.",
+    "jobTitle": "AI in agriculture speaker and trainer"
+  },
+
+  "reach": {
+    "students": "3.4K+",
+    "countries": "129",
+    "linkedin": "38K+",
+    "newsletter": "16K+",
+    "youtube": "23K+"
+  },
+
+  "reachLinks": {
+    "students": "https://www.udemy.com/course/ai-in-agriculture/?referralCode=19C904CE9CE14A84F140",
+    "countries": "https://www.linkedin.com/feed/update/urn:li:activity:7433798234336104448/",
+    "linkedin": "https://www.linkedin.com/in/kuzmenkomaryna/",
+    "youtube": "https://www.youtube.com/@drmarynakuzmenko"
+  },
+
+  "newsletter": {
+    "name": "AI in Agriculture newsletter",
+    "url": "https://aiinagriculture.org/newsletters/"
+  },
+
+  "live": {
+    "name": "Weekly Friday LinkedIn Live on understanding agricultural AI",
+    "short": "Friday LinkedIn Live",
+    "url": "https://aiinagriculture.org/livestreams/"
+  },
+
+  "links": {
+    "training": "https://aiinagriculture.org/ai-training-agrifood/",
+    "courses": "https://aiinagriculture.org/courses/",
+    "course": "https://aiinagriculture.org/courses/ai-in-agriculture/",
+    "aiinagriculture": "https://aiinagriculture.org/",
+    "moomore": "https://moomore.com/",
+    "petiole": "https://www.petiolepro.com/",
+    "iukProfile": "https://iuk-business-connect.org.uk/projects/women-in-innovation/maryna-kuzmenko/"
+  },
+
+  "course": {
+    "title": "AI in Agriculture: Practical Introductory Course",
+    "rating": "4.4★",
+    "ratings": "660",
+    "lessons": "15",
+    "quizzes": "8",
+    "duration": "1h 14m",
+    "reportPrice": "£1 a month"
+  },
+
+  "award": {
+    "wiw": {
+      "name": "Innovate UK Women in Innovation Award 2025/26",
+      "status": "Winner",
+      "for": "MooMore",
+      "forLong": "MooMore, AI thermal imaging for early lameness detection in dairy cattle",
+      "announced": "5 August 2026",
+      "grant": "£75,000",
+      "programme": "twelve-month programme running to June 2027",
+      "selection": "one of 61 grant winners among 100 women recognised from 1,590 applications",
+      "url": "https://iuk-business-connect.org.uk/projects/women-in-innovation/maryna-kuzmenko/"
+    },
+    "topVoice": { "name": "LinkedIn Top Voice", "when": "May 2026" },
+    "ofc": { "name": "Oxford Farming Conference Inspire Fellow 2026", "selection": "one of 15" },
+    "wiwForum": { "name": "Innovate UK Women in Innovation Community Forum", "cohort": "2025/26", "selection": "one of 16" },
+    "wipo": { "name": "WIPO and ITC SheTrades “Scaling Young Women's Businesses Through IP Mentorship” fellow", "year": "2024" },
+    "virgin": { "name": "Virgin StartUp Step Up alumna", "year": "2020" }
+  },
+
+  "recognition": [
+    {
+      "id": "wiw",
+      "title": "Innovate UK Women in Innovation Award 2025/26",
+      "text": "Dr. Maryna Kuzmenko was named a winner, announced on 5 August 2026, for MooMore, AI thermal imaging for early lameness detection in dairy cattle. The award carries a £75,000 grant and a twelve-month programme running to June 2027; she was one of 61 grant winners among 100 women recognised from 1,590 applications.",
+      "links": [
+        { "label": "The MooMore story", "url": "/moomore/" },
+        { "label": "Innovate UK profile", "url": "https://iuk-business-connect.org.uk/projects/women-in-innovation/maryna-kuzmenko/" }
+      ]
+    },
+    {
+      "id": "topVoice",
+      "title": "LinkedIn Top Voice, May 2026",
+      "text": "Dr. Maryna Kuzmenko was recognised by LinkedIn as a Top Voice in May 2026.",
+      "links": [
+        { "label": "LinkedIn notes", "url": "https://lnkd.in/p/eK3WAkEc" }
+      ]
+    },
+    {
+      "id": "ofc",
+      "title": "Oxford Farming Conference Inspire Fellow 2026",
+      "text": "Dr. Maryna Kuzmenko was selected as one of 15 Inspire Fellows for the 2026 cohort of the UK's leading agrifood policy conference."
+    },
+    {
+      "id": "wiwForum",
+      "title": "Innovate UK Women in Innovation Community Forum 2025/26",
+      "text": "Dr. Maryna Kuzmenko is one of 16 Community Forum Members pre-selected for the 2025/26 cohort, working on support for female entrepreneurship in the UK."
+    },
+    {
+      "id": "wipo",
+      "title": "WIPO and ITC SheTrades Fellow 2024",
+      "text": "Dr. Maryna Kuzmenko was selected as a fellow of the “Scaling Young Women's Businesses Through IP Mentorship” programme run by the World Intellectual Property Organization and the International Trade Centre."
+    },
+    {
+      "id": "virgin",
+      "title": "Virgin StartUp Step Up Alumna 2020",
+      "text": "Dr. Maryna Kuzmenko completed the Virgin StartUp Step Up programme for founders scaling early-stage businesses."
+    }
+  ],
+
+  "petiole": {
+    "grants": "three Innovate UK grants and one Horizon Europe grant",
+    "grantsLine": "Petiole received three Innovate UK grants and one Horizon Europe grant for practical AI applications in agriculture, such as pest and disease detection, counted separately from the MooMore award.",
+    "recognition": [
+      "GIST Tech-I 2015 finalist (USA)",
+      "CNBC Top 20 Hottest Startup Ideas 2015",
+      "UK FPC Fresh Awards 2023 shortlist"
+    ],
+    "reach": "used by research organisations on six continents and cited in peer-reviewed research"
+  },
+
+  "moomore": {
+    "status": "In validation on a 650-cow crossbred herd in Staffordshire",
+    "statusShort": "In validation on a 650-cow herd"
+  },
+
+  "roles": [
+    "Founder, MooMore",
+    "Co-founder and CEO, Petiole (company Petiole Ltd; platform Petiole Pro)"
+  ],
+
+  "languages": {
+    "list": ["English", "Ukrainian", "Russian", "German (B1)"],
+    "codes": ["en", "uk", "ru", "de"],
+    "firstPerson": "I speak English, Ukrainian and Russian, and German at B1."
+  },
+
+  "replyTime": "within two working days",
+
+  "showreelUrl": "",
+  "onesheetPdf": "",
+
+  "testimonials": [],
+
+  "partners": [],
+
+  "press": [
+    {
+      "title": "Building a resilient agriculture industry after the Ukraine invasion",
+      "outlet": "AgFunder · USA",
+      "kind": "Article",
+      "url": "https://www.linkedin.com/pulse/building-resilient-agriculture-industry-after-ukraine-maryna-kuzmenko/?trackingId=2B5CZufuTl27UqPthDOhOQ%3D%3D"
+    },
+    {
+      "title": "BBC 2019 Event",
+      "outlet": "BBC London · UK",
+      "kind": "Event",
+      "url": "https://www.linkedin.com/posts/kuzmenkomaryna_%F0%9D%97%AC%F0%9D%97%B2%F0%9D%98%80-%F0%9D%98%86%F0%9D%97%BC%F0%9D%98%82-%F0%9D%97%B0%F0%9D%97%AE%F0%9D%97%BB-%F0%9D%97%B0%F0%9D%97%BC%F0%9D%97%BA%F0%9D%97%B2-%F0%9D%98%84%F0%9D%97%B6%F0%9D%98%81%F0%9D%97%B5-%F0%9D%98%86%F0%9D%97%BC%F0%9D%98%82%F0%9D%97%BF-activity-7365276681684566016-1eiS?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAM71GsBnwHywaov9ksjchuhUmvWs2LprfA"
+    }
+  ]
+}

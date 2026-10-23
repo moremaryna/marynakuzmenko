@@ -1,0 +1,23 @@
+{#
+  The five reach figures, from facts.json. Shown on the home page and the
+  Partnerships page only; every other page links to those instead of
+  repeating the numbers.
+#}
+<div class="stats stats--five">
+  <a href="{{ facts.reachLinks.linkedin }}" target="_blank" rel="noopener">
+    <div class="stat"><strong>{{ facts.reach.linkedin }}</strong><span>LinkedIn community</span></div>
+  </a>
+  <a href="{{ facts.newsletter.url }}" target="_blank" rel="noopener">
+    <div class="stat"><strong>{{ facts.reach.newsletter }}</strong><span>Newsletter readers</span></div>
+  </a>
+  <a href="{{ facts.reachLinks.youtube }}" target="_blank" rel="noopener">
+    <div class="stat"><strong>{{ facts.reach.youtube }}</strong><span>YouTube subscribers</span></div>
+  </a>
+  <a href="{{ facts.reachLinks.students }}" target="_blank" rel="noopener">
+    <div class="stat"><strong>{{ facts.reach.students }}</strong><span>Course students</span></div>
+  </a>
+  <a href="{{ facts.reachLinks.countries }}" target="_blank" rel="noopener">
+    <div class="stat"><strong>{{ facts.reach.countries }}</strong><span>Countries reached</span></div>
+  </a>
+</div>
+<p class="stats-asof">Figures as of {{ facts.asOf }}</p>
