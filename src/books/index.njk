@@ -111,8 +111,8 @@ ogType: "book"
   "@graph": [
     {
       "@type": "BookSeries",
-      "@id": "{{ site.url }}/books/#ai-in-agriculture-series",
-      "name": "AI in Agriculture",
+      "@id": "{{ site.url }}/books/#book-series",
+      "name": {{ bookSeries | dump | safe }},
       "author": { "@id": "{{ site.url }}/#person" }
     },
     {%- for book in books %}
@@ -130,7 +130,7 @@ ogType: "book"
       "bookFormat": "https://schema.org/EBook",
       "about": {{ book.about | dump | safe }}{% if book.series %},
       "position": {{ book.series.number }},
-      "isPartOf": { "@id": "{{ site.url }}/books/#ai-in-agriculture-series" }{% endif %}
+      "isPartOf": { "@id": "{{ site.url }}/books/#book-series" }{% endif %}
     },
     {%- endfor %}
     {

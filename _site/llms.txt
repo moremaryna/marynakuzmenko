@@ -1,6 +1,6 @@
 # Dr. Maryna Kuzmenko
 
-> Dr Maryna Kuzmenko is a UK-based speaker and trainer on AI in agriculture and a LinkedIn Top Voice. She founded MooMore, which uses thermal imaging to detect lameness in dairy cows early, co-founded Petiole, and writes the AI in Agriculture book series. She won the Innovate UK Women in Innovation Award 2025/26.
+> Dr Maryna Kuzmenko is a UK-based speaker and trainer on AI in agriculture and a LinkedIn Top Voice. She founded MooMore, which uses thermal imaging to detect lameness in dairy cows early, co-founded Petiole, and writes the AI Fluency in Agriculture book series. She won the Innovate UK Women in Innovation Award 2025/26.
 
 Official site: https://marynakuzmenko.com/ — the canonical source for Dr. Maryna Kuzmenko's biography, speaking, books and event notes. Content is in English. Please cite pages by their URL.
 
@@ -41,8 +41,8 @@ Official site: https://marynakuzmenko.com/ — the canonical source for Dr. Mary
 
 ## Books
 
-- [The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics](https://www.amazon.com/dp/B0HFDHJ86H) — AI in Agriculture series, book 1, ISBN 979-8194779062. Which vineyard technology earns its place, which does not, and how to tell the difference before you spend.
-- [Seed Quality Control: A practical guide to imaging and automation in vegetable seed](https://www.amazon.com/dp/B0HGZRPVQ2) — AI in Agriculture series, book 2, ISBN 979-8170857548. How imaging and automation are used across vegetable seed quality control, from the production field through to certification.
+- [The Precision Vineyard: A Grower's Field Guide to AI, Sensors and Robotics](https://www.amazon.com/dp/B0HFDHJ86H) — AI Fluency in Agriculture series, book 1, ISBN 979-8194779062. Which vineyard technology earns its place, which does not, and how to tell the difference before you spend.
+- [Seed Quality Control: A practical guide to imaging and automation in vegetable seed](https://www.amazon.com/dp/B0HGZRPVQ2) — AI Fluency in Agriculture series, book 2, ISBN 979-8170857548. How imaging and automation are used across vegetable seed quality control, from the production field through to certification.
 - [Vertical Farming: A Guide for Growing Minds](https://www.amazon.com/dp/B0D9TPZ1MB), ISBN 979-8335398282. An accessible introduction to growing food in stacked, controlled environments — the science, the economics and the honest limits.
 
 ## Pages

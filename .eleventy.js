@@ -58,6 +58,12 @@ module.exports = function (eleventyConfig) {
     `Petiole Pro — ${facts.petiole.grantsLine}`,
   ]);
 
+  // The name of the book series, from books.json, for running text.
+  eleventyConfig.addGlobalData(
+    "bookSeries",
+    require("./src/_data/books.json").find((book) => book.series).series.name
+  );
+
   // Blog posts: every page tagged "posts", newest first.
   eleventyConfig.addCollection("posts", (api) =>
     api.getFilteredByTag("posts").sort((a, b) => b.date - a.date)
