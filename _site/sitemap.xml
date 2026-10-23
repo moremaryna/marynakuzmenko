@@ -29,10 +29,6 @@
     <lastmod>2026-10-10</lastmod>
   </url>
   <url>
-    <loc>https://marynakuzmenko.com/speaking/</loc>
-    <lastmod>2026-10-10</lastmod>
-  </url>
-  <url>
     <loc>https://marynakuzmenko.com/about/</loc>
     <lastmod>2026-10-11</lastmod>
   </url>
@@ -87,5 +83,9 @@
   <url>
     <loc>https://marynakuzmenko.com/events/</loc>
     <lastmod>2026-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://marynakuzmenko.com/speaking/</loc>
+    <lastmod>2026-10-23</lastmod>
   </url>
 </urlset>
