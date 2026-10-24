@@ -7,7 +7,7 @@
  * to it. It came across with its decisions, which were Maryna's:
  *
  *  - No price on the page. Every format is quoted for the organisation that
- *    asks; the first workshop in its default format is free (2026-10-22).
+ *    asks. The "first workshop free" offer came off this page on 2026-10-24.
  *  - No brand name. "AI Skills Hub" and "AI Skills Boost" are the UK
  *    government's free training site and programme, cited below; training sold
  *    under either would read as part of it.
@@ -198,7 +198,8 @@ const topics = [
 
 /**
  * The questions, in the order the page prints them. Plain text only: the
- * FAQPage markup carries these strings as they are.
+ * FAQPage markup carries these strings as they are. An optional `link` is
+ * printed after the answer, and added to the markup as an <a>.
  */
 const faq = [
   {
@@ -228,14 +229,15 @@ const faq = [
   },
   {
     question: "Do you offer training in other languages?",
-    answer: `${facts.languages.firstPerson} I'm not fluent in Spanish, but I'm available for Spanish-language training.`,
+    answer:
+      `${facts.languages.firstPerson} I'm not fluent in Spanish, but I can prepare ` +
+      "Spanish-language training, particularly in a video-on-demand format.",
   },
   {
     question: "How much does it cost?",
     answer:
-      "The starting price is free: the first workshop, in its default format, costs nothing. " +
-      "After that, pricing depends on the format, the length, the size of the group and how " +
-      `much is customised. Send me a few lines and I'll reply with a tailored quote ${facts.replyTime}.`,
+      "The pricing depends on the format, the length, the size of the group and how much is " +
+      `customised. Send me a few lines and I'll reply with a tailored quote ${facts.replyTime}.`,
   },
   {
     question: "Can our team earn CPD points?",
@@ -287,6 +289,7 @@ const faq = [
     answer:
       `Yes: all ${facts.course.lessons} video lessons, the quizzes and the certificate of ` +
       "completion, for every person on your team.",
+    link: { text: "Enroll here", url: facts.links.course },
   },
 ];
 

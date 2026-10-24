@@ -372,7 +372,7 @@ description: "AI workshops, talks and custom courses for agriculture and agrifoo
     {% for item in training.faq %}
     <details class="card faq-item training-faq">
       <summary><h3>{{ item.question }}</h3></summary>
-      <p>{{ item.answer }}</p>
+      <p>{{ item.answer }}{% if item.link %} <a class="inline-link" href="{{ item.link.url }}">{{ item.link.text }}</a> ↗{% endif %}</p>
     </details>
     {% endfor %}
   </div>
@@ -431,7 +431,7 @@ description: "AI workshops, talks and custom courses for agriculture and agrifoo
         {
           "@type": "Question",
           "name": {{ item.question | dump | safe }},
-          "acceptedAnswer": { "@type": "Answer", "text": {{ item.answer | dump | safe }} }
+          "acceptedAnswer": { "@type": "Answer", "text": {{ (item.answer + (' <a href="' + item.link.url + '">' + item.link.text + '</a>' if item.link else '')) | dump | safe }} }
         }{% if not loop.last %},{% endif %}{% endfor %}
       ]
     }
