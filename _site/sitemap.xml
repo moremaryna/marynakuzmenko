@@ -73,10 +73,6 @@
     <lastmod>2026-10-24</lastmod>
   </url>
   <url>
-    <loc>https://marynakuzmenko.com/events/</loc>
-    <lastmod>2026-10-23</lastmod>
-  </url>
-  <url>
     <loc>https://marynakuzmenko.com/about/</loc>
     <lastmod>2026-10-24</lastmod>
   </url>
@@ -85,15 +81,19 @@
     <lastmod>2026-10-24</lastmod>
   </url>
   <url>
-    <loc>https://marynakuzmenko.com/coverage/</loc>
-    <lastmod>2026-10-23</lastmod>
-  </url>
-  <url>
     <loc>https://marynakuzmenko.com/press-kit/</loc>
     <lastmod>2026-10-24</lastmod>
   </url>
   <url>
     <loc>https://marynakuzmenko.com/ai-training-agrifood/</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://marynakuzmenko.com/events/</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://marynakuzmenko.com/coverage/</loc>
     <lastmod>2026-10-24</lastmod>
   </url>
 </urlset>
