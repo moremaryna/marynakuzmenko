@@ -171,50 +171,17 @@
       <!-- Adaptive: speaking, training, lecture -->
       <fieldset class="adaptive-fields" data-inquiry="speaking training lecture" hidden disabled>
         <p class="adaptive-note" data-note-for="training">
-          Formats and topics are outlined on <a class="inline-link" href="/ai-training-agrifood/">team training</a>. The first workshop, in its default format, is free.
+          Formats and topics are outlined on <a class="inline-link" href="/ai-training-agrifood/">team training</a>.
         </p>
-        <div class="form-group">
-          <label for="event_name">Event or programme name</label>
-          <input type="text" name="event_name" id="event_name" placeholder="Name of the event, course or programme">
-        </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="event_date">Event Date</label>
+            <label for="event_date">Date</label>
             <input type="date" name="event_date" id="event_date">
           </div>
           <div class="form-group">
-            <label for="event_format">Format</label>
-            <select name="event_format" id="event_format">
-              <option value="">Select…</option>
-              <option value="In person">In person</option>
-              <option value="Online">Online</option>
-              <option value="Hybrid">Hybrid</option>
-            </select>
+            <label for="event_location">Where</label>
+            <input type="text" name="event_location" id="event_location" placeholder="City, or online">
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="event_location">City and country</label>
-            <input type="text" name="event_location" id="event_location" placeholder="e.g. Birmingham, UK">
-          </div>
-          <div class="form-group">
-            <label for="audience_size">Audience size</label>
-            <select name="audience_size" id="audience_size">
-              <option value="">Select…</option>
-              <option value="Under 50">Under 50</option>
-              <option value="50–200">50–200</option>
-              <option value="200–500">200–500</option>
-              <option value="500+">500+</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="audience">Who will be in the room</label>
-          <input type="text" name="audience" id="audience" placeholder="e.g. growers, agronomists, a board, students">
-        </div>
-        <div class="form-group">
-          <label for="budget">Budget <span class="form-optional">(optional)</span></label>
-          <input type="text" name="budget" id="budget">
         </div>
       </fieldset>
 
@@ -361,6 +328,14 @@
       other: ""
     };
 
+    const message = document.getElementById("message");
+    const placeholders = {
+      speaking: "The event, who will be in the room, roughly how many, and a budget if you have one.",
+      training: "Your organisation, the team, how many people, and what you'd like them to learn.",
+      lecture: "The course or programme, the students, and the date or term."
+    };
+    const defaultPlaceholder = message ? message.placeholder : "";
+
     // Show the fields for the chosen enquiry, and send only those.
     function sync() {
       const val = select.value;
@@ -371,6 +346,7 @@
       });
       notes.forEach((n) => { n.hidden = n.getAttribute("data-note-for") !== val; });
       if (helper) helper.textContent = helpers[val] || "";
+      if (message) message.placeholder = placeholders[val] || defaultPlaceholder;
     }
 
     // Pre-select the enquiry from the URL, e.g. /contact/?type=speaking.
