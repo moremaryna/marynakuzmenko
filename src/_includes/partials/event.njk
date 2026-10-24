@@ -1,7 +1,7 @@
 {#
   One entry of the events timeline, from src/_data/events.js. Used by
-  /events/ (what Maryna spoke at) and /coverage/ (what she attended and
-  reported on). Absolute links and PDFs open in a new tab.
+  /events/ (every entry) and /coverage/ (what she attended and reported
+  on). Absolute links and PDFs open in a new tab.
 
   Import it `with context`, so the macros can reach the photos data.
 #}
@@ -16,7 +16,7 @@
 
 {% macro eventItem(e) %}
 {% from "partials/photo.njk" import photo %}
-<article class="event-item">
+<article class="event-item{% if e.featured %} featured{% endif %}">
   <div class="event-date">
     <span class="year">{{ e.date | eventYear }}</span>
     <span class="day">{{ e.date | eventDay }}</span>
@@ -27,8 +27,9 @@
     <h2>{{ e.title }}</h2>
     <p>{{ e.summary | safe }}</p>
     <div class="event-meta">
+      {% if e.type == "recognition" %}<span>🏆 {{ e.organiser }}</span>{% endif %}
       {% if e.dateLine %}<span>📅 {{ e.dateLine }}</span>{% elif e.location %}<span>📍 {{ e.location }}</span>{% endif %}
-      <span>{{ e.mode }}</span>
+      {% if e.mode %}<span>{{ e.mode }}</span>{% endif %}
     </div>
     {% if e.photo %}
     {% set portrait = e.photoClass == "page-figure--portrait" %}

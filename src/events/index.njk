@@ -1,12 +1,14 @@
 ---
 layout: layouts/base.njk
 schemaType: CollectionPage
-title: Speaking appearances
-metaTitle: "Speaking Appearances | Dr. Maryna Kuzmenko"
-metaDescription: "Where Dr. Maryna Kuzmenko has spoken on AI in agriculture — keynotes, university lectures, and policy forums across the UK, Europe, Africa, Asia, and the Americas."
+title: Events & Engagements
+metaTitle: "Events & Engagements | Dr. Maryna Kuzmenko"
+metaDescription: "A timeline of Dr. Maryna Kuzmenko's events: keynotes, university lectures, agrifood shows she has reported on, and recognition, across the UK, Europe, Africa, Asia and the Americas."
 ---
-{# The speaking record: every "spoken" entry in src/_data/events.js. The
-   shows Maryna attends and reports on are on /coverage/. #}
+{# The whole history, newest first: every entry in src/_data/events.js on one
+   timeline — talks, the shows Maryna attended and reported on, and
+   recognition — as the page was before the October 2026 restructure split
+   it. /coverage/ still gathers the shows on their own. #}
 {% from "partials/event.njk" import eventItem with context %}
 
 <section class="events-hero">
@@ -15,24 +17,10 @@ metaDescription: "Where Dr. Maryna Kuzmenko has spoken on AI in agriculture — 
   <p class="lead">
     From university lecture halls to international stages, I translate complex AI trends into actionable agricultural innovation.
   </p>
-  <p class="events-hero__aside">
-    Keynotes, lectures and panels. Looking for the shows I attend and report on? See <a class="inline-link" href="/coverage/">events I've covered</a>.
-  </p>
 </section>
-
-{% set upcoming = [] %}
-{% for e in events %}{% if e.type == "spoken" and e.upcoming %}{% set upcoming = (upcoming.push(e), upcoming) %}{% endif %}{% endfor %}
-{% if upcoming.length %}
-<section class="events-upcoming">
-  <span class="eyebrow" style="text-align: center;">Upcoming</span>
-  <div class="events-timeline">
-    {% for e in upcoming %}{{ eventItem(e) }}{% endfor %}
-  </div>
-</section>
-{% endif %}
 
 <div class="events-timeline">
-  {% for e in events %}{% if e.type == "spoken" and not e.upcoming and not e.archive %}
+  {% for e in events %}{% if not e.archive %}
   {{ eventItem(e) }}
   {% endif %}{% endfor %}
 </div>
@@ -41,7 +29,7 @@ metaDescription: "Where Dr. Maryna Kuzmenko has spoken on AI in agriculture — 
   <div class="container">
     <h3>Selected Past Engagements</h3>
     <div class="archive-grid">
-      {% for e in events %}{% if e.type == "spoken" and e.archive %}
+      {% for e in events %}{% if e.archive %}
       <div class="archive-item">
         <a href="{{ e.links[0].url }}" target="_blank" rel="noopener"><strong>{{ e.title }}</strong></a>
         <span>{{ e.organiser }} · {{ e.location }}</span>
@@ -53,5 +41,6 @@ metaDescription: "Where Dr. Maryna Kuzmenko has spoken on AI in agriculture — 
 
 <section class="section section--cta">
   <h2>Bring AI innovation to your stage.</h2>
+  <p>Available for keynotes, guest lectures and other speaking engagements.</p>
   <a class="btn btn--primary" href="/contact/?type=speaking">Book Maryna</a>
 </section>

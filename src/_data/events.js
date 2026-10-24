@@ -1,9 +1,12 @@
 /**
  * Every engagement on the site, newest first, in one list.
  *
- * `type` decides the page: "spoken" entries are the speaking record on
- * /events/, "covered" entries are the shows Maryna attended and reported on,
- * on /coverage/. An entry is on exactly one of the two.
+ * /events/ is the whole list, as one timeline. `type` says what kind of
+ * entry it is: "spoken" for the speaking record (the strips of names on the
+ * home and Speaking pages, Speaking's list), "covered" for the shows Maryna
+ * attended and reported on (also gathered on /coverage/), and "recognition"
+ * for an award or title, which only the timeline shows; "writing" for the
+ * one article among the selected past engagements.
  *
  *   date       "YYYY-MM-DD" or "YYYY-MM"; "YYYY" for a selected past entry
  *   title      the event, or the talk where the talk has its own title
@@ -17,9 +20,12 @@
  *   highlight  true for the strip of names on the home and Speaking pages
  *   upcoming   true while the event is still to come
  *   archive    true for "Selected past engagements", shown as a short card
+ *   featured   true to set the entry apart on the timeline
  *
  * Photographs sit only in the entries whose event they can be traced to.
  */
+
+const facts = require("./facts.json");
 
 const LI = "https://www.linkedin.com";
 
@@ -86,6 +92,20 @@ module.exports = [
     links: [{ label: "LinkedIn Notes", url: "https://lnkd.in/p/et3GW6nd" }],
   },
   {
+    date: "2026-08",
+    type: "recognition",
+    featured: true,
+    title: `${facts.award.wiw.name} — ${facts.award.wiw.status}`,
+    organiser: "Innovate UK",
+    role: "Award Winner",
+    location: "UK",
+    summary: `Named a <strong>${facts.award.wiw.status.toLowerCase()}</strong> on ${facts.award.wiw.announced} for ${facts.award.wiw.forLong}: ${facts.award.wiw.selection}.`,
+    links: [
+      { label: "Official Profile", url: facts.award.wiw.url },
+      { label: "About MooMore", url: "/moomore/" },
+    ],
+  },
+  {
     date: "2026-07",
     type: "covered",
     title: "Fruit Focus 2026",
@@ -127,6 +147,16 @@ module.exports = [
       { label: "LinkedIn Post", url: `${LI}/feed/update/urn:li:activity:7471101611151572992/` },
       { label: "Watch Recap", url: "https://youtube.com/shorts/xxNr6vvumMg?feature=share", video: true },
     ],
+  },
+  {
+    date: "2026-05",
+    type: "recognition",
+    title: `${facts.award.topVoice.name} Recognition`,
+    organiser: "LinkedIn",
+    role: "Agritech and Sustainability Contributor",
+    location: "United Kingdom",
+    summary: `Recognised by LinkedIn as a Top Voice in ${facts.award.topVoice.when} for contributions on agritech and sustainability.`,
+    links: [{ label: "LinkedIn Notes", url: "https://lnkd.in/p/eK3WAkEc" }],
   },
   {
     date: "2026-03",
@@ -527,5 +557,14 @@ module.exports = [
     organiser: "Agri-TechE",
     location: "UK",
     links: [{ label: "LinkedIn post", url: `${LI}/posts/kuzmenkomaryna_this-week-i-got-a-priceless-opportunity-to-activity-6334527283289747456-R7zT?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAbFjqABfuK4zmZiPHMByaWLELC28UrW2ec` }],
+  },  // An article rather than an event, kept where the Events page has always
+  // listed it. No date: the page does not print one, and none is on record.
+  {
+    type: "writing",
+    archive: true,
+    title: "Building a resilient agriculture industry after the Ukraine invasion",
+    organiser: "AgFunder",
+    location: "USA",
+    links: [{ label: "Article", url: `${LI}/pulse/building-resilient-agriculture-industry-after-ukraine-maryna-kuzmenko/?trackingId=2B5CZufuTl27UqPthDOhOQ%3D%3D` }],
   },
 ];
