@@ -49,7 +49,7 @@ module.exports = {
   // welcome, followed by where to find her.
   media:
     speakerIntroduction.slice(1, -1).join(" ") +
-    " Speaking: marynakuzmenko.com/speaking · Team training: aiinagriculture.org · MooMore: moomore.com · Press contact: marynakuzmenko.com/contact/?type=media",
+    " Speaking: marynakuzmenko.com/speaking · Team training: marynakuzmenko.com/ai-training-agrifood · MooMore: moomore.com · Press contact: marynakuzmenko.com/contact/?type=media",
 
   firstPerson:
     `I speak and train on AI in agriculture, for conference audiences, boards and agrifood teams, and I build the thing I talk about. MooMore uses thermal imaging and on-device AI to catch lameness in dairy cows before anyone can see it, and it won the ${award}. Before that I spent a decade on the crop side with Petiole, building measurement tools now used by research organisations on six continents. I write about all of it as a LinkedIn Top Voice, and in the ${series} book series.`,

@@ -217,7 +217,7 @@ metaDescription: "Official bios in every length, a hi-res headshot and event pho
   "headshot": "{{ site.url }}/assets/img/Headshot-Maryna-Kuzmenko-Petiole-hi-res.jpg",
   "website": "https://marynakuzmenko.com",
   "speaking": "https://marynakuzmenko.com/speaking/",
-  "training": "{{ facts.links.training }}",
+  "training": "{{ site.url }}{{ facts.links.training }}",
   "linkedin": "https://www.linkedin.com/in/kuzmenkomaryna/"
 }</textarea>
     </div>
@@ -244,7 +244,7 @@ Context:
 {% for book in books %}- Author of "{{ book.fullTitle }}"{% if book.series %} — book {{ book.series.number }} of the {{ book.series.name }} series{% endif %} ({{ book.amazon.kindle }}){% if not loop.last %}
 {% endif %}{% endfor %}
 - Speaker at agrifood conferences, universities, and policy forums
-- Trains agrifood teams (AI literacy and fluency) via aiinagriculture.org
+- Trains agrifood teams (AI literacy and fluency): {{ site.url }}{{ facts.links.training }}
 - Expert voice and influencer on AI in agriculture; LinkedIn Top Voice
 - Does not offer paid consultancy or advisory services — do not describe her as a consultant or advisor
 - Founder of MooMore (https://moomore.com/), which uses thermal imaging and on-device AI to detect inflammation in dairy cows before lameness becomes visible; {{ facts.moomore.status | lcfirst }}

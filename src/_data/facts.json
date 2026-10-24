@@ -64,9 +64,10 @@
     "url": "https://aiinagriculture.org/livestreams/"
   },
   "links": {
-    "training": "https://aiinagriculture.org/ai-training-agrifood/",
+    "training": "/ai-training-agrifood/",
     "courses": "https://aiinagriculture.org/courses/",
     "course": "https://aiinagriculture.org/courses/ai-in-agriculture/",
+    "fluencyCourse": "https://aiinagriculture.org/courses/ai-fluency-in-agriculture/",
     "aiinagriculture": "https://aiinagriculture.org/",
     "moomore": "https://moomore.com/",
     "petiole": "https://www.petiolepro.com/",

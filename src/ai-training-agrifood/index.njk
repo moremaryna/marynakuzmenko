@@ -1,0 +1,440 @@
+---
+layout: layouts/base.njk
+title: AI training for agriculture and agrifood teams
+metaTitle: "AI Workshops and Training for Agriculture & Agrifood | Dr. Maryna Kuzmenko"
+description: "AI workshops, talks and custom courses for agriculture and agrifood teams, online or on site: AI literacy and AI fluency training by Dr. Maryna Kuzmenko."
+---
+{#
+  Team training. Moved here from aiinagriculture.org/ai-training-agrifood/ on
+  2026-10-24, at the same path, so the old address can point straight at it;
+  aiinagriculture.org's "Workshops" page is now a short invite to this one.
+
+  The formats, topics, law, figures and questions are read from
+  src/_data/training.js — see it for the decisions that came across with the
+  page. Nothing here is a price.
+#}
+{% from "partials/photo.njk" import photo %}
+{% set enquiry = "/contact/?type=training" %}
+
+<section class="hero hero--split">
+  <div class="hero__text">
+    <span class="eyebrow">Team training for agriculture and agrifood</span>
+    <h1>AI fluency for the people who <span class="italic-text">grow, process and feed the world.</span></h1>
+    <p class="lead">
+      Practical AI literacy training for agricultural and agrifood organisations.
+      From a one-hour lecture to a fully customised course, your team learns what
+      AI can really do in the field, the lab and the supply chain, and how to use
+      it with confidence.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="{{ enquiry }}">Book a training session</a>
+      <a class="btn btn--ghost" href="#topics">Explore topics</a>
+    </div>
+    <p class="training-trust">
+      Delivered by me, Dr. Maryna Kuzmenko: agri-AI founder, researcher and
+      educator. Online or on site, across the UK and internationally.
+    </p>
+  </div>
+  {{ photo(photos.workshop, sizes="(max-width: 900px) 100vw, 520px", eager=true, class="hero__photo") }}
+</section>
+
+<ul class="stats training-glance" aria-label="At a glance">
+  <li class="stat"><strong>45 min to 12 weeks</strong><span>From a keynote to a full course</span></li>
+  <li class="stat"><strong>Online or on site</strong><span>Live, in person, or both at once</span></li>
+  <li class="stat"><strong>5 to several hundred</strong><span>Workshops of up to 25 per group</span></li>
+  <li class="stat"><strong>No coding needed</strong><span>Advanced tracks if you want them</span></li>
+</ul>
+
+<section class="section">
+  <div class="training-split">
+    <div>
+      <span class="eyebrow">Why AI fluency, why now</span>
+      <h2>AI is already in your sector. Is your team ready for it?</h2>
+      <p>
+        Computer vision counts fruit and measures leaves. Sensors and models
+        predict yield, disease and milk output. Language tools draft reports,
+        grant bids and supplier emails in seconds. Your competitors, customers
+        and funders are already asking how you use AI.
+      </p>
+      <p>
+        Yet most teams were never taught what AI actually is, where it works and
+        where it fails. That gap leads to two costly mistakes: ignoring tools that
+        could save hours every week, or buying expensive solutions that never fit
+        the farm, the lab or the data.
+      </p>
+      <p class="pointer-box">{{ training.definition }}</p>
+    </div>
+
+    <ul class="training-benefits">
+      <li><strong>Make better decisions</strong> about AI tools, vendors and pilots</li>
+      <li><strong>Work faster</strong> with everyday AI assistants, safely and responsibly</li>
+      <li><strong>Collect better data</strong> today, so AI projects succeed tomorrow</li>
+      <li><strong>Speak the same language</strong> across agronomy, operations, R&amp;D and leadership</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" style="border-top: 1px solid var(--border);">
+  <span class="eyebrow">Who it is for</span>
+  <h2>Built for agriculture and agrifood teams</h2>
+  <div class="grid training-audiences">
+    <div class="card">
+      <h3>Farms and growers</h3>
+      <p>Managers, agronomists and technical staff who want to use AI on the ground.</p>
+    </div>
+    <div class="card">
+      <h3>Food producers, packers and retailers</h3>
+      <p>Operations, quality, supply chain and sustainability teams.</p>
+    </div>
+    <div class="card">
+      <h3>Agritech companies</h3>
+      <p>Sales, product and customer success teams who need to explain AI clearly to farmers.</p>
+    </div>
+    <div class="card">
+      <h3>Research institutes and universities</h3>
+      <p>Scientists, PhD students and technicians in plant science, phenotyping and animal science.</p>
+    </div>
+    <div class="card">
+      <h3>Industry bodies, cooperatives and advisers</h3>
+      <p>Consultants, extension officers and member organisations.</p>
+    </div>
+    <div class="card">
+      <h3>Leadership teams and boards</h3>
+      <p>Executives who need a clear, honest picture of AI's risks and opportunities.</p>
+    </div>
+  </div>
+  <p class="training-note">No coding or technical background is needed, unless you ask for an advanced track.</p>
+</section>
+
+<section class="section" id="formats" style="border-top: 1px solid var(--border);">
+  <span class="eyebrow">Training formats</span>
+  <h2>From a single talk to a full programme</h2>
+  <p class="training-intro">Every format can be delivered online or in person, for groups of any size.</p>
+
+  <table class="training-formats">
+    <thead>
+      <tr>
+        <th scope="col">Format</th>
+        <th scope="col">Length</th>
+        <th scope="col">Best for</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for format in training.formats %}
+      <tr>
+        <th scope="row">{{ format.name }}</th>
+        <td class="training-formats__length">{{ format.length }}</td>
+        <td>{{ format.bestFor }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h3 class="training-addons__title">Add to any format</h3>
+  <div class="badges">
+    {% for addOn in training.addOns %}<span class="badge">{{ addOn }}</span>{% endfor %}
+  </div>
+</section>
+
+<section class="section" id="topics" style="border-top: 1px solid var(--border);">
+  <span class="eyebrow">Training topics</span>
+  <h2>What your team can learn</h2>
+  <p class="training-intro">
+    Each topic works as a stand-alone lecture, a workshop or a module in a
+    longer course. Mix and match them into your own programme.
+  </p>
+
+  <div class="speaking-topics-grid">
+    {% for topic in training.topics %}
+    <div class="topic-card">
+      <div class="topic-icon" aria-hidden="true">{{ "0" + loop.index if loop.index < 10 else loop.index }}</div>
+      <h3>{{ topic.title }}</h3>
+      <p>{{ topic.summary }}</p>
+    </div>
+    {% endfor %}
+    <div class="topic-card training-yours">
+      <h3>Don't see your topic?</h3>
+      <p>I can build a course around your own crop, livestock, product, process or research area.</p>
+      <p><a class="text-link" href="{{ enquiry }}">Tell me what you need →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top: 1px solid var(--border);">
+  <span class="eyebrow">How it works</span>
+  <h2>From first email to confident team in four steps</h2>
+  <ol class="training-steps">
+    <li>
+      <h3>Get in touch</h3>
+      <p>
+        Send a few lines through the <a class="inline-link" href="{{ enquiry }}">contact form</a>
+        about your organisation, your team and what you would like to achieve.
+      </p>
+    </li>
+    <li>
+      <h3>Discovery call</h3>
+      <p>
+        A short call to understand your sector, your team's current AI skills
+        and your goals, with an optional skills survey for participants.
+      </p>
+    </li>
+    <li>
+      <h3>Tailored proposal</h3>
+      <p>
+        A clear outline of the format, topics, schedule, delivery and price,
+        with examples adapted to your crops, livestock, products or research.
+      </p>
+    </li>
+    <li>
+      <h3>Delivery and follow-up</h3>
+      <p>
+        Practical sessions online or on site, with materials your team keeps,
+        and follow-up support to turn what they learned into action.
+      </p>
+    </li>
+  </ol>
+</section>
+
+<section class="section" style="border-top: 1px solid var(--border);">
+  <div class="training-split training-split--trainer">
+    {{ photo(photos.bridgeAiTalk, sizes="(max-width: 900px) 100vw, 420px", class="page-figure--portrait") }}
+
+    <div>
+      <span class="eyebrow">About your trainer</span>
+      <h2>Learn from someone who builds AI for agriculture</h2>
+      <p>
+        I'm a scientist, founder and educator working where AI meets agriculture,
+        with nearly ten years of applying digital technology to farming. I
+        co-founded Petiole, a UK agritech company that uses computer vision to
+        measure plants in the field and the lab, and has won
+        {{ facts.petiole.grants }} for practical AI in agriculture. I also founded
+        MooMore, which uses AI thermal imaging to detect lameness early in dairy
+        cattle.
+      </p>
+      <p>
+        I turn complex technology into clear, practical language that farmers,
+        food businesses and scientists can use straight away. I:
+      </p>
+      <ul class="speaking-list">
+        <li>Host a {{ facts.live.name | lcfirst }} — <a class="inline-link" href="{{ facts.live.url }}">watch the recordings</a> ↗</li>
+        <li>Write the {{ facts.newsletter.name }} for {{ facts.reach.newsletter }} readers — <a class="inline-link" href="{{ facts.newsletter.url }}">read the archive</a> ↗</li>
+        <li>
+          Created the course <a class="inline-link" href="{{ facts.links.course }}">{{ facts.course.title }}</a> ↗,
+          taken by {{ facts.reach.students }} students in {{ facts.reach.countries }} countries
+        </li>
+        <li>Speak at industry events and give corporate keynotes — <a class="inline-link" href="/speaking/">speaking</a></li>
+      </ul>
+
+      <ul class="recognition-list training-credentials">
+        <li><strong>{{ facts.award.wiw.name }}</strong> — {{ facts.award.wiw.status }}, for {{ facts.award.wiw.forLong }}.</li>
+        <li><strong>{{ facts.award.ofc.name }}</strong> — {{ facts.award.ofc.selection }} in the cohort.</li>
+        <li><strong>{{ facts.award.topVoice.name }}</strong> — named in {{ facts.award.topVoice.when }}.</li>
+      </ul>
+
+      <p>
+        Because I build real AI systems for agriculture, every session is grounded
+        in what actually works on farms and in labs, not in theory or sales talk.
+        The full story is on the <a class="inline-link" href="/about/">About page</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+{#
+  Photographs of Maryna at work, in the order she gave them (2026-10-23).
+  Columns rather than equal tiles, because cropping to one shape would cut the
+  lettering off the Landscape 2024 banner and the BridgeAI slide, which the
+  alt text reads out.
+#}
+<section class="section" style="border-top: 1px solid var(--border);">
+  <span class="eyebrow">In the room</span>
+  <h2>From the conference hall to the orchard</h2>
+  <p class="training-intro">Talks, round tables and conversations in the field, in person and online.</p>
+
+  {% set gallerySizes = "(min-width: 1100px) 360px, (min-width: 700px) 45vw, 100vw" %}
+  <div class="training-gallery">
+    {{ photo(photos.discussion, sizes=gallerySizes) }}
+    {{ photo(photos.bridgeAiCompetition, sizes=gallerySizes) }}
+    {{ photo(photos.orchard, sizes=gallerySizes) }}
+    {{ photo(photos.reflecting, sizes=gallerySizes) }}
+    {{ photo(photos.conferenceTalk, sizes=gallerySizes) }}
+    {{ photo(photos.conferenceConversation, sizes=gallerySizes) }}
+    {{ photo(photos.landscape2024, sizes=gallerySizes) }}
+  </div>
+</section>
+
+<section class="soul-section training-outcomes">
+  <div class="training-split">
+    <div>
+      <span class="eyebrow">What your team walks away with</span>
+      <h2>Real skills, not just slides</h2>
+      <p>After the training, participants can:</p>
+    </div>
+    <ul class="training-checks">
+      <li>Explain in plain words how AI works and where it fits in agriculture and agrifood</li>
+      <li>Spot realistic AI opportunities in their own role and business</li>
+      <li>Ask the right questions of AI vendors, consultants and data partners</li>
+      <li>Use AI assistants safely and productively in everyday work</li>
+      <li>Collect and organise data that is ready for future AI projects</li>
+      <li>Understand the risks: data privacy, bias, errors and over-reliance</li>
+      <li>Take part confidently in AI pilots, grant projects and digital transformation plans</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow">Start before we meet</span>
+  <h2>Free for everyone on your team, today</h2>
+  <p class="training-intro">
+    Courses your people can take on their own, at their own pace, before or
+    after the training. Both are on aiinagriculture.org.
+  </p>
+
+  <div class="training-start">
+    <div class="card">
+      <span class="eyebrow">AI awareness · Free · Open now</span>
+      <h3>{{ facts.course.title }}</h3>
+      <p>
+        {{ facts.course.lessons }} video lessons ({{ facts.course.duration }}),
+        {{ facts.course.quizzes }} marked quizzes, and a certificate of completion
+        anyone can verify. No technical background needed.
+      </p>
+      <p class="training-source">
+        {{ facts.reach.students }} students and a {{ facts.course.rating }} rating from
+        {{ facts.course.ratings }} ratings on the course's Udemy listing — it is
+        moving to aiinagriculture.org from there.
+      </p>
+      <p><a class="btn btn--primary" href="{{ facts.links.course }}">Start the free course ↗</a></p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">AI fluency · In preparation</span>
+      <h3>AI Fluency in Agriculture</h3>
+      <p>
+        A practical course series on briefing AI well, starting with Prompt
+        Engineering Basics: no code, no jargon, with tomatoes, trial plots and
+        farm shops as the examples all the way through.
+      </p>
+      <p><a class="btn btn--ghost" href="{{ facts.links.fluencyCourse }}">Join the waiting list ↗</a></p>
+    </div>
+  </div>
+</section>
+
+{#
+  Law and statistics, each with its source named and linked. Checked on
+  training.reviewed; re-check them at every review, because the Act has
+  already been amended once since Article 4 first applied.
+#}
+<section class="section" style="border-top: 1px solid var(--border);">
+  <div class="training-split">
+    <div>
+      <span class="eyebrow">The law</span>
+      <h2>Support your EU AI Act AI-literacy duty</h2>
+      <p class="pointer-box">{{ training.act.answer }}</p>
+      <p>
+        The Act does not name a course, and the European Commission's guidance
+        says there is no need for a certificate: an internal record of training
+        is enough. Training is one measure an organisation can take; on its
+        own, it does not make an organisation compliant. National market
+        surveillance authorities supervise Article 4 from 2 August 2026.
+      </p>
+      <p class="training-source">
+        Sources:
+        <a class="inline-link" href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" rel="noopener">Regulation (EU) 2024/1689, the AI Act</a>, Articles 2 and 4;
+        <a class="inline-link" href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj" rel="noopener">Regulation (EU) 2026/1744, the Digital Omnibus on AI</a>, in force from 27 July 2026;
+        European Commission,
+        <a class="inline-link" href="https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers" rel="noopener">AI literacy: questions and answers</a>,
+        updated 27 July 2026. This is a summary, not legal advice.
+        Last reviewed <time datetime="{{ training.reviewed }}">{{ training.reviewed | readableDate }}</time>.
+      </p>
+    </div>
+
+    <div>
+      <span class="eyebrow">In the UK</span>
+      <h3 class="training-figures__title">Where UK workers are starting from</h3>
+      <ul class="training-figures">
+        {% for figure in training.figures %}
+        <li class="stat">
+          <strong>{{ figure.value }}</strong>
+          <p>{{ figure.text }}</p>
+          <p class="training-source"><a class="inline-link" href="{{ figure.url }}" rel="noopener">{{ figure.source }}</a></p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top: 1px solid var(--border);">
+  <span class="eyebrow">Questions</span>
+  <h2>Frequently asked questions</h2>
+  <div class="faq-list">
+    {% for item in training.faq %}
+    <details class="card faq-item training-faq">
+      <summary><h3>{{ item.question }}</h3></summary>
+      <p>{{ item.answer }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section section--cta" style="background: var(--accent); color: white; border-radius: var(--radius); text-align: center; margin: 40px 0;">
+  <h2 style="color: white;">Ready to build your team's AI skills?</h2>
+  <p style="color: rgba(255,255,255,0.85); max-width: 760px; margin: 0 auto;">
+    Tell me about your organisation and what you would like your team to learn,
+    and I'll send a tailored proposal for a lecture, a workshop or a custom
+    programme. Online and on-site delivery across the UK and internationally.
+  </p>
+  <a class="btn" style="background: white; color: var(--accent); margin-top: 20px;" href="{{ enquiry }}">Contact Maryna</a>
+  <p style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 16px;">I reply {{ facts.replyTime }}.</p>
+</section>
+
+<section class="section section--tight">
+  {{ photo(photos.aiCamp, sizes="(max-width: 900px) 100vw, 860px", credit=true) }}
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "{{ site.url }}{{ page.url }}#training",
+      "name": {{ title | dump | safe }},
+      "serviceType": "Corporate AI training",
+      "description": {{ description | dump | safe }},
+      "url": "{{ site.url }}{{ page.url }}",
+      "provider": { "@id": "{{ site.url }}/#person" },
+      "areaServed": "Worldwide",
+      "audience": { "@type": "BusinessAudience", "audienceType": "Agriculture and agrifood organisations" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Training formats",
+        "itemListElement": [{% for format in training.formats %}
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ format.name | dump | safe }}, "description": {{ (format.length + ". " + format.bestFor) | dump | safe }} } }{% if not loop.last %},{% endif %}{% endfor %}
+        ]
+      }
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "{{ site.url }}{{ page.url }}#levels",
+      "name": "Levels of AI capability",
+      "hasDefinedTerm": [{% for level in training.levels %}
+        { "@type": "DefinedTerm", "name": {{ level.name | dump | safe }}, "description": {{ level.meaning | dump | safe }} }{% if not loop.last %},{% endif %}{% endfor %}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ site.url }}{{ page.url }}#faq",
+      "about": { "@id": "{{ site.url }}{{ page.url }}#training" },
+      "mainEntity": [{% for item in training.faq %}
+        {
+          "@type": "Question",
+          "name": {{ item.question | dump | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.answer | dump | safe }} }
+        }{% if not loop.last %},{% endif %}{% endfor %}
+      ]
+    }
+  ]
+}
+</script>

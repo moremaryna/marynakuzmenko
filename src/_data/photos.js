@@ -500,6 +500,60 @@ module.exports = {
     caption: "The University of Sargodha webinar, 10 September 2025.",
   }),
 
+  // --- Team training ----------------------------------------------------------
+  // /ai-training-agrifood/, moved here from aiinagriculture.org on 2026-10-24
+  // with the captions Maryna wrote for it there. Two of them say what she is
+  // doing rather than where: she gave no venue for those, and the event on the
+  // workshop lanyard is too small to read with confidence.
+
+  // In the hero, beside the heading.
+  workshop: photo({
+    master: "maryna-kuzmenko-workshop",
+    width: 1200,
+    height: 813,
+    alt: "Dr. Maryna Kuzmenko smiling as she speaks, holding a microphone and a presentation clicker, with an event lanyard round her neck and people seated in the background.",
+    caption: "AI skills can be improved simply by sharing knowledge of how AI works in practice.",
+  }),
+
+  // "In the room", the first.
+  discussion: photo({
+    master: "Maryna-Kuzmenko-Discussion",
+    name: "maryna-kuzmenko-discussion",
+    width: 1000,
+    height: 536,
+    alt: "Dr. Maryna Kuzmenko listening at a round table with four other delegates, a large sheet of paper and pens between them, in a wood-panelled hall.",
+    caption: "Discussing and facilitating.",
+  }),
+
+  // "In the room". The competition and its year are the file name's.
+  bridgeAiCompetition: photo({
+    master: "bridge-ai-competition-2025-maryna-kuzmenko",
+    width: 800,
+    height: 1066,
+    alt: "Dr. Maryna Kuzmenko on a low stage with a microphone, presenting to a seated audience, beside a screen reading £10 billion, global fresh fruit production.",
+    caption: "Presenting one of the tech solutions to a larger audience, BridgeAI competition, 2025.",
+  }),
+
+  // "In the room".
+  orchard: photo({
+    master: "demonstrating-the-basics-of-data-collection-in-orchard",
+    name: "maryna-kuzmenko-orchard-data-collection",
+    width: 800,
+    height: 1067,
+    alt: "Dr. Maryna Kuzmenko in a straw hat holding a phone up to a young apple tree while a grower holds a branch steady, in a grassy orchard on a sunny day.",
+    caption: "In the orchard, speaking about the specifics of data collection with apple and pear growers.",
+  }),
+
+  // "In the room".
+  reflecting: photo({
+    master: "maryna-kuzmenko-reflecting-and-considering-on-strategy",
+    name: "maryna-kuzmenko-reflecting",
+    width: 1000,
+    height: 537,
+    alt: "Dr. Maryna Kuzmenko seated at a conference table, looking up as she listens, with other delegates out of focus behind her.",
+    caption: "UK-Singapore Innovation Forum, February 2026.",
+  }),
+
   // --- Building the tools ---------------------------------------------------
 
   // Teaching page, "The Premise". About, under the professional bio.

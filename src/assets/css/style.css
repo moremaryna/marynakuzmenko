@@ -1874,3 +1874,115 @@ html, body { overflow-x: clip; }
 }
 
 .insights-also { margin: 22px 0 0; font-size: 15px; color: var(--muted); }
+
+/* --- TEAM TRAINING (/ai-training-agrifood/) -------------------------------- */
+.hero .training-trust { font-size: 15px; color: var(--muted); margin: 24px 0 0; max-width: 560px; }
+
+/* Four short facts under the hero: the stat tiles, holding words not numbers. */
+.training-glance { list-style: none; padding: 0; margin: 0 0 20px; }
+.training-glance strong { font-size: 24px; line-height: 1.25; margin-bottom: 6px; }
+.training-glance span { text-transform: none; letter-spacing: 0; font-size: 14px; }
+
+/* Text beside a list or a photograph; one column on a phone. */
+.training-split {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    align-items: start;
+}
+.training-split h2 { margin-top: 0; }
+.training-split--trainer { grid-template-columns: minmax(0, 380px) 1fr; }
+.training-split--trainer .page-figure { margin: 0; }
+
+.training-intro { color: var(--muted); max-width: 720px; margin: 0 0 32px; }
+.training-note { color: var(--muted); font-size: 15px; margin: 24px 0 0; }
+.training-source { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+.training-benefits { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.training-benefits li {
+    padding: 24px 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--muted);
+}
+.training-benefits strong { display: block; font-family: var(--font-heading); font-weight: 400; font-size: 21px; color: var(--accent); }
+
+.training-audiences { margin-top: 30px; }
+.training-audiences .card { min-height: 0; padding: 32px; }
+.training-audiences .card h3 { font-size: 21px; }
+
+/* The formats: a table on a wide screen, a stack of blocks on a phone. */
+.training-formats { width: 100%; border-collapse: collapse; font-size: 15px; }
+.training-formats th, .training-formats td { text-align: left; padding: 18px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.training-formats thead th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 700; }
+.training-formats tbody th { font-family: var(--font-heading); font-weight: 400; font-size: 19px; color: var(--accent); }
+.training-formats__length { color: var(--gold); font-weight: 600; white-space: nowrap; }
+.training-addons__title { font-size: 21px; color: var(--accent); margin: 40px 0 0; }
+
+.training-yours { background: rgba(30, 77, 58, 0.04); border-style: dashed; }
+
+.training-steps {
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+    margin: 30px 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+.training-steps li { counter-increment: step; border-top: 2px solid var(--gold); padding-top: 20px; }
+.training-steps li::before {
+    content: "0" counter(step);
+    font-family: var(--font-heading);
+    font-size: 32px;
+    color: var(--gold);
+}
+.training-steps h3 { font-size: 21px; color: var(--accent); margin: 8px 0; }
+.training-steps p { color: var(--muted); font-size: 15px; margin: 0; }
+
+.training-credentials { margin: 24px 0; }
+
+/* Photographs in columns, each at its own shape, so nothing is cropped. */
+.training-gallery { columns: 3 320px; column-gap: 20px; }
+.training-gallery .page-figure { break-inside: avoid; margin: 0 0 20px; }
+.training-gallery figcaption { font-size: 0.82rem; }
+
+.training-outcomes .eyebrow { color: var(--gold); }
+.training-outcomes p { max-width: none; }
+.training-checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.training-checks li { position: relative; padding-left: 34px; color: rgba(255, 255, 255, 0.9); }
+.training-checks li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+.training-start { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.training-start .card { min-height: 0; }
+.training-start .eyebrow { margin-bottom: 0; }
+.training-start .btn { margin-top: 8px; }
+
+.training-figures__title { font-size: 24px; color: var(--accent); margin-top: 0; }
+.training-figures { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.training-figures .stat p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+
+/* The questions fold, so fourteen of them do not run the page on for ever. */
+.training-faq { min-height: 0; }
+.training-faq:hover { transform: none; }
+.training-faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+.training-faq summary::-webkit-details-marker { display: none; }
+.training-faq summary::after { content: "+"; font-size: 24px; color: var(--gold); line-height: 1; }
+.training-faq[open] summary::after { content: "−"; }
+.training-faq summary h3 { margin: 0; }
+.training-faq p { margin-top: 14px; }
+
+@media (max-width: 900px) {
+    .training-split, .training-split--trainer, .training-start { grid-template-columns: 1fr; gap: 36px; }
+    .training-steps { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+    .training-steps { grid-template-columns: 1fr; }
+    .training-formats thead { display: none; }
+    .training-formats, .training-formats tbody, .training-formats tr, .training-formats th, .training-formats td { display: block; }
+    .training-formats tr { padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .training-formats th, .training-formats td { border: 0; padding: 4px 0; }
+}
